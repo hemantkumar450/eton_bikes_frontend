@@ -1,0 +1,112 @@
+{
+  "name": "pumpumpum-angular",
+  "version": "2.3.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build:prod": "ng build --configuration=production",
+    "build:dev": "ng build --configuration=dev",
+    "release": "standard-version && git push --follow-tags origin master",
+    "prettier": "prettier --single-quote --parser typescript --write \"./src/**/*.ts\" && prettier --single-quote --parser scss --write \"./src/**/*.scss\"",
+    "format:write": "prettier projects/**/*.{ts,json,md,scss} --write",
+    "format:test": "prettier projects/**/*.{ts,json,md,scss} --list-different",
+    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
+    "serve:production": "node dist/server",
+    "build:production": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:client-and-server-bundles": "ng build --prod && ng run frontend-app:server:production --bundleDependencies all",
+    "move:build": "sudo rm -rf old-dist && sudo mv distnew old-dist && sudo mv dist distnew"
+  },
+  "private": true,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "projects/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "never",
+        [
+          "start-case",
+          "pascal-case"
+        ]
+      ]
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/platform-server": "~8.2.14",
+    "@angular/router": "~8.2.14",
+    "@ng-bootstrap/ng-bootstrap": "^5.2.3",
+    "@ng-select/ng-select": "^3.7.2",
+    "@ngu/carousel": "^1.5.5",
+    "@nguniversal/express-engine": "^8.2.6",
+    "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
+    "angular-svg-round-progressbar": "^3.0.1",
+    "angular2-text-mask": "^9.0.0",
+    "bootstrap": "^4.4.1",
+    "express": "^4.15.2",
+    "hammerjs": "^2.0.8",
+    "ng-click-outside": "^6.0.0",
+    "ng-lazyload-image": "^7.1.0",
+    "ng-otp-input": "^1.7.0",
+    "ng2-animate-on-scroll": "^1.2.0",
+    "ng2-pdf-viewer": "^6.3.0",
+    "ng5-slider": "^1.2.4",
+    "ngx-bootstrap": "^5.3.2",
+    "ngx-owl-carousel-o": "^2.0.3",
+    "ngx-toastr": "^11.3.2",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.25",
+    "@angular/cli": "~8.3.22",
+    "@angular/compiler-cli": "~8.2.14",
+    "@angular/language-service": "~8.2.14",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/prompt": "^8.3.5",
+    "@types/express": "^4.17.0",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.0",
+    "commitizen": "^4.0.4",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "standard-version": "^7.0.1",
+    "ts-loader": "^5.2.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~3.5.3",
+    "webpack-cli": "^3.1.0"
+  }
+}

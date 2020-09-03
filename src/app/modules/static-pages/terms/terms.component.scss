@@ -1,0 +1,13 @@
+b{
+  color:#000;
+}
+p b{
+  display: inline;
+}
+ul {
+  ul{
+    li{
+      list-style: circle;
+    }
+  }
+}

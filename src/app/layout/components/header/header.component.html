@@ -1,0 +1,63 @@
+<!-- <div class="current-area-alert">
+  <p>We’ll be there in your city soon. Currently serving only Delhi- NCR.</p>
+</div> -->
+<header [class.header-white]="isWhiteHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-6">
+        <a routerLink="/">
+          <img class="logo"
+            src="/assets/images/logo.svg"
+            alt="">
+        </a>
+      </div>
+      <div class="col-md-8 col-sm-6 col-6">
+        <ul class="top-menu float-right">
+          <li class="d-none d-md-inline-block">
+            <a class="highlight-link"
+              routerLink="/corporate">Corporate Lease</a>
+          </li>
+          <li class="d-none d-md-inline-block">
+            <a routerLink="/cars">Browse Cars</a>
+          </li>
+          <li class="d-none d-md-inline-block">
+            <a routerLink="/faqs">FAQs</a>
+          </li>
+          <li *ngIf="!isAuthenticated()">
+            <button type="button"
+              (click)="openLoginModal()">Login/Register</button>
+          </li>
+          <li *ngIf="isAuthenticated()">
+            <div class="btn-group user-header-menu"
+              dropdown>
+              <button dropdownToggle
+                type="button">
+                <span class="user-name">
+                  {{ getUserName() }}
+                </span>
+                <i class="icon-down-arrow"></i>
+              </button>
+              <ul id="dropdown-animated"
+                *dropdownMenu
+                class="dropdown-menu">
+                <li>
+                  <a routerLink="/user-dashboard/index">My Dashboard</a>
+                </li>
+                <li>
+                  <a routerLink="/user/account">My Account</a>
+                </li>
+                <li>
+                  <a routerLink="/user/favourites">My Favourites</a>
+                </li>
+                <li>
+                  <button type="button"
+                    (click)="onLogOut()">Log Out</button>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
