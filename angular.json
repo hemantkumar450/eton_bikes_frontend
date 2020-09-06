@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-v9": {
+    "eton-bikes": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-v9",
+            "outputPath": "dist/eton-bikes",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-v9:build"
+            "browserTarget": "eton-bikes:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-v9:build:production"
+              "browserTarget": "eton-bikes:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-v9:build"
+            "browserTarget": "eton-bikes:build"
           }
         },
         "test": {
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-v9:serve"
+            "devServerTarget": "eton-bikes:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-v9:serve:production"
+              "devServerTarget": "eton-bikes:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-v9"
+  "defaultProject": "eton-bikes"
 }
