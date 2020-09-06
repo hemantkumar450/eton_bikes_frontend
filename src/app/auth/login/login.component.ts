@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private title: Title,
     private router: Router
   ) {
-    this.title.setTitle('PumPumPum - Login');
+    this.title.setTitle('etonbikes - Login');
     this.authType = AuthType.LOGIN;
   }
 

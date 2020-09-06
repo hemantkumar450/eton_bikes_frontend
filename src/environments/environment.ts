@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiEndPoint: 'https://api.pumpumpum.com/api/v1/customer',
+  apiEndPoint: 'https://api.etonbikes.com/api/v1/customer',
   paymentENVIRONMENT: 'TEST'
   // apiEndPoint: 'http://13.232.16.134:5000/api/v1/customer'
 };

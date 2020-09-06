@@ -16,7 +16,7 @@ export class ChangePasswordComponent implements OnInit {
     private title: Title,
     private router: Router
   ) {
-    this.title.setTitle('PumPumPum - Change Password');
+    this.title.setTitle('etonbikes - Change Password');
   }
 
   ngOnInit(): void {
