@@ -1,0 +1,54 @@
+<div class="success-dialog-content"
+  [class.subscription]="activeModalType === SuccessModalType.SUBSCRIPTION_SUCCESS || activeModalType === SuccessModalType.SUBSCRIPTION_SUCCESS_lOGGED_IN">
+  <button class="icon-close"
+    type="button"
+    (click)="close()"></button>
+  <div *ngIf="activeModalType === SuccessModalType.REGISTER_SUCCESS">
+    <img width="200"
+      [src]="'/assets/images/email-sent.svg'"
+      alt="">
+    <h5>We have sent you an email to verify <br>your email address</h5>
+    <p>To continue, please activate your account.</p>
+  </div>
+  <div *ngIf="activeModalType === SuccessModalType.EMAIL_CONFIRMATION">
+    <img width="170"
+      [src]="'/assets/images/email-verified.svg'"
+      alt="">
+    <h5>Your e-mail has been successfully verified!</h5>
+    <p>Please click on 'Login' below to start browsing cars on etonbikes.</p>
+    <a routerLink="login"
+      (click)="close()"
+      class="btn btn-primary">Login</a>
+  </div>
+  <div *ngIf="activeModalType === SuccessModalType.SUBSCRIPTION_SUCCESS">
+    <img src="/assets/images/logo.svg"
+      alt="">
+    <h4>Thank You for choosing us!</h4>
+    <p>Your car subscription request is being processed. A PPP executive will get in touch with you within 24 hours.</p>
+    <div class="divider"></div>
+    <p><strong>Please check your mail for your account password and information about the next steps.</strong></p>
+    <a routerLink="/cars"
+      (click)="close()"
+      class="btn btn-primary">Continue Browsing</a>
+  </div>
+  <div *ngIf="activeModalType === SuccessModalType.SUBSCRIPTION_SUCCESS_lOGGED_IN">
+    <img src="/assets/images/logo.svg"
+      alt="">
+    <h4>Thank You for choosing us!</h4>
+    <p>Your car subscription request is being processed. A PPP executive will get in touch with you within 24 hours.</p>
+    <div class="divider"></div>
+    <a routerLink="/cars"
+      (click)="close()"
+      class="btn btn-primary">Continue Browsing</a>
+  </div>
+  <div *ngIf="activeModalType === SuccessModalType.CONTACT_FORM_SUCCESS">
+    <img width="170"
+      [src]="'/assets/images/email-verified.svg'"
+      alt="">
+    <h5>Thank you for reaching out to us!</h5>
+    <p>Stay tuned, a etonbikes executive will get in touch with you soon. To continue browsing through our listings, please click on the link below -</p>
+    <a routerLink="cars"
+      (click)="close()"
+      class="btn btn-primary">Browse Cars</a>
+  </div>
+</div>

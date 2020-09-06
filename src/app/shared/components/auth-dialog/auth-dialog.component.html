@@ -1,0 +1,13 @@
+<div class="auth-dialog">
+    <button type="button" class="icon-close" (click)="decline()">
+  </button>
+    <app-login-form (loginSuccessEvent)="onLoginSuccess()" *ngIf="authType === AUTH_TYPES.LOGIN">
+    </app-login-form>
+    <app-register-form *ngIf="authType === AUTH_TYPES.SIGN_UP">
+    </app-register-form>
+    <app-forgot-password-form *ngIf="authType === AUTH_TYPES.FORGOT_PASSWORD">
+    </app-forgot-password-form>
+    <app-change-password *ngIf="authType === AUTH_TYPES.CHANGE_PASSWORD">
+    </app-change-password>
+
+</div>
