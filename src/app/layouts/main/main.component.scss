@@ -1,0 +1,18 @@
+main {
+  padding-top: 80px;
+}
+
+::ng-deep router-outlet + * {
+  display: block;
+  animation: fade 1s;
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
