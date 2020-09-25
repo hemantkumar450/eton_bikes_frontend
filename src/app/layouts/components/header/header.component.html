@@ -1,34 +1,889 @@
-<header id="header" class="d-flex align-items-center">
-  <div class="container d-flex flex-column align-items-center">
+<header id="header" role="banner" class="i18n-en-US">
+  <nav class="navigation l-wrapper">
+      <div class="nav-logo">
+          <h1 class="u-hide-visual">Santa Cruz Bicycles</h1>
+          <a href="#" title="Home" rel="home">
+              <svg id="santa-cruz-logo" viewBox="0 0 147.79 47.4">
+                  <title>Santa Cruz Bicycles</title>
+                  <path d="M113,4.66,103.11,21.6H94.47L104.4,4.66H95L85.05,21.6H74.69L73.31,8.2,65.46,21.6H56.83L69.48,0H80l1.37,13.23L89.07,0h34.08l-2.73,4.66ZM56.7,0h-8L24,21.6H56.7ZM48.19,16.94H38L48.45,7.77ZM140.79,0h-8L108.13,21.6h32.65Zm-8.51,16.94h-10.2l10.46-9.17ZM7.69,8.47h0C6.19,11,7,13.1,9.57,13.13H19.82l-2.23,3.82H2.73L0,21.6H18.84c2.57,0,5.88-2.08,7.38-4.66h0l2.23-3.82h0c1.51-2.57.64-4.66-1.93-4.66H16.32l2.23-3.82H33.42L36.15,0H17.31c-2.57,0-5.88,2.08-7.38,4.66h0ZM82.35,42.73c-1.5,2.55-.65,4.63,1.88,4.65h15.93c2.57,0,5.88-2.08,7.38-4.66h0l7.2-12.29h14.6L109.54,47.38h24.64l2.73-4.66h-11l18.5-16.94H108.82L98.9,42.73H91l9.92-16.94H92.27Zm-43.06,0,7.2-12.29H58.79l2.73-4.66H45.23c-2.57,0-5.88,2.08-7.38,4.66h0l-7.2,12.29h0v0h0c-1.5,2.56-.65,4.63,1.88,4.66H48.86l2.74-4.67Zm25.9-16.94L52.53,47.38h8.63l4.17-7.12h1.73l3,7.12h9.1l-3.59-7.12h0c2.57,0,5.88-2.08,7.38-4.66h0l3-5.16h0c1.51-2.57.64-4.66-1.93-4.66H65.18Zm9.1,9.82H68.06l3-5.16h6.22Zm70-35.26h-.93v2h-.54v-2h-.93V0h2.41Zm.43-.34h.79l.62,1.39c.08.19.13.33.13.33h0s0-.13.12-.33L147,0h.79V2.32h-.54V.44h0a4.23,4.23,0,0,1-.17.45l-.63,1.43H146L145.4.89a4.26,4.26,0,0,1-.17-.45h0V2.32h-.5Z"></path>
+                </svg>
+          </a>
+      </div>
 
-    <h1>Eton Bikes</h1>
-    <h2>We're working hard to improve our website and we'll be ready to launch after</h2>
-    <div class="countdown d-flex justify-content-center" data-count="2020/12/30">
-      <div>
-        <h3>{{_days}}</h3>
-        <h4>Days</h4>
-      </div>
-      <div>
-        <h3>{{_hours}}</h3>
-        <h4>Hours</h4>
-      </div>
-      <div>
-        <h3>{{_minutes}}</h3>
-        <h4>Minutes</h4>
-      </div>
-      <div>
-        <h3>{{_seconds}}</h3>
-        <h4>Seconds</h4>
-      </div>
-    </div>
+      <nav class="nav-links" role="navigation">
+          <ul class="nav-links__list">
+              <li class="nav-links__item first"><a 
+                      class="nav-links__item-link nav-dropdown__bike_menu" (click)="showBikes()">Bikes</a></li>
+              <li class="nav-links__item"><a href="#"
+                      class="nav-links__item-link nav-dropdown__components_menu">Wheels</a></li>
+              <li class="nav-links__item"><a href="#"
+                      class="nav-links__item-link nav-dropdown__paydirt_menu">Paydirt</a></li>
+              <li class="nav-links__item"><a href="#"
+                      class="nav-links__item-link nav-dropdown__gear_menu">Gear</a></li>
+              <li class="nav-links__item"><a href="#"
+                      class="nav-links__item-link nav-dropdown__teams_menu">Teams</a></li>
+              <li class="nav-links__item"><a href="#"
+                      class="nav-links__item-link nav-dropdown__news_menu">News</a></li>
+              <li class="nav-links__item last"><a href="#"
+                      class="nav-links__item-link nav-dropdown__demo_menu">Demo</a></li>
+          </ul>
 
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-      <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-      <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="icofont-skype"></i></a>
-      <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
-    </div>
 
-  </div>
+      </nav>
+
+      <div class="nav-icons">
+          <ul>
+              <li>
+                  <a class="nav-icon nav-icon__login"
+                      href="https://shop.santacruzbicycles.com/customer/account/" title="Log In">
+                      <svg id="user-account" viewBox="0 0 20 20">
+                          <title>User Account</title>
+                          <path d="M683.83,377.5a3.43,3.43,0,1,0,3.43,3.43A3.43,3.43,0,0,0,683.83,377.5Zm0,5.19a1.76,1.76,0,1,1,1.76-1.76A1.76,1.76,0,0,1,683.83,382.69Zm0-8.52a10,10,0,1,0,10,10A10,10,0,0,0,683.83,374.17Zm5.83,15.94a8.31,8.31,0,0,1-11.67,0v-.57a4.73,4.73,0,0,1,1.92-3.7,6.55,6.55,0,0,0,7.82,0,4.73,4.73,0,0,1,1.92,3.7Zm-1.54-6-.55-.34-.47.46a4.84,4.84,0,0,1-6.55,0l-.47-.46-.55.34a6.68,6.68,0,0,0-3,4.07,8.33,8.33,0,1,1,14.64,0A6.68,6.68,0,0,0,688.13,384.08Z" transform="translate(-673.83 -374.17)"></path>
+                        </svg>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-icon nav-icon__cart"
+                      href="https://shop.santacruzbicycles.com/checkout/cart/" title="Shopping Cart">
+                      <svg id="cart-empty" class="cart--empty" viewBox="0 0 25.17 18.65">
+                          <title>Shopping Cart Empty</title>
+                          <path d="M677.67,403.42a2.21,2.21,0,1,0,2.21,2.21A2.21,2.21,0,0,0,677.67,403.42Zm9.63,0a2.21,2.21,0,1,0,2.21,2.21A2.21,2.21,0,0,0,687.29,403.42Z" transform="translate(-668.13 -389.19)"></path><path d="M691.25,401.44H673.62l-2.29-10.25h-2.2a1,1,0,0,1,0-2h3.8l2.29,10.25h14.36l1.73-9.43a1,1,0,1,1,2,.36Z" transform="translate(-668.13 -389.19)"></path>
+                        </svg>
+                        <svg id="cart-active" class="cart--active" viewBox="0 0 25.17 18.65">
+                          <title>Shopping Cart Active</title>
+                          <path d="M677.67,403.42a2.21,2.21,0,1,0,2.21,2.21A2.21,2.21,0,0,0,677.67,403.42Zm9.63,0a2.21,2.21,0,1,0,2.21,2.21A2.21,2.21,0,0,0,687.29,403.42Z" transform="translate(-668.13 -389.19)"></path><path d="M691.25,401.44H673.62l-2.29-10.25h-2.2a1,1,0,0,1,0-2h3.8l2.29,10.25h14.36l1.73-9.43a1,1,0,1,1,2,.36Z" transform="translate(-668.13 -389.19)"></path>
+                          <circle fill="#e5001c" cx="14.29" cy="3.31" r="2.21"></circle>
+                        </svg>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-icon nav-icon__search" title="Search">
+                      <svg id="search" viewBox="0 0 486 503.39">
+                          <title>Search</title>
+                          <path d="M491.61,462.81,371.8,338.21a202.59,202.59,0,0,0,47.68-130.66c0-112.07-91.18-203.24-203.24-203.24S13,95.48,13,207.55s91.18,203.24,203.24,203.24A201.07,201.07,0,0,0,332.68,374L453.4,499.56a26.51,26.51,0,1,0,38.21-36.75ZM216.24,57.33c82.83,0,150.22,67.39,150.22,150.22S299.08,357.77,216.24,357.77,66,290.38,66,207.55,133.41,57.33,216.24,57.33Z" transform="translate(-13 -4.31)"></path>
+                        </svg>
+                  </a>
+
+                  <div class="search-form">
+                      <form action="/search" method="get">
+                          <div class="form-item form-item--textfield form-item--test-name">
+                              <div class="form-item__element">
+                                  <input id="search-keys" placeholder="Search Site" name="keys"
+                                      class="form-textfield" type="text">
+                                  <input name="op" type="submit" value="Search" class="form-submit">
+                              </div>
+                          </div>
+                      </form>
+                      <div class="search-form__close">
+                          <svg id="close--small-white" viewBox="0 0 512 512">
+                              <title>Close</title>
+                              <polygon fill="#fff" points="512 59.09 452.91 0 256 196.91 59.09 0 0 59.09 196.91 256 0 452.91 59.09 512 256 315.09 452.91 512 512 452.91 315.09 256 512 59.09"></polygon>
+                            </svg>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+
+      <div class="nav-toggle">
+          <span class="nav-toggle--top"></span>
+          <span class="nav-toggle--middle"></span>
+          <span class="nav-toggle--bottom"></span>
+      </div>
+
+  </nav>
 </header>
+
+<div id="nav_dropdowns">
+
+  <div class="nav-dropdown__display-container" id="nav-dropdown__bike_menu" *ngIf="bike_menu" [ngClass]="bike_menu ? 'js-nav-link--is-active' : ''">
+      <div class="nav-header">
+          <div class="nav-header__inner">
+              <div class="nav-header__link"><a href="#">See All Bikes</a></div>
+              <div class="nav-header__close">
+                  <svg id="close--small" viewBox="0 0 512 512">
+                      <title>Close</title>
+                      <polygon points="512 59.09 452.91 0 256 196.91 59.09 0 0 59.09 196.91 256 0 452.91 59.09 512 256 315.09 452.91 512 512 452.91 315.09 256 512 59.09"></polygon>
+                    </svg>
+              </div>
+          </div>
+      </div>
+      <div class="nav-dropdown">
+          <div class="l-wrapper">
+              <div class="nav-dropdown__inner">
+
+                  <div class="nav-dropdown__bikes-wrapper">
+                      <div class="nav-dropdown__bikes">
+
+                          <ul class="bike-dd__list-category">
+                              <li class="bike-dd__list-category--item">
+                                  <span class="bike-dd__list-category--title">27.5"</span>
+                                  <ul class="bike-dd__list-items">
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=MrNydYry 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=XDiH5bBE 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=XDiH5bBE"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">V10</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  215mm</dd>
+                                                              <dd class="polaroid-horizontal__size">27.5",
+                                                                  MX (Mixed), 29"</dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/nomad_updated_thumb.jpg?itok=4Zwtq5v3 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/nomad_updated_thumb.jpg?itok=dd4F43z4 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/nomad_updated_thumb.jpg?itok=dd4F43z4"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Nomad</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  170mm</dd>
+                                                              <dd class="polaroid-horizontal__size">27.5"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0010_my21_heckler_1.0_cc_xo1_rsv_blackout.jpg?itok=NHouWBHr 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0010_my21_heckler_1.0_cc_xo1_rsv_blackout.jpg?itok=ZWKewjJb 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0010_my21_heckler_1.0_cc_xo1_rsv_blackout.jpg?itok=ZWKewjJb"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Heckler</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  150mm</dd>
+                                                              <dd class="polaroid-horizontal__size">27.5"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0014_my21_bronson_cc_xo1_rsv_beef.jpg?itok=Og0CqGXh 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0014_my21_bronson_cc_xo1_rsv_beef.jpg?itok=sLsBtp8t 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0014_my21_bronson_cc_xo1_rsv_beef.jpg?itok=sLsBtp8t"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Bronson</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  150mm</dd>
+                                                              <dd class="polaroid-horizontal__size">27.5"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/scb_thumbnail_5010_aqua.jpg?itok=HuKHH-W1 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/scb_thumbnail_5010_aqua.jpg?itok=6kyaUEPv 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/scb_thumbnail_5010_aqua.jpg?itok=6kyaUEPv"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">5010</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  130mm</dd>
+                                                              <dd class="polaroid-horizontal__size">27.5"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li class="bike-dd__list-category--item">
+                                  <span class="bike-dd__list-category--title">29"</span>
+                                  <ul class="bike-dd__list-items">
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=MrNydYry 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=XDiH5bBE 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=XDiH5bBE"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">V10</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  215mm</dd>
+                                                              <dd class="polaroid-horizontal__size">27.5",
+                                                                  MX (Mixed), 29"</dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/scb_mega_storm_thumb.jpg?itok=a0Z4ybwH 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/scb_mega_storm_thumb.jpg?itok=caabMrda 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/scb_mega_storm_thumb.jpg?itok=caabMrda"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Megatower
+                                                      </h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  160mm</dd>
+                                                              <dd class="polaroid-horizontal__size">29"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0007_my21_hightower_cc_xx1_rsv_grey.jpg?itok=wPnXzgkh 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0007_my21_hightower_cc_xx1_rsv_grey.jpg?itok=GbVEdrZ7 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0007_my21_hightower_cc_xx1_rsv_grey.jpg?itok=GbVEdrZ7"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Hightower
+                                                      </h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  140mm</dd>
+                                                              <dd class="polaroid-horizontal__size">29"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0004_my21_tallboy_cc_xx1_rsv_ivory.jpg?itok=KIWDXHxN 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0004_my21_tallboy_cc_xx1_rsv_ivory.jpg?itok=CN_ct3lC 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0004_my21_tallboy_cc_xx1_rsv_ivory.jpg?itok=CN_ct3lC"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Tallboy</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  120mm</dd>
+                                                              <dd class="polaroid-horizontal__size">29"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0016_my21_blur_cc_xx1_rsv_aqua.jpg?itok=7onXGz4X 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0016_my21_blur_cc_xx1_rsv_aqua.jpg?itok=pWAeeDK_ 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0016_my21_blur_cc_xx1_rsv_aqua.jpg?itok=pWAeeDK_"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Blur</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  100mm</dd>
+                                                              <dd class="polaroid-horizontal__size">29"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0009_my21_highball_cc_xo1_rsv_ember.jpg?itok=b1jIW3R1 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0009_my21_highball_cc_xo1_rsv_ember.jpg?itok=1uSv7GlT 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0009_my21_highball_cc_xo1_rsv_ember.jpg?itok=1uSv7GlT"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Highball</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  Hardtail</dd>
+                                                              <dd class="polaroid-horizontal__size">29"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0013_my21_chameleon_al_r_29_fog.jpg?itok=-dYnShR4 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0013_my21_chameleon_al_r_29_fog.jpg?itok=-mb5xQXY 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0013_my21_chameleon_al_r_29_fog.jpg?itok=-mb5xQXY"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Chameleon
+                                                      </h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  Hardtail</dd>
+                                                              <dd class="polaroid-horizontal__size">29",
+                                                                  27.5" plus</dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li class="bike-dd__list-category--item">
+                                  <span class="bike-dd__list-category--title">Mixed Wheels</span>
+                                  <ul class="bike-dd__list-items">
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=MrNydYry 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=XDiH5bBE 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg?itok=XDiH5bBE"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">V10</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  215mm</dd>
+                                                              <dd class="polaroid-horizontal__size">27.5",
+                                                                  MX (Mixed), 29"</dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                  </ul>
+                                  <span class="bike-dd__list-category--title">700c / 650b / 26"</span>
+                                  <ul class="bike-dd__list-items">
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/my21_thumb_0005_my21_stigmata_cc_rival_blue.jpg?itok=5DPb34Ct 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0005_my21_stigmata_cc_rival_blue.jpg?itok=Y9G8Y19D 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/my21_thumb_0005_my21_stigmata_cc_rival_blue.jpg?itok=Y9G8Y19D"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Stigmata</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  Gravel/CX</dd>
+                                                              <dd class="polaroid-horizontal__size">650b,
+                                                                  700c</dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li class="bike-dd__list-item">
+                                          <div class="polaroid-horizontal">
+                                              <a class="polaroid-horizontal__link"
+                                                  href="#">
+                                                  <div class="polaroid-horizontal__image">
+                                                      <picture>
+                                                          <source
+                                                              data-srcset="https://www.santacruzbicycles.com/files/styles/scb_crop_350_240/public/frame/thumbs/jackal_thumb.jpg?itok=YiF-qnTz 2x, https://www.santacruzbicycles.com/files/styles/scb_crop_175_120/public/frame/thumbs/jackal_thumb.jpg?itok=x4gUX7Fm 1x"
+                                                              media="(min-width: 0px)"><img
+                                                              data-src="/files/styles/scb_crop_175_120/public/frame/thumbs/jackal_thumb.jpg?itok=x4gUX7Fm"
+                                                              class="lazyload" alt="Santa Cruz Image"
+                                                              title=""></picture>
+                                                  </div>
+                                                  <div class="polaroid-horizontal__text-container">
+                                                      <h2 class="polaroid-horizontal__title">Jackal</h2>
+                                                      <div class="polaroid-horizontal__text">
+                                                          <dl>
+                                                              <dd class="polaroid-horizontal__travel">
+                                                                  Hardtail</dd>
+                                                              <dd class="polaroid-horizontal__size">26"
+                                                              </dd>
+                                                          </dl>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="nav-dropdown__bikes-extra">
+                          <div class="nav-dropdown__bikes-extra-item bikes-extra-item__cta">
+                              <div
+                                  class="view view-feature-blocks view-id-feature_blocks view-display-id-block">
+
+
+
+                                  <div class="view-content">
+                                      <div>
+                                          <section class="feature-block">
+                                              <div class="feature-block__image">
+                                                  <picture>
+                                                      <source
+                                                          data-srcset="https://www.santacruzbicycles.com/files/styles/scb_natural_960_auto/public/scb_web_pdp_action2.jpg?itok=siVTQCaF 2x, https://www.santacruzbicycles.com/files/styles/scb_natural_480_auto/public/scb_web_pdp_action2.jpg?itok=pjBVOHTt 1x"
+                                                          media="(min-width: 0px)"><img
+                                                          data-src="/files/styles/scb_natural_480_auto/public/scb_web_pdp_action2.jpg?itok=pjBVOHTt"
+                                                          class="lazyload" alt="Santa Cruz Image"
+                                                          title=""></picture>
+                                              </div>
+                                              <div class="feature-block__text-container">
+                                                  <h2 class="feature-block__title">Get Creative With Your
+                                                      Surroundings</h2>
+                                                  <a href="#"
+                                                      class="feature-block__cta">See the new 5010 </a>
+                                              </div>
+                                          </section>
+                                      </div>
+                                  </div>
+
+
+
+
+
+
+                              </div><a href="#" class="btn-primary dealer-link"
+                                  data-gtm_context="bikes">Find Your Local Dealer</a>
+                          </div>
+                          <div class="nav-dropdown__bikes-extra-item bikes-extra-item__support">
+                              <h1 class="bikes-extra-item__support-title">Demo &amp; Support</h1>
+                              <ul class="bikes-extra-item__support-list">
+                                  <li class="first"><a href="#">Factory Demo</a></li>
+                                  <li><a href="#">Demo Tour</a></li>
+                                  <li><a href="#">Bike Archive</a></li>
+                                  <li><a href="#">Warranty</a></li>
+                                  <li class="last"><a href="#">Tech Support</a></li>
+                              </ul>
+
+
+                          </div>
+                      </div><!--  .nav-dropdown__bikes-extra  -->
+                  </div><!--  .nav-dropdown__bikes-wrapper  -->
+              </div><!--  .nav-dropdown__inner  -->
+          </div><!--  .l-wrapper  -->
+      </div><!--  .nav-dropdown  -->
+  </div>
+
+</div>
+
+<div id="mobile_nav">
+
+  <nav class="mobile-nav" role="navigation">
+
+      <div class="search-form">
+          <form action="/search" method="get">
+              <div class="form-item form-item--textfield form-item--test-name">
+                  <div class="form-item__element">
+                      <input id="search-keys" placeholder="Search Site" name="keys" class="form-textfield"
+                          type="text">
+                      <input name="op" type="submit" value="Search" class="form-submit">
+                  </div>
+              </div>
+          </form>
+          <div class="search-form__close">
+              <svg role="img">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xlink:href="/assets/img/ref.svg#close--small-white">
+                  </use>Close
+              </svg>
+          </div>
+      </div>
+      <ul class="mobile-nav__primary-list">
+          <li class="mobile-nav__primary-item" id="li-nav-dropdown__bike_menu"><a href="/en-US/bikes"
+                  class="mobile-nav__primary-item-link mobile-nav__primary--has-secondary-nav">Bikes</a>
+              <div class="mobile-nav__secondary-wrapper">
+                  <a class="mobile-nav__secondary-title" href="">Bikes</a>
+                  <div class="mobile-nav__secondary-list--wrapper">
+                      <ul class="mobile-nav__secondary-list-items">
+                          <li class="mobile-nav__secondary-list-item first"><span
+                                  class="mobile-nav__secondary-list-category--title">27.5"</span>
+                              <ul class="mobile-nav__secondary-list-items">
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/v10">V10</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/nomad">Nomad</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/heckler">Heckler</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/bronson">Bronson</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/5010">5010</a> </li>
+                              </ul>
+                          </li>
+                          <li class="mobile-nav__secondary-list-item"><span
+                                  class="mobile-nav__secondary-list-category--title">29"</span>
+                              <ul class="mobile-nav__secondary-list-items">
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/v10">V10</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/megatower">Megatower</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/hightower">Hightower</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/tallboy">Tallboy</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/blur">Blur</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/highball-29">Highball</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/chameleon">Chameleon</a> </li>
+                              </ul>
+                          </li>
+                          <li class="mobile-nav__secondary-list-item"><span
+                                  class="mobile-nav__secondary-list-category--title">Mixed Wheels</span>
+                              <ul class="mobile-nav__secondary-list-items">
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/v10">V10</a> </li>
+                              </ul>
+                          </li>
+                          <li class="mobile-nav__secondary-list-item"><span
+                                  class="mobile-nav__secondary-list-category--title">700c / 650b /
+                                  26"</span>
+                              <ul class="mobile-nav__secondary-list-items">
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/stigmata">Stigmata</a> </li>
+                                  <li class="mobile-nav__secondary-list-item">
+                                      <a href="/en-US/bikes/jackal">Jackal</a> </li>
+                              </ul>
+                          </li>
+                          <li class="mobile-nav__secondary-list-item last"><a
+                                  class="mobile-nav__secondary-list-category--title"
+                                  href="/en-US/bikes">See all bikes</a></li>
+                      </ul>
+
+
+                  </div>
+              </div>
+          </li>
+          <li class="mobile-nav__primary-item" id="li-nav-dropdown__components_menu"><a
+                  href="/en-US/wheels"
+                  class="mobile-nav__primary-item-link mobile-nav__primary--has-secondary-nav">Wheels</a>
+              <div class="mobile-nav__secondary-wrapper">
+                  <a class="mobile-nav__secondary-title" href="">Wheels</a>
+                  <div class="mobile-nav__secondary-list--wrapper">
+                      <ul class="mobile-nav__secondary-list-items">
+                          <li class="mobile-nav__secondary-list-item first"><a href="/en-US/wheels">View
+                                  Wheels</a></li>
+                          <li class="mobile-nav__secondary-list-item last"><a href="/en-US/wheels">View
+                                  Carbon</a></li>
+                      </ul>
+
+
+                  </div>
+              </div>
+          </li>
+          <li class="mobile-nav__primary-item" id="li-nav-dropdown__paydirt_menu"><a
+                  href="/en-US/node/3360" class="mobile-nav__primary-item-link">Paydirt</a></li>
+          <li class="mobile-nav__primary-item" id="li-nav-dropdown__gear_menu"><a
+                  href="https://shop.santacruzbicycles.com"
+                  class="mobile-nav__primary-item-link mobile-nav__primary--has-secondary-nav">Gear</a>
+              <div class="mobile-nav__secondary-wrapper">
+                  <a class="mobile-nav__secondary-title" href="">Gear</a>
+                  <div class="mobile-nav__secondary-list--wrapper">
+                      <ul class="mobile-nav__secondary-list-category">
+                          <li class="mobile-nav__secondary-list-category--items first"><span
+                                  class="mobile-nav__secondary-list-category--title">Ride Wear</span>
+                              <ul>
+                                  <li class="mobile-nav__secondary-list-item first"><a
+                                          href="https://shop.santacruzbicycles.com/clothing.html">Shop
+                                          men's</a></li>
+                                  <li class="mobile-nav__secondary-list-item"><a
+                                          href="https://shop.santacruzbicycles.com/womens.html">Shop
+                                          women's</a></li>
+                                  <li class="mobile-nav__secondary-list-item last"><a
+                                          href="https://shop.santacruzbicycles.com/kids.html">Shop
+                                          kid's</a></li>
+                              </ul>
+
+                          </li>
+                          <li class="mobile-nav__secondary-list-category--items"><span
+                                  class="mobile-nav__secondary-list-category--title">Accessories</span>
+                              <ul>
+                                  <li class="mobile-nav__secondary-list-item first"><a
+                                          href="https://shop.santacruzbicycles.com/accessories/stickers.html">Shop
+                                          stickers</a></li>
+                                  <li class="mobile-nav__secondary-list-item"><a
+                                          href="https://shop.santacruzbicycles.com/accessories/bottles.html">Shop
+                                          bottles</a></li>
+                                  <li class="mobile-nav__secondary-list-item last"><a
+                                          href="https://shop.santacruzbicycles.com/accessories/grips.html">Shop
+                                          grips</a></li>
+                              </ul>
+
+                          </li>
+                          <li class="mobile-nav__secondary-list-category--items"><span
+                                  class="mobile-nav__secondary-list-category--title">Parts &amp;
+                                  Tools</span>
+                              <ul>
+                                  <li class="mobile-nav__secondary-list-item first"><a
+                                          href="https://shop.santacruzbicycles.com/parts-and-tools/by-type.html">Shop
+                                          tools</a></li>
+                                  <li class="mobile-nav__secondary-list-item"><a
+                                          href="https://shop.santacruzbicycles.com/parts-and-tools/by-model.html">Shop
+                                          small parts</a></li>
+                                  <li class="mobile-nav__secondary-list-item last"><a
+                                          href="https://shop.santacruzbicycles.com/parts-and-tools.html">Shop
+                                          handlebars</a></li>
+                              </ul>
+
+                          </li>
+                          <li class="mobile-nav__secondary-list-item last"><a
+                                  class="mobile-nav__secondary-list-category--title"
+                                  href="https://shop.santacruzbicycles.com">Shop all gear</a></li>
+                      </ul>
+
+
+                  </div>
+              </div>
+          </li>
+          <li class="mobile-nav__primary-item" id="li-nav-dropdown__teams_menu"><a href="/en-US/node/215"
+                  class="mobile-nav__primary-item-link">Teams</a></li>
+          <li class="mobile-nav__primary-item" id="li-nav-dropdown__news_menu"><a href="/en-US/news"
+                  class="mobile-nav__primary-item-link">News</a></li>
+          <li class="mobile-nav__primary-item" id="li-nav-dropdown__demo_menu"><a href="/en-US/node/2057"
+                  class="mobile-nav__primary-item-link mobile-nav__primary--has-secondary-nav">Demo</a>
+              <div class="mobile-nav__secondary-wrapper">
+                  <a class="mobile-nav__secondary-title" href="">Demo</a>
+                  <div class="mobile-nav__secondary-list--wrapper">
+                      <ul class="mobile-nav__secondary-list-items">
+                          <li class="mobile-nav__secondary-list-item first"><a
+                                  href="/en-US/factory-demo">Book Your Ride</a></li>
+                          <li class="mobile-nav__secondary-list-item"><a
+                                  href="https://ride.santacruzbicycles.com/">Find A Tour Stop</a></li>
+                          <li class="mobile-nav__secondary-list-item last"><a href="/en-US/dealers">Find A
+                                  Dealer</a></li>
+                      </ul>
+
+
+                  </div>
+              </div>
+          </li>
+      </ul>
+      <div class="mobile-nav__shopping">
+          <a class="mobile-nav__shopping-icon mobile-nav__shopping-icon-dealers" href="/en-US/dealers"
+              title="Find a Dealer">
+              <svg role="img">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xlink:href="/assets/img/ref.svg#location">
+                  </use>
+              </svg>
+              <span>Find a Dealer</span>
+          </a>
+          <a class="mobile-nav__shopping-icon mobile-nav__shopping-icon-cart"
+              href="https://shop.santacruzbicycles.com/checkout/cart/" title="Cart">
+              <svg class="cart--empty" role="img">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xlink:href="/assets/img/ref.svg#cart-empty">
+                  </use>
+              </svg>
+              <svg class="cart--active" role="img">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xlink:href="/assets/img/ref.svg#cart-active">
+                  </use>
+              </svg>
+              <span>Cart</span>
+          </a>
+          <a class="mobile-nav__shopping-icon mobile-nav__shopping-icon-cart-login"
+              href="https://shop.santacruzbicycles.com/customer/account/" title="My Account">
+              <svg role="img">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xlink:href="/assets/img/ref.svg#user-account">
+                  </use>
+              </svg>
+              <span>My Account</span>
+          </a>
+      </div>
+      <div class="mobile-nav__social">
+          <ul class="mobile-nav__social-channels">
+              <li class="mobile-nav__social-icon first">
+                  <a href="https://www.facebook.com/santacruzbicycles" target="_blank"
+                      title="Santa Cruz Bicycles on Facebook">
+                      <i class="u-hide-visual">Facebook</i>
+                      <svg role="img">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="/assets/img/ref.svg#facebook">
+                          </use>
+                      </svg>
+                  </a></li>
+              <li class="mobile-nav__social-icon">
+                  <a href="https://twitter.com/santacruzbikes" target="_blank"
+                      title="Santa Cruz Bicycles on Twitter">
+                      <i class="u-hide-visual">Twitter</i>
+                      <svg role="img">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="/assets/img/ref.svg#twitter">
+                          </use>
+                      </svg>
+                  </a></li>
+              <li class="mobile-nav__social-icon">
+                  <a href="https://www.instagram.com/santacruzbicycles/" target="_blank"
+                      title="Santa Cruz Bicycles on Instagram">
+                      <i class="u-hide-visual">Instagram</i>
+                      <svg role="img">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="/assets/img/ref.svg#instagram">
+                          </use>
+                      </svg>
+                  </a></li>
+              <li class="mobile-nav__social-icon">
+                  <a href="https://www.youtube.com/channel/UC-ZdOy00pTvliH3FtW_a_8g" target="_blank"
+                      title="Santa Cruz Bicycles on YouTube">
+                      <i class="u-hide-visual">YouTube</i>
+                      <svg role="img">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="/assets/img/ref.svg#youtube">
+                          </use>
+                      </svg>
+                  </a></li>
+              <li class="mobile-nav__social-icon last">
+                  <a href="https://www.santacruzbicycles.com/node/654" target="_blank"
+                      title="Santa Cruz Bicycles on Newsletter">
+                      <i class="u-hide-visual">Newsletter</i>
+                      <svg role="img">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="/assets/img/ref.svg#email">
+                          </use>
+                      </svg>
+                  </a></li>
+          </ul>
+
+
+      </div>
+  </nav>
+</div>
