@@ -153,9 +153,9 @@
                     </div>
                 </section>
 
-                <div id="frame_page" class="tab-accordion-processed">
+                <div id="frame_page" class="tab-accordion-processed" (scroll)="onWindowScroll($event);">
 
-                    <section class="secondary-navigation fixedBottom">
+                    <section id="fixedTab" class="secondary-navigation fixedBottom" >
                         <div class="secondary-navigation__wrapper">
                             <div class="secondary-navigation__items">
                                 <div class="secondary-navigation__title">
