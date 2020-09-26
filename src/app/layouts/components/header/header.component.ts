@@ -17,5 +17,9 @@ export class HeaderComponent {
   showBikes(){
     this.bike_menu = !this.bike_menu;
   }
+
+  closeBikes() {
+    this.bike_menu = false;
+  }
   
 }
