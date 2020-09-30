@@ -334,11 +334,11 @@ j.start&&j.start(a)):void 0==a.data("flexslider")&&new d.flexslider(this,j)});va
     //run SVG for Everybody
     svg4everybody();
 
-    //Hero Panel - search for 'Santa Cruz' string and add wrapping html so the two words never wrap
+    //Hero Panel - search for 'Eton' string and add wrapping html so the two words never wrap
     $(".hero-panel__title").html(function(index, html) {
-      var searchString = 'santa cruz';
+      var searchString = 'Eton';
       var regEx = new RegExp(searchString, 'ig');
-      var replaceString = '<i style="white-space: nowrap; font-style: normal;">Santa Cruz</i>';
+      var replaceString = '<i style="white-space: nowrap; font-style: normal;">Eton</i>';
       
     	return html.replace(regEx, replaceString);
 		});
@@ -784,11 +784,11 @@ j.start&&j.start(a)):void 0==a.data("flexslider")&&new d.flexslider(this,j)});va
     function socialShare(target) {
 
       var url = '';
-      var share_title = encodeURIComponent(getMetaProperty("property", "og:title") + " #SantaCruzBicycles");
+      var share_title = encodeURIComponent(getMetaProperty("property", "og:title") + " #EtonBicycles");
 
       var share_image = getMetaProperty("name","twitter:image:src");
       if (share_image == false) {
-        share_image = "https://www.santacruzbicycles.com/files/styles/medium/public/ike.jpg";
+        share_image = "https://www.etonbicycles.com/files/styles/medium/public/ike.jpg";
       }
       share_image = encodeURIComponent(share_image);
 
@@ -796,7 +796,7 @@ j.start&&j.start(a)):void 0==a.data("flexslider")&&new d.flexslider(this,j)});va
       if (share_description == false) {
         share_description = getMetaProperty("property", "og:title");
       }
-      share_description = encodeURIComponent(share_description + ' #SantaCruzBicycles');
+      share_description = encodeURIComponent(share_description + ' #EtonBicycles');
 
       var page_url =  encodeURIComponent(location.href);
 

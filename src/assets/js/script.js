@@ -8,7 +8,7 @@ $('.ig-wrapper').each(function(){
       currentIDs = new Array(),
       num = 10;
 
-      if($('.ig-wrapper').attr("id") == "instafeed-santa-cruz") {
+      if($('.ig-wrapper').attr("id") == "instafeed-eton") {
         var sc = true;
       }
       else if ($('.ig-wrapper').attr("id") == "instafeed-juliana") {
