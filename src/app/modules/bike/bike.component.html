@@ -157,13 +157,13 @@
         <div class="view-content">
           <div class="product-explorer pex-toggle-processed">
             <div class="l-wrapper">
-              <div class="product-explorer__image-wrapper"><a href="/en-US/bikes/v10"><img
-                    data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg" class=" lazyloaded" width="1100"
-                    height="704" alt="Eton Bicycles" src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"></a>
+              <div class="product-explorer__image-wrapper" [ngSwitch]="exLineup">
+                <a href="/en-US/bikes/v10" *ngSwitchCase="'tab1'"><img lass=" lazyloaded" alt="Eton Bicycles" src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"></a>
+                  <a href="/en-US/bikes/v10" *ngSwitchCase="'tab2'"><img class=" lazyloaded" alt="Eton Bicycles" src="/assets/img/thumbs/nomad_updated_thumb.jpg"></a>
               </div>
               <div class="product-explorer__text-wrapper">
                 <ul>
-                  <li class="product-explorer__item js-product-explorer--active">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab1'" rel="tab1" (click)="exLineup ='tab1'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/v10"><img data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"
                           class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
@@ -181,7 +181,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab2'" rel="tab2" (click)="exLineup ='tab2'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/nomad"><img data-src="/assets/img/thumbs/nomad_updated_thumb.jpg"
                           class=" lazyloaded" width="1100" height="704"
@@ -202,7 +202,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab3'" rel="tab3" (click)="exLineup ='tab3'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/megatower"><img data-src="/assets/img/thumbs/scb_mega_storm_thumb.jpg"
                           class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
@@ -221,7 +221,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab4'" rel="tab4" (click)="exLineup ='tab4'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/heckler"><img
                           data-src="/assets/img/thumbs/my21_thumb_0010_my21_heckler_1.0_cc_xo1_rsv_blackout.jpg"
@@ -241,7 +241,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab5'" rel="tab5" (click)="exLineup ='tab5'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/bronson"><img
                           data-src="/assets/img/thumbs/my21_thumb_0014_my21_bronson_cc_xo1_rsv_beef.jpg"
@@ -261,7 +261,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab6'" rel="tab6" (click)="exLineup ='tab6'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/5010"><img data-src="/assets/img/thumbs/scb_thumbnail_5010_aqua.jpg"
                           class=" lazyloaded" width="1027" height="704" alt="Eton Bicycles 5010"
@@ -280,7 +280,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab7'" rel="tab7" (click)="exLineup ='tab7'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/hightower"><img
                           data-src="/assets/img/thumbs/my21_thumb_0007_my21_hightower_cc_xx1_rsv_grey.jpg"
@@ -300,7 +300,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab8'" rel="tab8" (click)="exLineup ='tab8'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/tallboy"><img
                           data-src="/assets/img/thumbs/my21_thumb_0004_my21_tallboy_cc_xx1_rsv_ivory.jpg"
@@ -320,7 +320,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab9'" rel="tab9" (click)="exLineup ='tab9'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/blur"><img
                           data-src="/assets/img/thumbs/my21_thumb_0016_my21_blur_cc_xx1_rsv_aqua.jpg"
@@ -339,7 +339,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab10'" rel="tab10" (click)="exLineup ='tab10'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/highball-29"><img
                           data-src="/assets/img/thumbs/my21_thumb_0009_my21_highball_cc_xo1_rsv_ember.jpg"
@@ -359,7 +359,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab11'" rel="tab11" (click)="exLineup ='tab11'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/stigmata"><img
                           data-src="/assets/img/thumbs/my21_thumb_0005_my21_stigmata_cc_rival_blue.jpg"
@@ -379,7 +379,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab12'" rel="tab12" (click)="exLineup ='tab12'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/chameleon"><img
                           data-src="/assets/img/thumbs/my21_thumb_0013_my21_chameleon_al_r_29_fog.jpg"
@@ -399,7 +399,7 @@
                     <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
                     <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
                   </li>
-                  <li class="product-explorer__item js-product-explorer--inactive">
+                  <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab13'" rel="tab13" (click)="exLineup ='tab13'">
                     <div class="product-explorer__image">
                       <a href="/en-US/bikes/jackal"><img data-src="/assets/img/thumbs/jackal_thumb.jpg"
                           class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles Jackal"
@@ -965,6 +965,7 @@
                 <div *nguCarouselDef="let item;" class="item">
                   <div class="tile">{{item}}</div>
                 </div>
+  
                 <button NguCarouselNext class="rightRs">></button>
                 <button NguCarouselPrev class="leftRs">
                   < </button> <ul class="myPoint" NguCarouselPoint>

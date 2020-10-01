@@ -11,5 +11,9 @@ export class GeometryComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  viewMode = 'tab1';
+  viewModeInner1 = 'tab1';
+  viewModeInner2 = 'tab3';
+  viewModeInner3 = 'tab5';
 
 }

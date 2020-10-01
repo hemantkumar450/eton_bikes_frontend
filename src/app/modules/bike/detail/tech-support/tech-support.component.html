@@ -6,25 +6,25 @@
 
       <div class="tabs">
         <ul>
-          <li class="js-tab-trigger tabs__option tabs__option--faq js-tab--active js-tabs__option--active">
-            <a href="#tab-faqs">FAQs</a>
+          <li class="js-tab-trigger tabs__option tabs__option--faq" [class.js-tabs__option--active]="techSupp == 'tab1'" rel="tab1" (click)="techSupp ='tab1'">
+            <a >FAQs</a>
           </li>
-          <li class="js-tab-trigger tabs__option tabs__option--components">
-            <a href="#tab-components">Comp<span class="tabs__option-abbr">onent</span>s</a>
+          <li class="js-tab-trigger tabs__option tabs__option--components" [class.js-tabs__option--active]="techSupp == 'tab2'" rel="tab2" (click)="techSupp ='tab2'">
+            <a >Comp<span class="tabs__option-abbr">onent</span>s</a>
           </li>
-          <li class="js-tab-trigger tabs__option tabs__option--shock">
-            <a href="#tab-shock-setup">Shock<span class="tabs__option-abbr">
+          <li class="js-tab-trigger tabs__option tabs__option--shock" [class.js-tabs__option--active]="techSupp == 'tab3'" rel="tab3" (click)="techSupp ='tab3'">
+            <a >Shock<span class="tabs__option-abbr">
                 Setup</span></a>
           </li>
-          <li class="js-tab-trigger tabs__option tabs__option--warranty">
-            <a href="#tab-warranty-reg">Warranty<span class="tabs__option-abbr">
+          <li class="js-tab-trigger tabs__option tabs__option--warranty" [class.js-tabs__option--active]="techSupp == 'tab4'" rel="tab4" (click)="techSupp ='tab4'">
+            <a >Warranty<span class="tabs__option-abbr">
                 &amp; Registration</span></a>
           </li>
         </ul>
       </div>
 
-      <div class="tab-content">
-        <div id="tab-faqs" class="js-tab-target tab-content__item" style="display: block;">
+      <div class="tab-content" [ngSwitch]="techSupp">
+        <div id="tab-faqs" class="js-tab-target tab-content__item" *ngSwitchCase="'tab1'">
           <div class="faq-list">
 
             <div class="faq-list__faqs">
@@ -124,7 +124,7 @@
 
           </div>
         </div>
-        <div id="tab-components" class="js-tab-target tab-content__item" style="display: none;">
+        <div id="tab-components" class="js-tab-target tab-content__item" *ngSwitchCase="'tab2'">
           <div class="frame-components">
             <div class="comp comp-suspension">
               <div class="comp-label comp-suspension__label">Suspension System
@@ -200,7 +200,7 @@
             </div>
           </div>
         </div>
-        <div id="tab-shock-setup" class="js-tab-target tab-target tab-content__item" style="display: none;">
+        <div id="tab-shock-setup" class="js-tab-target tab-target tab-content__item" *ngSwitchCase="'tab3'">
           <div class="shock-tables">
             <div class="shock-table">
               <h2 class="shock-table__title"><a href="/en-US/shock/3689">FOX DHX2
@@ -338,7 +338,7 @@
             </div>
           </div>
         </div>
-        <div id="tab-warranty-reg" class="js-tab-target tab-target tab-content__item" style="display: none;">
+        <div id="tab-warranty-reg" class="js-tab-target tab-target tab-content__item" *ngSwitchCase="'tab4'">
           <div class="frame-warranty-info">
             <script type="application/ld+json">
               {

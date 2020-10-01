@@ -12,4 +12,6 @@ export class TechSupportComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  techSupp = 'tab1';
+
 }

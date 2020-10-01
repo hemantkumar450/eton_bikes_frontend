@@ -1,11 +1,11 @@
-<app-tabs>
+<!-- <app-tabs>
   <app-tab [tabTitle]="'Tab 1'">
     Tab 1 content
   </app-tab>
   <app-tab tabTitle="Tab 2">
     Tab 2 content
   </app-tab>
-</app-tabs>
+</app-tabs> -->
 
 <div id="geometry" class="frame-section  frame-section--odd frame-section--geometry">
   <section class="geometry">
@@ -13,11 +13,11 @@
       <div class="tabs geometry_size__toggles">
         <ul>
           <li
-            class="tabs__option geometry_size__toggle geometry_size__toggle-1 geometry_size__toggle--active js-tab--active js-tabs__option--active"
-            data-toggle="1">27.5"</li>
-          <li class="tabs__option geometry_size__toggle geometry_size__toggle-2" data-toggle="2">
+            class="tabs__option geometry_size__toggle geometry_size__toggle-1"
+            data-toggle="1" [class.js-tabs__option--active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1'">27.5"</li>
+          <li class="tabs__option geometry_size__toggle geometry_size__toggle-2" data-toggle="2" [class.js-tabs__option--active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">
             29"</li>
-          <li class="tabs__option geometry_size__toggle geometry_size__toggle-3" data-toggle="3">
+          <li class="tabs__option geometry_size__toggle geometry_size__toggle-3" data-toggle="3" [class.js-tabs__option--active]="viewMode == 'tab3'" rel="tab3" (click)="viewMode ='tab3'">
             MX</li>
         </ul>
       </div>
@@ -39,19 +39,19 @@
           </span>
         </div>
       </aside>
-      <div class="geometry__records">
-        <div class="geometry_size__record geometry_size-1 geometry_size--active">
+      <div class="geometry__records" [ngSwitch]="viewMode">
+        <div class="geometry_size__record geometry_size-1 geometry_size--active" *ngSwitchCase="'tab1'">
           <div class="js-tabset tabset--geom">
             <div class="tabs">
               <ul>
-                <li class="js-tab-trigger tabs__option tabs__option--tab1"><a href="#tab-geom--tab1">High</a></li>
-                <li class="js-tab-trigger tabs__option tabs__option--tab2 js-tab--active js-tabs__option--active">
-                  <a href="#tab-geom--tab2">Low</a></li>
+                <li class="js-tab-trigger tabs__option tabs__option--tab1" [class.js-tabs__option--active]="viewModeInner1 == 'tab1'" rel="tab1" (click)="viewModeInner1 ='tab1'"><a >High</a></li>
+                <li class="js-tab-trigger tabs__option tabs__option--tab2" [class.js-tabs__option--active]="viewModeInner1 == 'tab2'" rel="tab2" (click)="viewModeInner1 ='tab2'">
+                  <a >Low</a></li>
               </ul>
             </div>
-            <div class="tab-content">
+            <div class="tab-content" [ngSwitch]="viewModeInner1">
               <div id="tab-geom--tab1" class="js-tab-target tab-content__item  tab-content__item--tab1"
-                style="display: none;">
+              *ngSwitchCase="'tab1'">
                 <div class="geometry-details">
                   <div class="geometry-detail__table">
                     <h2 class="geometry-table__title">High</h2>
@@ -433,7 +433,7 @@
                   </div>
                 </div>
               </div>
-              <div id="tab-geom--tab2" class="js-tab-target tab-content__item  tab-content__item--tab2" style="">
+              <div id="tab-geom--tab2" class="js-tab-target tab-content__item  tab-content__item--tab2" *ngSwitchCase="'tab2'">
                 <div class="geometry-details">
                   <div class="geometry-detail__table">
                     <h2 class="geometry-table__title">Low</h2>
@@ -819,17 +819,17 @@
           </div>
         </div>
 
-        <div class="geometry_size__record geometry_size-2">
+        <div class="geometry_size__record geometry_size-2 geometry_size--active" *ngSwitchCase="'tab2'">
           <div class="js-tabset tabset--geom2">
             <div class="tabs">
-              <ul>
-                <li class="js-tab-trigger tabs__option tabs__option--tab3 js-tab--active">
-                  <a href="#tab-geom2--tab3">High</a></li>
-                <li class="js-tab-trigger tabs__option tabs__option--tab4"><a href="#tab-geom2--tab4">Low</a></li>
+              <ul>                
+                <li class="js-tab-trigger tabs__option tabs__option--tab3" [class.js-tabs__option--active]="viewModeInner2 == 'tab3'" rel="tab3" (click)="viewModeInner2 ='tab3'"><a >High</a></li>
+                <li class="js-tab-trigger tabs__option tabs__option--tab4" [class.js-tabs__option--active]="viewModeInner2 == 'tab4'" rel="tab4" (click)="viewModeInner2 ='tab4'">
+                  <a >Low</a></li>
               </ul>
             </div>
-            <div class="tab-content">
-              <div id="tab-geom2--tab3" class="js-tab-target tab-content__item  tab-content__item--tab3">
+            <div class="tab-content" [ngSwitch]="viewModeInner2">
+              <div id="tab-geom2--tab3" class="js-tab-target tab-content__item  tab-content__item--tab3" *ngSwitchCase="'tab3'">
                 <div class="geometry-details">
                   <div class="geometry-detail__table">
                     <h2 class="geometry-table__title">High</h2>
@@ -1212,7 +1212,7 @@
                 </div>
               </div>
               <div id="tab-geom2--tab4" class="js-tab-target tab-content__item  tab-content__item--tab4"
-                style="display:none">
+              *ngSwitchCase="'tab4'">
                 <div class="geometry-details">
                   <div class="geometry-detail__table">
                     <h2 class="geometry-table__title">Low</h2>
@@ -1584,17 +1584,17 @@
           </div>
         </div>
 
-        <div class="geometry_size__record geometry_size-3">
+        <div class="geometry_size__record geometry_size-3 geometry_size--active" *ngSwitchCase="'tab3'">
           <div class="js-tabset tabset--geom3">
             <div class="tabs">
-              <ul>
-                <li class="js-tab-trigger tabs__option tabs__option--tab5 js-tab--active">
-                  <a href="#tab-geom3--tab5">High</a></li>
-                <li class="js-tab-trigger tabs__option tabs__option--tab6"><a href="#tab-geom3--tab6">Low</a></li>
+              <ul>     
+                <li class="js-tab-trigger tabs__option tabs__option--tab5" [class.js-tabs__option--active]="viewModeInner3 == 'tab5'" rel="tab5" (click)="viewModeInner3 ='tab5'"><a >High</a></li>
+                <li class="js-tab-trigger tabs__option tabs__option--tab6" [class.js-tabs__option--active]="viewModeInner3 == 'tab6'" rel="tab6" (click)="viewModeInner3 ='tab6'">
+                  <a >Low</a></li>
               </ul>
             </div>
-            <div class="tab-content">
-              <div id="tab-geom3--tab5" class="js-tab-target tab-content__item  tab-content__item--tab5">
+            <div class="tab-content" [ngSwitch]="viewModeInner3">
+              <div id="tab-geom3--tab5" class="js-tab-target tab-content__item  tab-content__item--tab5" *ngSwitchCase="'tab5'">
                 <div class="geometry-details">
                   <div class="geometry-detail__table">
                     <h2 class="geometry-table__title">High</h2>
@@ -1915,7 +1915,7 @@
                 </div>
               </div>
               <div id="tab-geom3--tab6" class="js-tab-target tab-content__item  tab-content__item--tab6"
-                style="display:none">
+              *ngSwitchCase="'tab6'">
                 <div class="geometry-details">
                   <div class="geometry-detail__table">
                     <h2 class="geometry-table__title">Low</h2>
@@ -2221,108 +2221,109 @@
         </div>
 
       </div>
-      <div class="geometry__wrapper size_chart__wrapper">
+      <div [ngSwitch]="viewMode" class="size_chart__wrapper">
+        <div class="geometry__wrapper size_chart__wrapper" *ngSwitchCase="'tab1'">
 
+          <header class="size_chart__header">
+            <h3 class="builder-summary__heading"><span class="builder-summary-size">27.5"</span>
+              Frame Sizing</h3>
+          </header>
 
-        <header class="size_chart__header">
-          <h3 class="builder-summary__heading"><span class="builder-summary-size">27.5"</span>
-            Frame Sizing</h3>
-        </header>
+          <aside class="geometry__toggles">
+            <div class="toggle">
+              <span class="toggle__label">Show: </span>
+              <span class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m" data-measure="m">
+                <a class="toggle__option-link" href="#">cm</a>
+              </span>
+              <span
+                class="toggle__option toggle__option--aluminium measure-toggle measure-toggle--i js-toggle__option--active"
+                data-measure="i">
+                <a class="toggle__option-link" href="#">in</a>
+              </span>
+            </div>
+          </aside>
 
-        <aside class="geometry__toggles">
-          <div class="toggle">
-            <span class="toggle__label">Show: </span>
-            <span class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m" data-measure="m">
-              <a class="toggle__option-link" href="#">cm</a>
-            </span>
-            <span
-              class="toggle__option toggle__option--aluminium measure-toggle measure-toggle--i js-toggle__option--active"
-              data-measure="i">
-              <a class="toggle__option-link" href="#">in</a>
-            </span>
-          </div>
-        </aside>
-
-        <div class="size_chart__records">
-          <div class="geometry_size__record geometry_size-1 geometry_size--active">
-            <div class="size-chart">
-              <div class="size-chart__size"><strong class="label size-chart__line-label">S</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 46.153846153846%; margin-left: 0%" data-size="S">
-                    <span class="num min measure measure-i">5'1"</span><span
-                      class="num min measure measure-m">155</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">5'6"</span><span class="num max measure measure-m">168cm</span>
+          <div class="size_chart__records">
+            <div class="geometry_size__record geometry_size-1 geometry_size--active">
+              <div class="size-chart">
+                <div class="size-chart__size"><strong class="label size-chart__line-label">S</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 46.153846153846%; margin-left: 0%" data-size="S">
+                      <span class="num min measure measure-i">5'1"</span><span
+                        class="num min measure measure-m">155</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">5'6"</span><span class="num max measure measure-m">168cm</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 38.461538461538%; margin-left: 38.461538461538%"
-                    data-size="M"><span class="num min measure measure-i">5'6"</span><span
-                      class="num min measure measure-m">168</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">5'10"</span><span class="num max measure measure-m">178cm</span>
+                <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 38.461538461538%; margin-left: 38.461538461538%"
+                      data-size="M"><span class="num min measure measure-i">5'6"</span><span
+                        class="num min measure measure-m">168</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">5'10"</span><span class="num max measure measure-m">178cm</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 38.461538461538%; margin-left: 61.538461538462%"
-                    data-size="L"><span class="num min measure measure-i">5'9"</span><span
-                      class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">6'1"</span><span class="num max measure measure-m">185cm</span>
+                <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 38.461538461538%; margin-left: 61.538461538462%"
+                      data-size="L"><span class="num min measure measure-i">5'9"</span><span
+                        class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">6'1"</span><span class="num max measure measure-m">185cm</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="geometry_size__record geometry_size-2">
-            <div class="size-chart">
-              <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 36.363636363636%; margin-left: 0%" data-size="M">
-                    <span class="num min measure measure-i">5'7"</span><span
-                      class="num min measure measure-m">170</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">5'10"</span><span class="num max measure measure-m">178cm</span>
+            <div class="geometry_size__record geometry_size-2">
+              <div class="size-chart">
+                <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 36.363636363636%; margin-left: 0%" data-size="M">
+                      <span class="num min measure measure-i">5'7"</span><span
+                        class="num min measure measure-m">170</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">5'10"</span><span class="num max measure measure-m">178cm</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 45.454545454545%; margin-left: 18.181818181818%"
-                    data-size="L"><span class="num min measure measure-i">5'9"</span><span
-                      class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">6'1"</span><span class="num max measure measure-m">185cm</span>
+                <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 45.454545454545%; margin-left: 18.181818181818%"
+                      data-size="L"><span class="num min measure measure-i">5'9"</span><span
+                        class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">6'1"</span><span class="num max measure measure-m">185cm</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="size-chart__size"><strong class="label size-chart__line-label">XL</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 45.454545454545%; margin-left: 54.545454545455%"
-                    data-size="XL"><span class="num min measure measure-i">6'1"</span><span
-                      class="num min measure measure-m">185</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">6'5"</span><span class="num max measure measure-m">196cm</span>
+                <div class="size-chart__size"><strong class="label size-chart__line-label">XL</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 45.454545454545%; margin-left: 54.545454545455%"
+                      data-size="XL"><span class="num min measure measure-i">6'1"</span><span
+                        class="num min measure measure-m">185</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">6'5"</span><span class="num max measure measure-m">196cm</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="geometry_size__record geometry_size-3">
-            <div class="size-chart">
-              <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 57.142857142857%; margin-left: 0%" data-size="M">
-                    <span class="num min measure measure-i">5'7"</span><span
-                      class="num min measure measure-m">170</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">5'10"</span><span class="num max measure measure-m">178cm</span>
+            <div class="geometry_size__record geometry_size-3">
+              <div class="size-chart">
+                <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 57.142857142857%; margin-left: 0%" data-size="M">
+                      <span class="num min measure measure-i">5'7"</span><span
+                        class="num min measure measure-m">170</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">5'10"</span><span class="num max measure measure-m">178cm</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
-                <div class="size-chart__line-contents">
-                  <div class="size-chart__line-item" style="width: 71.428571428571%; margin-left: 28.571428571429%"
-                    data-size="L"><span class="num min measure measure-i">5'9"</span><span
-                      class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
-                      class="num max measure measure-i">6'1"</span><span class="num max measure measure-m">185cm</span>
+                <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
+                  <div class="size-chart__line-contents">
+                    <div class="size-chart__line-item" style="width: 71.428571428571%; margin-left: 28.571428571429%"
+                      data-size="L"><span class="num min measure measure-i">5'9"</span><span
+                        class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
+                        class="num max measure measure-i">6'1"</span><span class="num max measure measure-m">185cm</span>
+                    </div>
                   </div>
                 </div>
               </div>

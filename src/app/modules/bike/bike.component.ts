@@ -36,6 +36,8 @@ export class BikeComponent {
     this.cdr.detectChanges();
   }
 
+  exLineup = 'tab1';
+
   reset() {
     this.myCarousel.reset(!this.resetAnim);
   }
