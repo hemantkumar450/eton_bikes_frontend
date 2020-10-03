@@ -7,68 +7,16 @@
 
 
       <div class="frame-detail-images__contents">
-        <!--                        <div id="frame-detail-images--carbon" class="js-tab-target gallery gallery--frame gallery--frame-detail">-->
-        <div style="" id="frame-detail-images--carbon"
+        <div id="frame-detail-images--carbon"
           class="js-tab-target gallery gallery--frame gallery--frame-detail gallery--items-13">
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/toptube_bs.jpg" data-bg="/assets/img/files/toptube_bs.jpg"
-            style="background-image: url(&quot;/assets/img/files/toptube_bs.jpg&quot;);">
+
+          <div class="gallery__item gallery-trigger lazypreload lazyloaded" *ngFor="let image of images"
+            [style.background-image]="'url(&quot;' + image + '&quot;)'">
           </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/chainstay_detail.jpg" data-bg="/assets/img/files/chainstay_detail.jpg"
-            style="background-image: url(&quot;/assets/img/files/chainstay_detail.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/flipchip_29.jpg" data-bg="/assets/img/files/flipchip_29.jpg"
-            style="background-image: url(&quot;/assets/img/files/flipchip_29.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/tire_clearance_grey.jpg"
-            data-bg="/assets/img/files/tire_clearance_grey.jpg"
-            style="background-image: url(&quot;/assets/img/files/tire_clearance_grey.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/dhx2_coil_bs.jpg" data-bg="/assets/img/files/dhx2_coil_bs.jpg"
-            style="background-image: url(&quot;/assets/img/files/dhx2_coil_bs.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/downtube_protector.jpg"
-            data-bg="/assets/img/files/downtube_protector.jpg"
-            style="background-image: url(&quot;/assets/img/files/downtube_protector.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/matte_headtube.jpg" data-bg="/assets/img/files/matte_headtube.jpg"
-            style="background-image: url(&quot;/assets/img/files/matte_headtube.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/detail/chain_slapper.jpg" data-bg="/assets/img/detail/chain_slapper.jpg"
-            style="background-image: url(&quot;/assets/img/detail/chain_slapper.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/internal_routing.jpg" data-bg="/assets/img/files/internal_routing.jpg"
-            style="background-image: url(&quot;/assets/img/files/internal_routing.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/vpp_1.jpg" data-bg="/assets/img/files/vpp_1.jpg"
-            style="background-image: url(&quot;/assets/img/files/vpp_1.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/my21_v10mx_details_001.jpg"
-            data-bg="/assets/img/files/my21_v10mx_details_001.jpg"
-            style="background-image: url(&quot;/assets/img/files/my21_v10mx_details_001.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/my21_v10mx_details_004.jpg"
-            data-bg="/assets/img/files/my21_v10mx_details_004.jpg"
-            style="background-image: url(&quot;/assets/img/files/my21_v10mx_details_004.jpg&quot;);">
-          </div>
-          <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media--carbon"
-            data-gallerysrc="/assets/img/files/my21_v10mx_details_005.jpg"
-            data-bg="/assets/img/files/my21_v10mx_details_005.jpg"
-            style="background-image: url(&quot;/assets/img/files/my21_v10mx_details_005.jpg&quot;);">
-          </div>
-        </div><!--                        </div>-->
+
+        </div>
       </div>
+
     </div>
   </section>
 </div>

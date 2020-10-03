@@ -92,11 +92,8 @@
 
 
   <div id="file-14635--2" class="file file-video file-video-youtube">
-
     <h2 class="element-invisible"><a href="/en-US/file/syndicate-mixed-opinions">The
         Syndicate - Mixed Opinions</a></h2>
-
-
     <div class="content">
       <div class="media-youtube-video media-youtube-2">
         <div class="u-video-wrapper" style="padding-bottom: 56.25%"><iframe class="media-youtube-player"
@@ -107,42 +104,22 @@
         </div>
       </div>
     </div>
-
-
   </div>
 
+
+  <!-- TODO Image open section -->
   <section class="frame-overview-imagery">
     <div class="l-wrapper">
       <div class="gallery gallery--frame gallery--frame-overview gallery--items-5">
-        <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media"
-          data-gallerysrc="/assets/img/files/ftwilliam19_h1d6041_1.jpg"
-          data-bg="/assets/img/files/ftwilliam19_h1d6041_1.jpg"
-          style="background-image: url(&quot;/assets/img/files/ftwilliam19_h1d6041_1.jpg&quot;);">
-        </div>
-        <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media"
-          data-gallerysrc="/assets/img/files/ftwilliam19a63i0632_1.jpg"
-          data-bg="/assets/img/files/ftwilliam19a63i0632_1.jpg"
-          style="background-image: url(&quot;/assets/img/files/ftwilliam19a63i0632_1.jpg&quot;);">
-        </div>
-        <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media"
-          data-gallerysrc="/assets/img/files/ftwilliam19bb019807_0.jpg"
-          data-bg="/assets/img/files/ftwilliam19bb019807_0.jpg"
-          style="background-image: url(&quot;/assets/img/files/ftwilliam19bb019807_0.jpg&quot;);">
-        </div>
-        <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media"
-          data-gallerysrc="/assets/img/files/ftwilliam19_h1d7631_0.jpg"
-          data-bg="/assets/img/files/ftwilliam19_h1d7631_0.jpg"
-          style="background-image: url(&quot;/assets/img/files/ftwilliam19_h1d7631_0.jpg&quot;);">
-        </div>
-        <div class="gallery__item gallery-trigger lazypreload lazyloaded" data-galleryid="frame_media"
-          data-gallerysrc="/assets/img/files/ftwilliam19_m1_0797_2.jpg"
-          data-bg="/assets/img/files/ftwilliam19_m1_0797_2.jpg"
-          style="background-image: url(&quot;/assets/img/files/ftwilliam19_m1_0797_2.jpg&quot;);">
+        <div class="gallery__item gallery-trigger lazypreload lazyloaded" *ngFor="let image of images"
+          [style.background-image]="'url(&quot;' + image + '&quot;)'">
         </div>
       </div>
     </div>
   </section>
 
+
+  <!-- Advertisement -->
   <section id="panel--3441"
     class="media-panel media-panel--vh-default  media-panel--space-none media-panel--full-bg media-panel--text-first ">
     <div class="media-panel__wrapper">
@@ -163,4 +140,5 @@
       </div>
     </div>
   </section>
+
 </div>
