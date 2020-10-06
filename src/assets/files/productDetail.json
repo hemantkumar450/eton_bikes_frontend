@@ -1,0 +1,178 @@
+{
+    "success": true,
+    "message": "Product by Id",
+    "data": {
+        "tech_support": {
+            "faqs": [
+                {
+                    "_id": "5f788a3b906f5355c430323d",
+                    "key": "Can I convert the bike from 27.5 to 29 or vice versa?",
+                    "value": "No, we decided to make two different compromise-free frames. They are not convertible."
+                },
+                {
+                    "_id": "5f788a3b906f5355c430323e",
+                    "key": "Can I mount a chainguide to my bike?",
+                    "value": "Yes, this bike is equipped with ISCG-05 tabs for easy chainguide mounting. Most chainguides on the market that are made for this standard should work."
+                }
+            ],
+            "components": [
+                {
+                    "_id": "5f788a3b906f5355c430323b",
+                    "key": "Suspension System",
+                    "value": "VPP"
+                },
+                {
+                    "_id": "5f788a3b906f5355c430323c",
+                    "key": "Front Derailleur",
+                    "value": "No compatibility"
+                }
+            ],
+            "warranty_and_registration": "Santa Cruz Bicycles will repair or replace at its option any frame or rigid fork made by Santa Cruz Bicycles it determines to be defective in materials or workmanship. The warranty will be in effect for the lifetime of the frame or fork and is available only to the original owner. Notwithstanding the foregoing, frames purchased prior to May 1, 2015 are covered under the previously-existing warranty for five years from the original date of purchase."
+        },
+        "close_up_media": null,
+        "long_shot_media": null,
+        "is_deleted": false,
+        "_id": "5f7888ea6fa150400c65928a",
+        "close_up_images": [],
+        "long_shot_images": [],
+        "name": "V10",
+        "title": "Puzzling Ain’t Easy",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "features": [
+            {
+                "_id": "5f788a3b906f5355c4303233",
+                "key": "Available in",
+                "value": "Carbon CC"
+            },
+            {
+                "_id": "5f788a3b906f5355c4303234",
+                "key": "Wheel size",
+                "value": "27.5, MX (Mixed), 29"
+            }
+        ],
+        "slug": "v10",
+        "media_urls": [
+            {
+                "category": "youtube",
+                "_id": "5f788a3b906f5355c4303235",
+                "url": "https://www.youtube.com/watch?v=lj_SexG2IOI"
+            }
+        ],
+        "geometry": [
+            {
+                "high": [
+                    {
+                        "_id": "5f788a3b906f5355c4303237",
+                        "key": {
+                            "category": "geometry",
+                            "is_deleted": false,
+                            "_id": "5f78886a4b2ef939a4118b01",
+                            "order": "a",
+                            "name": "Reach",
+                            "added_on": "2020-10-03T14:19:22.720Z",
+                            "updated_on": "2020-10-03T14:19:22.720Z",
+                            "__v": 0,
+                            "id": "5f78886a4b2ef939a4118b01"
+                        },
+                        "small": 16.22,
+                        "medium": 17.2,
+                        "large": 18.19
+                    }
+                ],
+                "low": [
+                    {
+                        "_id": "5f788a3b906f5355c4303238",
+                        "key": {
+                            "category": "geometry",
+                            "is_deleted": false,
+                            "_id": "5f78886a4b2ef939a4118b01",
+                            "order": "a",
+                            "name": "Reach",
+                            "added_on": "2020-10-03T14:19:22.720Z",
+                            "updated_on": "2020-10-03T14:19:22.720Z",
+                            "__v": 0,
+                            "id": "5f78886a4b2ef939a4118b01"
+                        },
+                        "small": 16.14,
+                        "medium": 17.13,
+                        "large": 18.11
+                    }
+                ],
+                "frame_size": [
+                    {
+                        "_id": "5f788a3b906f5355c4303239",
+                        "key": "S",
+                        "from": 5.1,
+                        "to": 5.6
+                    },
+                    {
+                        "_id": "5f788a3b906f5355c430323a",
+                        "key": "M",
+                        "from": 5.6,
+                        "to": 5.1
+                    }
+                ],
+                "_id": "5f788a3b906f5355c4303236",
+                "key": "27.5"
+            }
+        ],
+        "added_on": "2020-10-03T14:21:30.610Z",
+        "updated_on": "2020-10-03T14:28:11.712Z",
+        "__v": 0,
+        "active": "true",
+        "id": "5f7888ea6fa150400c65928a",
+        "sub_products": [
+            {
+                "detail": {
+                    "name": "test",
+                    "media": {
+                        "caption": null,
+                        "media_type": "image",
+                        "is_deleted": false,
+                        "_id": "5f789dfd4d43c734a03a3957",
+                        "name": "3c2ad1911b9197ce4c376f0254fb5ef6738f8891.png",
+                        "media_link": "files/3c2ad1911b9197ce4c376f0254fb5ef6738f8891.png",
+                        "added_on": "2020-10-03T15:51:25.608Z",
+                        "updated_on": "2020-10-03T15:51:25.608Z",
+                        "__v": 0,
+                        "id": "5f789dfd4d43c734a03a3957"
+                    },
+                    "icon": {
+                        "caption": null,
+                        "media_type": "image",
+                        "is_deleted": false,
+                        "_id": "5f789dfd4d43c734a03a3957",
+                        "name": "3c2ad1911b9197ce4c376f0254fb5ef6738f8891.png",
+                        "media_link": "files/3c2ad1911b9197ce4c376f0254fb5ef6738f8891.png",
+                        "added_on": "2020-10-03T15:51:25.608Z",
+                        "updated_on": "2020-10-03T15:51:25.608Z",
+                        "__v": 0,
+                        "id": "5f789dfd4d43c734a03a3957"
+                    }
+                },
+                "active": true,
+                "is_deleted": false,
+                "_id": "5f7978f92ad2744f0836821a",
+                "name": "V10",
+                "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+                "product": "5f7888ea6fa150400c65928a",
+                "build_specs": [
+                    {
+                        "_id": "5f7978f92ad2744f0836821b",
+                        "key": "Price",
+                        "value": "$5999USD"
+                    },
+                    {
+                        "_id": "5f7978f92ad2744f0836821c",
+                        "key": "Weight",
+                        "value": "16.59kg / 36.57lbs"
+                    }
+                ],
+                "added_on": "2020-10-04T07:25:45.205Z",
+                "updated_on": "2020-10-04T07:25:45.205Z",
+                "__v": 0,
+                "id": "5f7978f92ad2744f0836821a"
+            }
+        ]
+    }
+}

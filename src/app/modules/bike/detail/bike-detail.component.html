@@ -49,7 +49,7 @@
       </section>
 
       <!-- overview -->
-      <app-overview></app-overview>
+      <app-overview *ngIf="productDetail" [data]="{ title: productDetail.title, description: productDetail.description, features: productDetail.features, long_shot_media: productDetail.long_shot_media}"></app-overview>
       <!-- end #overview -->
 
       <!-- build_price -->
@@ -61,11 +61,11 @@
       <!-- end #detail_images -->
 
       <!-- geometry -->
-      <app-geometry></app-geometry>
+      <app-geometry *ngIf="productDetail" [data]="productDetail.geometry"></app-geometry>
       <!-- end #geometry -->
 
       <!-- tech_support -->
-      <app-tech-support></app-tech-support>
+      <app-tech-support *ngIf="productDetail" [data]="techSupport"></app-tech-support>
       <!-- end #tech_support -->
     </div>
   </div>

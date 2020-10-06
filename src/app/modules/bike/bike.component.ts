@@ -3,21 +3,23 @@ import {
   Component,
   OnDestroy,
   ViewChild,
-} from "@angular/core";
-import { NguCarousel, NguCarouselConfig } from "@ngu/carousel";
+} from '@angular/core';
+import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 
 @Component({
-  selector: "app-bike",
-  templateUrl: "./bike.component.html",
-  styleUrls: ["./bike.component.scss"],
+  selector: 'app-bike',
+  templateUrl: './bike.component.html',
+  styleUrls: ['./bike.component.scss'],
 })
 export class BikeComponent {
-  name = "Angular";
+
+  constructor(private cdr: ChangeDetectorRef) {}
+  name = 'Angular';
   slideNo = 0;
   withAnim = true;
   resetAnim = true;
 
-  @ViewChild("myCarousel") myCarousel: NguCarousel<any>;
+  @ViewChild('myCarousel') myCarousel: NguCarousel<any>;
   carouselConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
     load: 3,
@@ -28,15 +30,15 @@ export class BikeComponent {
   };
   carouselItems = [1, 2, 3];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  exLineup = 'tab1';
 
+  // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {}
 
+  // tslint:disable-next-line: use-lifecycle-interface
   ngAfterViewInit() {
     this.cdr.detectChanges();
   }
-
-  exLineup = 'tab1';
 
   reset() {
     this.myCarousel.reset(!this.resetAnim);

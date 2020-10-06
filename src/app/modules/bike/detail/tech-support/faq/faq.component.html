@@ -1,0 +1,19 @@
+<div id="tab-faqs" class="js-tab-target tab-content__item">
+    <div class="faq-list">
+      <div class="faq-list__faqs">
+        <div class="faq-item" *ngFor="let item of data; let i = index;">
+
+          <div class="faq-item__header js-accordion-trigger" (click)="clicked = i">
+            <div class="faq-item__question">
+              <h2><a name="faq-2754"></a>{{item.key}}</h2>
+            </div>
+          </div>
+
+          <div class="faq-item__answer js-accordion-target" [ngStyle]="{'display' : clicked == i ? 'block' : 'none' }">
+            <p>{{item.value}}</p>
+          </div>
+          <div class="item-toggle"></div>
+        </div>        
+      </div>
+    </div>
+  </div>

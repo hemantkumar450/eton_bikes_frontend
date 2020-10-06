@@ -3,14 +3,10 @@
     <div class="geometry__wrapper l-wrapper">
       <div class="tabs geometry_size__toggles">
         <ul>
-          <li class="tabs__option geometry_size__toggle geometry_size__toggle-1" data-toggle="1"
-            [class.js-tabs__option--active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1'">27.5"</li>
-          <li class="tabs__option geometry_size__toggle geometry_size__toggle-2" data-toggle="2"
-            [class.js-tabs__option--active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">
-            29"</li>
-          <li class="tabs__option geometry_size__toggle geometry_size__toggle-3" data-toggle="3"
-            [class.js-tabs__option--active]="viewMode == 'tab3'" rel="tab3" (click)="viewMode ='tab3'">
-            MX</li>
+          <li *ngFor="let item of data; let i = index;"
+            class="tabs__option geometry_size__toggle geometry_size__toggle-1" [ngClass]="getMainActiveClass(i)"
+            data-toggle="i" (click)="viewMode = i">
+            {{item.key}}"</li>
         </ul>
       </div>
       <header class="geometry__header">
@@ -32,1940 +28,282 @@
         </div>
       </aside>
       <div class="geometry__records" [ngSwitch]="viewMode">
-        <div class="geometry_size__record geometry_size-1 geometry_size--active" *ngSwitchCase="'tab1'">
-          <div class="js-tabset tabset--geom">
-            <div class="tabs">
-              <ul>
-                <li class="js-tab-trigger tabs__option tabs__option--tab1"
-                  [class.js-tabs__option--active]="viewModeInner1 == 'tab1'" rel="tab1"
-                  (click)="viewModeInner1 ='tab1'"><a>High</a></li>
-                <li class="js-tab-trigger tabs__option tabs__option--tab2"
-                  [class.js-tabs__option--active]="viewModeInner1 == 'tab2'" rel="tab2"
-                  (click)="viewModeInner1 ='tab2'">
-                  <a>Low</a></li>
-              </ul>
-            </div>
-            <div class="tab-content" [ngSwitch]="viewModeInner1">
-              <div id="tab-geom--tab1" class="js-tab-target tab-content__item  tab-content__item--tab1"
-                *ngSwitchCase="'tab1'">
-                <div class="geometry-details">
-                  <div class="geometry-detail__table">
-                    <h2 class="geometry-table__title">High</h2>
-                    <div class="geometry-table__notes">
-                      <p>Flip chip in rear dropout has two positions:
-                        short and long. Flipping the chip changes
-                        chainstay and wheelbase length by 10mm.</p>
+        <ng-container *ngFor="let item of data; let i = index;">
+          <div class="geometry_size__record geometry_size-1 geometry_size--active" *ngSwitchCase="i">
+            <div class="js-tabset tabset--geom">
+              <div class="tabs">
+                <ul>
+                  <li class="js-tab-trigger tabs__option tabs__option--tab1"
+                    [class.js-tabs__option--active]="viewModeInner1 == 'high'" rel="high"
+                    (click)="viewModeInner1 ='high'"><a>High</a></li>
+                  <li class="js-tab-trigger tabs__option tabs__option--tab2"
+                    [class.js-tabs__option--active]="viewModeInner1 == 'low'" rel="low" (click)="viewModeInner1 ='low'">
+                    <a>Low</a></li>
+                </ul>
+              </div>
+              <div class="tab-content" [ngSwitch]="viewModeInner1">
+                <div id="tab-geom--tab1" class="js-tab-target tab-content__item  tab-content__item--tab1"
+                  *ngSwitchCase="'high'">
+                  <div class="geometry-details">
+                    <div class="geometry-detail__table">
+                      <h2 class="geometry-table__title">High</h2>
+                      <!-- <div class="geometry-table__notes">
+                        <p>Flip chip in rear dropout has two positions:
+                          short and long. Flipping the chip changes
+                          chainstay and wheelbase length by 10mm.</p>
+                      </div> -->
+                      <table class="metric-imperial metric geometry-table__table">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th></th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <ng-container *ngFor="let high of item.high; let j = index;">
+                            <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
+                              <td class="geometry-table__item-icon"><span
+                                  class="geom-table-icon geom-table-icon--A">{{ j + 1}}</span>
+                              </td>
+                              <td class="label geometry-table__item-label">
+                                {{high.key.name}}</td>
+                              <td class="value geometry-table__item-value">
+                                <span class="measure measure-m">{{high.small}}<i>"</i></span><span
+                                  class="measure measure-i">16.22<i>"</i></span>
+                              </td>
+                              <td class="value geometry-table__item-value">
+                                <span class="measure measure-m">{{high.medium}}<i>"</i></span><span
+                                  class="measure measure-i">17.2<i>"</i></span>
+                              </td>
+                              <td class="value geometry-table__item-value">
+                                <span class="measure measure-m">{{high.large}}<i>"</i></span><span
+                                  class="measure measure-i">18.19<i>"</i></span>
+                              </td>
+                            </tr>
+                          </ng-container>
+                        </tbody>
+                      </table>
                     </div>
-                    <table class="metric-imperial metric geometry-table__table">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th></th>
-                          <th>S</th>
-                          <th>M</th>
-                          <th>L</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--A">A</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Reach</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">412<i>mm</i></span><span
-                              class="measure measure-i">16.22<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">437<i>mm</i></span><span
-                              class="measure measure-i">17.2<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">462<i>mm</i></span><span
-                              class="measure measure-i">18.19<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--K">K</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Top Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="geometry-detail__image">
-                    <div class="geometry-table__interactive-image"><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                          data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerreach"
-                          src="/assets/img/interactive/reach.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                          data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstack"
-                          src="/assets/img/interactive/stack.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                          data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubean"
-                          src="/assets/img/interactive/headtubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                          data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubelen"
-                          src="/assets/img/interactive/seattubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                          data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerfrontcenter"
-                          src="/assets/img/interactive/frontcenter.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                          data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbheight"
-                          src="/assets/img/interactive/bbheight.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                          data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbdrop"
-                          src="/assets/img/interactive/bbdrop.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                          data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerwheelbase"
-                          src="/assets/img/interactive/wheelbase.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                          data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerchainstay"
-                          src="/assets/img/interactive/chainstay.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                          data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubelen"
-                          src="/assets/img/interactive/headtubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                          data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layertoptube"
-                          src="/assets/img/interactive/toptube.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                          data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubean"
-                          src="/assets/img/interactive/seattubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                          data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstandover"
-                          src="/assets/img/interactive/standover.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                          data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layereyetoeye"
-                          src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                          data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbase" src="/assets/img/interactive/base.png?new=true"></span>
+                    <div class="geometry-detail__image">
+                      <div class="geometry-table__interactive-image"><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
+                            data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerreach"
+                            src="/assets/img/interactive/reach.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
+                            data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerstack"
+                            src="/assets/img/interactive/stack.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
+                            data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerheadtubean"
+                            src="/assets/img/interactive/headtubean.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
+                            data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerseattubelen"
+                            src="/assets/img/interactive/seattubelen.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
+                            data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerfrontcenter"
+                            src="/assets/img/interactive/frontcenter.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
+                            data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerbbheight"
+                            src="/assets/img/interactive/bbheight.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
+                            data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerbbdrop"
+                            src="/assets/img/interactive/bbdrop.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
+                            data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerwheelbase"
+                            src="/assets/img/interactive/wheelbase.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
+                            data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerchainstay"
+                            src="/assets/img/interactive/chainstay.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
+                            data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerheadtubelen"
+                            src="/assets/img/interactive/headtubelen.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
+                            data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layertoptube"
+                            src="/assets/img/interactive/toptube.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
+                            data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerseattubean"
+                            src="/assets/img/interactive/seattubean.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
+                            data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerstandover"
+                            src="/assets/img/interactive/standover.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
+                            data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layereyetoeye"
+                            src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
+                            data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerbase"
+                            src="/assets/img/interactive/base.png?new=true"></span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div id="tab-geom--tab2" class="js-tab-target tab-content__item  tab-content__item--tab2"
-                *ngSwitchCase="'tab2'">
-                <div class="geometry-details">
-                  <div class="geometry-detail__table">
-                    <h2 class="geometry-table__title">Low</h2>
-                    <div class="geometry-table__notes">
-                      <p>Flip chip in rear dropout has two positions:
-                        short and long. Flipping the chip changes
-                        chainstay and wheelbase length by 10mm.</p>
+                <div id="tab-geom--tab2" class="js-tab-target tab-content__item  tab-content__item--tab2"
+                  *ngSwitchCase="'low'">
+                  <div class="geometry-details">
+                    <div class="geometry-detail__table">
+                      <h2 class="geometry-table__title">Low</h2>
+                      <div class="geometry-table__notes">
+                        <!-- <p>Flip chip in rear dropout has two positions:
+                          short and long. Flipping the chip changes
+                          chainstay and wheelbase length by 10mm.</p> -->
+                      </div>
+                      <table class="metric-imperial metric geometry-table__table">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th></th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <ng-container *ngFor="let low of item.low; let j = index; let odd=odd; let even=even;">
+                            <tr class="geom-table-row geom-table-row--reach" [ngClass]="{odd:odd, even: even}" data-id="reach">
+                              <td class="geometry-table__item-icon"><span
+                                  class="geom-table-icon geom-table-icon--A">{{ j + 1}}</span>
+                              </td>
+                              <td class="label geometry-table__item-label">
+                                {{low.key.name}}</td>
+                              <td class="value geometry-table__item-value">
+                                <span class="measure measure-m">{{low.small}}<i>"</i></span><span
+                                  class="measure measure-i">16.14<i>"</i></span>
+                              </td>
+                              <td class="value geometry-table__item-value">
+                                <span class="measure measure-m">{{low.medium}}<i>"</i></span><span
+                                  class="measure measure-i">17.13<i>"</i></span>
+                              </td>
+                              <td class="value geometry-table__item-value">
+                                <span class="measure measure-m">{{low.large}}<i>"</i></span><span
+                                  class="measure measure-i">18.11<i>"</i></span>
+                              </td>
+                            </tr>
+                          </ng-container>
+                          <!-- <tr class="geom-table-row geom-table-row--seatpostlength geom-table-row--empty even"
+                            data-id="seatpostlength">
+                            <td class="geometry-table__item-icon"></td>
+                            <td class="label geometry-table__item-label">
+                              Seatpost Length</td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                          </tr>
+                          <tr class="geom-table-row geom-table-row--stemlength geom-table-row--empty odd"
+                            data-id="stemlength">
+                            <td class="geometry-table__item-icon"></td>
+                            <td class="label geometry-table__item-label">
+                              Stem Length</td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                          </tr>
+                          <tr class="geom-table-row geom-table-row--cranklength geom-table-row--empty even"
+                            data-id="cranklength">
+                            <td class="geometry-table__item-icon"></td>
+                            <td class="label geometry-table__item-label">
+                              Crank Length</td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                            <td class="value geometry-table__item-value">
+                            </td>
+                          </tr> -->
+                        </tbody>
+                      </table>
                     </div>
-                    <table class="metric-imperial metric geometry-table__table">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th></th>
-                          <th>S</th>
-                          <th>M</th>
-                          <th>L</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--A">A</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Reach</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">410<i>mm</i></span><span
-                              class="measure measure-i">16.14<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">435<i>mm</i></span><span
-                              class="measure measure-i">17.13<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">460<i>mm</i></span><span
-                              class="measure measure-i">18.11<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stack even" data-id="stack">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--B">B</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Stack</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">602<i>mm</i></span><span
-                              class="measure measure-i">23.7<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">610<i>mm</i></span><span
-                              class="measure measure-i">24.02<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">615<i>mm</i></span><span
-                              class="measure measure-i">24.21<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubean odd" data-id="headtubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--C">C</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubelen even" data-id="seattubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--D">D</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">435<i>mm</i></span><span
-                              class="measure measure-i">17.13<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">455<i>mm</i></span><span
-                              class="measure measure-i">17.91<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--frontcenter odd" data-id="frontcenter">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--E">E</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Front Center</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">769<i>mm</i></span><span
-                              class="measure measure-i">30.28<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">798<i>mm</i></span><span
-                              class="measure measure-i">31.42<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">825<i>mm</i></span><span
-                              class="measure measure-i">32.48<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbheight even" data-id="bbheight">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--F">F</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbdrop odd" data-id="bbdrop">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--G">G</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Drop</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">3<i>mm</i></span><span
-                              class="measure measure-i">0.12<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">3<i>mm</i></span><span
-                              class="measure measure-i">0.12<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">3<i>mm</i></span><span
-                              class="measure measure-i">0.12<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--wheelbase even" data-id="wheelbase">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--H">H</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Wheelbase</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1200<i>mm</i></span><span
-                              class="measure measure-i">47.24<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1234<i>mm</i></span><span
-                              class="measure measure-i">48.58<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1266<i>mm</i></span><span
-                              class="measure measure-i">49.84<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--chainstay odd" data-id="chainstay">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--I">I</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Chainstay Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">430<i>mm</i></span><span
-                              class="measure measure-i">16.93<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">435<i>mm</i></span><span
-                              class="measure measure-i">17.13<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">440<i>mm</i></span><span
-                              class="measure measure-i">17.32<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubelen even" data-id="headtubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--J">J</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">100<i>mm</i></span><span
-                              class="measure measure-i">3.94<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">110<i>mm</i></span><span
-                              class="measure measure-i">4.33<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">115<i>mm</i></span><span
-                              class="measure measure-i">4.53<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--toptube geom-table-row--empty odd" data-id="toptube">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--K">K</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Top Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubean geom-table-row--empty even"
-                          data-id="seattubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--L">L</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--standover odd" data-id="standover">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--M">M</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Standover Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">707<i>mm</i></span><span
-                              class="measure measure-i">27.83<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">707<i>mm</i></span><span
-                              class="measure measure-i">27.83<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">707<i>mm</i></span><span
-                              class="measure measure-i">27.83<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--eyetoeye even" data-id="eyetoeye">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--N">N</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Eye to Eye Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--spacer odd" data-id="reach">
-                          <td colspan="20">&nbsp;</td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seatpostlength geom-table-row--empty even"
-                          data-id="seatpostlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Seatpost Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stemlength geom-table-row--empty odd"
-                          data-id="stemlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Stem Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--cranklength geom-table-row--empty even"
-                          data-id="cranklength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Crank Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="geometry-detail__image">
-                    <div class="geometry-table__interactive-image"><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                          data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerreach"
-                          src="/assets/img/interactive/reach.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                          data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstack"
-                          src="/assets/img/interactive/stack.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                          data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubean"
-                          src="/assets/img/interactive/headtubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                          data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubelen"
-                          src="/assets/img/interactive/seattubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                          data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerfrontcenter"
-                          src="/assets/img/interactive/frontcenter.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                          data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbheight"
-                          src="/assets/img/interactive/bbheight.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                          data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbdrop"
-                          src="/assets/img/interactive/bbdrop.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                          data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerwheelbase"
-                          src="/assets/img/interactive/wheelbase.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                          data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerchainstay"
-                          src="/assets/img/interactive/chainstay.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                          data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubelen"
-                          src="/assets/img/interactive/headtubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                          data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layertoptube"
-                          src="/assets/img/interactive/toptube.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                          data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubean"
-                          src="/assets/img/interactive/seattubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                          data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstandover"
-                          src="/assets/img/interactive/standover.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                          data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layereyetoeye"
-                          src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                          data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbase" src="/assets/img/interactive/base.png?new=true"></span>
+                    <div class="geometry-detail__image">
+                      <div class="geometry-table__interactive-image"><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
+                            data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerreach"
+                            src="/assets/img/interactive/reach.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
+                            data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerstack"
+                            src="/assets/img/interactive/stack.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
+                            data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerheadtubean"
+                            src="/assets/img/interactive/headtubean.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
+                            data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerseattubelen"
+                            src="/assets/img/interactive/seattubelen.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
+                            data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerfrontcenter"
+                            src="/assets/img/interactive/frontcenter.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
+                            data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerbbheight"
+                            src="/assets/img/interactive/bbheight.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
+                            data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerbbdrop"
+                            src="/assets/img/interactive/bbdrop.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
+                            data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerwheelbase"
+                            src="/assets/img/interactive/wheelbase.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
+                            data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerchainstay"
+                            src="/assets/img/interactive/chainstay.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
+                            data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerheadtubelen"
+                            src="/assets/img/interactive/headtubelen.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
+                            data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layertoptube"
+                            src="/assets/img/interactive/toptube.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
+                            data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerseattubean"
+                            src="/assets/img/interactive/seattubean.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
+                            data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerstandover"
+                            src="/assets/img/interactive/standover.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
+                            data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layereyetoeye"
+                            src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
+                          class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
+                            data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
+                            alt="Geometry Illustration Layerbase"
+                            src="/assets/img/interactive/base.png?new=true"></span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="geometry_size__record geometry_size-2 geometry_size--active" *ngSwitchCase="'tab2'">
-          <div class="js-tabset tabset--geom2">
-            <div class="tabs">
-              <ul>
-                <li class="js-tab-trigger tabs__option tabs__option--tab3"
-                  [class.js-tabs__option--active]="viewModeInner2 == 'tab3'" rel="tab3"
-                  (click)="viewModeInner2 ='tab3'"><a>High</a></li>
-                <li class="js-tab-trigger tabs__option tabs__option--tab4"
-                  [class.js-tabs__option--active]="viewModeInner2 == 'tab4'" rel="tab4"
-                  (click)="viewModeInner2 ='tab4'">
-                  <a>Low</a></li>
-              </ul>
-            </div>
-            <div class="tab-content" [ngSwitch]="viewModeInner2">
-              <div id="tab-geom2--tab3" class="js-tab-target tab-content__item  tab-content__item--tab3"
-                *ngSwitchCase="'tab3'">
-                <div class="geometry-details">
-                  <div class="geometry-detail__table">
-                    <h2 class="geometry-table__title">High</h2>
-                    <div class="geometry-table__notes">
-                      <p>Flip chip in rear dropout has two positions:
-                        short and long. Flipping the chip changes
-                        chainstay and wheelbase length by 10mm.</p>
-                    </div>
-                    <table class="metric-imperial metric geometry-table__table">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th></th>
-                          <th>M</th>
-                          <th>L</th>
-                          <th>XL</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--A">A</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Reach</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">437<i>mm</i></span><span
-                              class="measure measure-i">17.2<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">462<i>mm</i></span><span
-                              class="measure measure-i">18.19<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">492<i>mm</i></span><span
-                              class="measure measure-i">19.37<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stack even" data-id="stack">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--B">B</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Stack</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">632<i>mm</i></span><span
-                              class="measure measure-i">24.88<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">637<i>mm</i></span><span
-                              class="measure measure-i">25.08<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">641<i>mm</i></span><span
-                              class="measure measure-i">25.24<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubean odd" data-id="headtubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--C">C</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.7<i>°</i></span><span
-                              class="measure measure-i">63.7<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.7<i>°</i></span><span
-                              class="measure measure-i">63.7<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.7<i>°</i></span><span
-                              class="measure measure-i">63.7<i>°</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubelen even" data-id="seattubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--D">D</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">455<i>mm</i></span><span
-                              class="measure measure-i">17.91<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">465<i>mm</i></span><span
-                              class="measure measure-i">18.31<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--frontcenter odd" data-id="frontcenter">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--E">E</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Front Center</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">806<i>mm</i></span><span
-                              class="measure measure-i">31.73<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">833<i>mm</i></span><span
-                              class="measure measure-i">32.8<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">865<i>mm</i></span><span
-                              class="measure measure-i">34.06<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbheight even" data-id="bbheight">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--F">F</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">356<i>mm</i></span><span
-                              class="measure measure-i">14.02<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">356<i>mm</i></span><span
-                              class="measure measure-i">14.02<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">356<i>mm</i></span><span
-                              class="measure measure-i">14.02<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbdrop odd" data-id="bbdrop">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--G">G</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Drop</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">16<i>mm</i></span><span
-                              class="measure measure-i">0.63<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">16<i>mm</i></span><span
-                              class="measure measure-i">0.63<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">16<i>mm</i></span><span
-                              class="measure measure-i">0.63<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--wheelbase even" data-id="wheelbase">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--H">H</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Wheelbase</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1251<i>mm</i></span><span
-                              class="measure measure-i">49.25<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1278<i>mm</i></span><span
-                              class="measure measure-i">50.31<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1315<i>mm</i></span><span
-                              class="measure measure-i">51.77<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--chainstay odd" data-id="chainstay">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--I">I</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Chainstay Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">450<i>mm</i></span><span
-                              class="measure measure-i">17.72<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubelen even" data-id="headtubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--J">J</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">100<i>mm</i></span><span
-                              class="measure measure-i">3.94<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">105<i>mm</i></span><span
-                              class="measure measure-i">4.13<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">110<i>mm</i></span><span
-                              class="measure measure-i">4.33<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--toptube geom-table-row--empty odd" data-id="toptube">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--K">K</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Top Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubean geom-table-row--empty even"
-                          data-id="seattubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--L">L</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--standover odd" data-id="standover">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--M">M</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Standover Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">718<i>mm</i></span><span
-                              class="measure measure-i">28.27<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">719<i>mm</i></span><span
-                              class="measure measure-i">28.31<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">719<i>mm</i></span><span
-                              class="measure measure-i">28.31<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--eyetoeye even" data-id="eyetoeye">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--N">N</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Eye to Eye Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--spacer odd" data-id="reach">
-                          <td colspan="20">&nbsp;</td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seatpostlength geom-table-row--empty even"
-                          data-id="seatpostlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Seatpost Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stemlength geom-table-row--empty odd"
-                          data-id="stemlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Stem Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--cranklength geom-table-row--empty even"
-                          data-id="cranklength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Crank Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="geometry-detail__image">
-                    <div class="geometry-table__interactive-image"><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                          data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerreach"
-                          src="/assets/img/interactive/reach.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                          data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstack"
-                          src="/assets/img/interactive/stack.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                          data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubean"
-                          src="/assets/img/interactive/headtubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                          data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubelen"
-                          src="/assets/img/interactive/seattubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                          data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerfrontcenter"
-                          src="/assets/img/interactive/frontcenter.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                          data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbheight"
-                          src="/assets/img/interactive/bbheight.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                          data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbdrop"
-                          src="/assets/img/interactive/bbdrop.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                          data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerwheelbase"
-                          src="/assets/img/interactive/wheelbase.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                          data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerchainstay"
-                          src="/assets/img/interactive/chainstay.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                          data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubelen"
-                          src="/assets/img/interactive/headtubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                          data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layertoptube"
-                          src="/assets/img/interactive/toptube.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                          data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubean"
-                          src="/assets/img/interactive/seattubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                          data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstandover"
-                          src="/assets/img/interactive/standover.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                          data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layereyetoeye"
-                          src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                          data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbase" src="/assets/img/interactive/base.png?new=true"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="tab-geom2--tab4" class="js-tab-target tab-content__item  tab-content__item--tab4"
-                *ngSwitchCase="'tab4'">
-                <div class="geometry-details">
-                  <div class="geometry-detail__table">
-                    <h2 class="geometry-table__title">Low</h2>
-                    <div class="geometry-table__notes">
-                      <p>Flip chip in rear dropout has two positions:
-                        short and long. Flipping the chip changes
-                        chainstay and wheelbase length by 10mm.</p>
-                    </div>
-                    <table class="metric-imperial metric geometry-table__table">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th></th>
-                          <th>M</th>
-                          <th>L</th>
-                          <th>XL</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--A">A</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Reach</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">435<i>mm</i></span><span
-                              class="measure measure-i">17.13<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">460<i>mm</i></span><span
-                              class="measure measure-i">18.11<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">490<i>mm</i></span><span
-                              class="measure measure-i">19.29<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stack even" data-id="stack">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--B">B</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Stack</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">631<i>mm</i></span><span
-                              class="measure measure-i">24.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">635<i>mm</i></span><span
-                              class="measure measure-i">25<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">640<i>mm</i></span><span
-                              class="measure measure-i">25.2<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubean odd" data-id="headtubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--C">C</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubelen even" data-id="seattubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--D">D</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">455<i>mm</i></span><span
-                              class="measure measure-i">17.91<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">465<i>mm</i></span><span
-                              class="measure measure-i">18.31<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--frontcenter odd" data-id="frontcenter">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--E">E</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Front Center</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">806<i>mm</i></span><span
-                              class="measure measure-i">31.73<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">833<i>mm</i></span><span
-                              class="measure measure-i">32.8<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">865<i>mm</i></span><span
-                              class="measure measure-i">34.06<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbheight even" data-id="bbheight">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--F">F</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbdrop odd" data-id="bbdrop">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--G">G</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Drop</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">21<i>mm</i></span><span
-                              class="measure measure-i">0.83<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">21<i>mm</i></span><span
-                              class="measure measure-i">0.83<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">21<i>mm</i></span><span
-                              class="measure measure-i">0.83<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--wheelbase even" data-id="wheelbase">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--H">H</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Wheelbase</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1252<i>mm</i></span><span
-                              class="measure measure-i">49.29<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1279<i>mm</i></span><span
-                              class="measure measure-i">50.35<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1316<i>mm</i></span><span
-                              class="measure measure-i">51.81<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--chainstay odd" data-id="chainstay">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--I">I</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Chainstay Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">450<i>mm</i></span><span
-                              class="measure measure-i">17.72<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubelen even" data-id="headtubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--J">J</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">100<i>mm</i></span><span
-                              class="measure measure-i">3.94<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">105<i>mm</i></span><span
-                              class="measure measure-i">4.13<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">110<i>mm</i></span><span
-                              class="measure measure-i">4.33<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--toptube geom-table-row--empty odd" data-id="toptube">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--K">K</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Top Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubean geom-table-row--empty even"
-                          data-id="seattubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--L">L</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--standover odd" data-id="standover">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--M">M</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Standover Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">713<i>mm</i></span><span
-                              class="measure measure-i">28.07<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">714<i>mm</i></span><span
-                              class="measure measure-i">28.11<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">714<i>mm</i></span><span
-                              class="measure measure-i">28.11<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--eyetoeye even" data-id="eyetoeye">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--N">N</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Eye to Eye Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">250<i>mm</i></span><span
-                              class="measure measure-i">9.84<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--spacer odd" data-id="reach">
-                          <td colspan="20">&nbsp;</td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seatpostlength geom-table-row--empty even"
-                          data-id="seatpostlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Seatpost Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stemlength geom-table-row--empty odd"
-                          data-id="stemlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Stem Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--cranklength geom-table-row--empty even"
-                          data-id="cranklength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Crank Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="geometry-detail__image">
-                    <div class="geometry-table__interactive-image"><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                          data-src="/assets/img/interactive/reach.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerreach"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                          data-src="/assets/img/interactive/stack.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerstack"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                          data-src="/assets/img/interactive/headtubean.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerheadtubean"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                          data-src="/assets/img/interactive/seattubelen.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerseattubelen"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                          data-src="/assets/img/interactive/frontcenter.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerfrontcenter"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                          data-src="/assets/img/interactive/bbheight.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerbbheight"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                          data-src="/assets/img/interactive/bbdrop.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerbbdrop"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                          data-src="/assets/img/interactive/wheelbase.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerwheelbase"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                          data-src="/assets/img/interactive/chainstay.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerchainstay"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                          data-src="/assets/img/interactive/headtubelen.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerheadtubelen"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                          data-src="/assets/img/interactive/toptube.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layertoptube"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                          data-src="/assets/img/interactive/seattubean.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerseattubean"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                          data-src="/assets/img/interactive/standover.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerstandover"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                          data-src="/assets/img/interactive/eyetoeye.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layereyetoeye"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                          data-src="/assets/img/interactive/base.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerbase"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="geometry_size__record geometry_size-3 geometry_size--active" *ngSwitchCase="'tab3'">
-          <div class="js-tabset tabset--geom3">
-            <div class="tabs">
-              <ul>
-                <li class="js-tab-trigger tabs__option tabs__option--tab5"
-                  [class.js-tabs__option--active]="viewModeInner3 == 'tab5'" rel="tab5"
-                  (click)="viewModeInner3 ='tab5'"><a>High</a></li>
-                <li class="js-tab-trigger tabs__option tabs__option--tab6"
-                  [class.js-tabs__option--active]="viewModeInner3 == 'tab6'" rel="tab6"
-                  (click)="viewModeInner3 ='tab6'">
-                  <a>Low</a></li>
-              </ul>
-            </div>
-            <div class="tab-content" [ngSwitch]="viewModeInner3">
-              <div id="tab-geom3--tab5" class="js-tab-target tab-content__item  tab-content__item--tab5"
-                *ngSwitchCase="'tab5'">
-                <div class="geometry-details">
-                  <div class="geometry-detail__table">
-                    <h2 class="geometry-table__title">High</h2>
-                    <div class="geometry-table__notes">
-                      <p>Flip chip in rear dropout has two positions:
-                        short and long. Flipping the chip changes
-                        chainstay and wheelbase length by 10mm.</p>
-                    </div>
-                    <table class="metric-imperial metric geometry-table__table">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th></th>
-                          <th>M</th>
-                          <th>L</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--A">A</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Reach</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">437<i>mm</i></span><span
-                              class="measure measure-i">17.2<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">462<i>mm</i></span><span
-                              class="measure measure-i">18.19<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stack even" data-id="stack">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--B">B</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Stack</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">632<i>mm</i></span><span
-                              class="measure measure-i">24.88<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">637<i>mm</i></span><span
-                              class="measure measure-i">25.08<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubean odd" data-id="headtubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--C">C</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.7<i>°</i></span><span
-                              class="measure measure-i">63.7<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.7<i>°</i></span><span
-                              class="measure measure-i">63.7<i>°</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubelen even" data-id="seattubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--D">D</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">455<i>mm</i></span><span
-                              class="measure measure-i">17.91<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--frontcenter odd" data-id="frontcenter">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--E">E</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Front Center</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">806<i>mm</i></span><span
-                              class="measure measure-i">31.73<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">833<i>mm</i></span><span
-                              class="measure measure-i">32.8<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbheight even" data-id="bbheight">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--F">F</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">356<i>mm</i></span><span
-                              class="measure measure-i">14.02<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">356<i>mm</i></span><span
-                              class="measure measure-i">14.02<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbdrop odd" data-id="bbdrop">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--G">G</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Drop</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">16.4/-2<i>mm</i></span><span
-                              class="measure measure-i">0.65<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">16.4/-2<i>mm</i></span><span
-                              class="measure measure-i">0.65<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--wheelbase even" data-id="wheelbase">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--H">H</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Wheelbase</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1251<i>mm</i></span><span
-                              class="measure measure-i">49.25<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1278<i>mm</i></span><span
-                              class="measure measure-i">50.31<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--chainstay odd" data-id="chainstay">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--I">I</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Chainstay Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445-455<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445-455<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubelen even" data-id="headtubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--J">J</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">100<i>mm</i></span><span
-                              class="measure measure-i">3.94<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">105<i>mm</i></span><span
-                              class="measure measure-i">4.13<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--toptube geom-table-row--empty odd" data-id="toptube">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--K">K</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Top Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubean geom-table-row--empty even"
-                          data-id="seattubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--L">L</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--standover odd" data-id="standover">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--M">M</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Standover Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">718<i>mm</i></span><span
-                              class="measure measure-i">28.27<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">719<i>mm</i></span><span
-                              class="measure measure-i">28.31<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--eyetoeye geom-table-row--empty even"
-                          data-id="eyetoeye">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--N">N</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Eye to Eye Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--spacer odd" data-id="reach">
-                          <td colspan="20">&nbsp;</td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seatpostlength geom-table-row--empty even"
-                          data-id="seatpostlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Seatpost Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stemlength geom-table-row--empty odd"
-                          data-id="stemlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Stem Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--cranklength geom-table-row--empty even"
-                          data-id="cranklength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Crank Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="geometry-detail__image">
-                    <div class="geometry-table__interactive-image"><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                          data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerreach"
-                          src="/assets/img/interactive/reach.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                          data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstack"
-                          src="/assets/img/interactive/stack.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                          data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubean"
-                          src="/assets/img/interactive/headtubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                          data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubelen"
-                          src="/assets/img/interactive/seattubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                          data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerfrontcenter"
-                          src="/assets/img/interactive/frontcenter.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                          data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbheight"
-                          src="/assets/img/interactive/bbheight.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                          data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbbdrop"
-                          src="/assets/img/interactive/bbdrop.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                          data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerwheelbase"
-                          src="/assets/img/interactive/wheelbase.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                          data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerchainstay"
-                          src="/assets/img/interactive/chainstay.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                          data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerheadtubelen"
-                          src="/assets/img/interactive/headtubelen.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                          data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layertoptube"
-                          src="/assets/img/interactive/toptube.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                          data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerseattubean"
-                          src="/assets/img/interactive/seattubean.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                          data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerstandover"
-                          src="/assets/img/interactive/standover.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                          data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layereyetoeye"
-                          src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                          data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
-                          alt="Geometry Illustration Layerbase" src="/assets/img/interactive/base.png?new=true"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="tab-geom3--tab6" class="js-tab-target tab-content__item  tab-content__item--tab6"
-                *ngSwitchCase="'tab6'">
-                <div class="geometry-details">
-                  <div class="geometry-detail__table">
-                    <h2 class="geometry-table__title">Low</h2>
-                    <table class="metric-imperial metric geometry-table__table">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th></th>
-                          <th>M</th>
-                          <th>L</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--A">A</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Reach</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">435<i>mm</i></span><span
-                              class="measure measure-i">17.13<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">460<i>mm</i></span><span
-                              class="measure measure-i">18.11<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stack even" data-id="stack">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--B">B</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Stack</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">631<i>mm</i></span><span
-                              class="measure measure-i">24.84<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">635<i>mm</i></span><span
-                              class="measure measure-i">25<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubean odd" data-id="headtubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--C">C</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">63.3<i>°</i></span><span
-                              class="measure measure-i">63.3<i>°</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubelen even" data-id="seattubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--D">D</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">445<i>mm</i></span><span
-                              class="measure measure-i">17.52<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">455<i>mm</i></span><span
-                              class="measure measure-i">17.91<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--frontcenter odd" data-id="frontcenter">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--E">E</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Front Center</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">806<i>mm</i></span><span
-                              class="measure measure-i">31.73<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">833<i>mm</i></span><span
-                              class="measure measure-i">32.8<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbheight even" data-id="bbheight">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--F">F</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">351<i>mm</i></span><span
-                              class="measure measure-i">13.82<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--bbdrop odd" data-id="bbdrop">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--G">G</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            BB Drop</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">21.6/3.<i>mm</i></span><span
-                              class="measure measure-i">0.85<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">21.6/3.<i>mm</i></span><span
-                              class="measure measure-i">0.85<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--wheelbase even" data-id="wheelbase">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--H">H</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Wheelbase</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1252<i>mm</i></span><span
-                              class="measure measure-i">49.29<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">1279<i>mm</i></span><span
-                              class="measure measure-i">50.35<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--chainstay odd" data-id="chainstay">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--I">I</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Chainstay Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">446-456<i>mm</i></span><span
-                              class="measure measure-i">17.56<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">446-456<i>mm</i></span><span
-                              class="measure measure-i">17.56<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--headtubelen even" data-id="headtubelen">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--J">J</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Head Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">100<i>mm</i></span><span
-                              class="measure measure-i">3.94<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">105<i>mm</i></span><span
-                              class="measure measure-i">4.13<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--toptube geom-table-row--empty odd" data-id="toptube">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--K">K</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Top Tube Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seattubean geom-table-row--empty even"
-                          data-id="seattubean">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--L">L</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Seat Tube Angle</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--standover odd" data-id="standover">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--M">M</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Standover Height</td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">713<i>mm</i></span><span
-                              class="measure measure-i">28.07<i>"</i></span>
-                          </td>
-                          <td class="value geometry-table__item-value">
-                            <span class="measure measure-m">714<i>mm</i></span><span
-                              class="measure measure-i">28.11<i>"</i></span>
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--eyetoeye geom-table-row--empty even"
-                          data-id="eyetoeye">
-                          <td class="geometry-table__item-icon"><span
-                              class="geom-table-icon geom-table-icon--N">N</span>
-                          </td>
-                          <td class="label geometry-table__item-label">
-                            Eye to Eye Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--spacer odd" data-id="reach">
-                          <td colspan="20">&nbsp;</td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--seatpostlength geom-table-row--empty even"
-                          data-id="seatpostlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Seatpost Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--stemlength geom-table-row--empty odd"
-                          data-id="stemlength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Stem Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                        <tr class="geom-table-row geom-table-row--cranklength geom-table-row--empty even"
-                          data-id="cranklength">
-                          <td class="geometry-table__item-icon"></td>
-                          <td class="label geometry-table__item-label">
-                            Crank Length</td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                          <td class="value geometry-table__item-value">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="geometry-detail__image">
-                    <div class="geometry-table__interactive-image"><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                          data-src="/assets/img/interactive/reach.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerreach"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                          data-src="/assets/img/interactive/stack.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerstack"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                          data-src="/assets/img/interactive/headtubean.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerheadtubean"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                          data-src="/assets/img/interactive/seattubelen.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerseattubelen"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                          data-src="/assets/img/interactive/frontcenter.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerfrontcenter"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                          data-src="/assets/img/interactive/bbheight.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerbbheight"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                          data-src="/assets/img/interactive/bbdrop.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerbbdrop"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                          data-src="/assets/img/interactive/wheelbase.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerwheelbase"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                          data-src="/assets/img/interactive/chainstay.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerchainstay"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                          data-src="/assets/img/interactive/headtubelen.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerheadtubelen"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                          data-src="/assets/img/interactive/toptube.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layertoptube"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                          data-src="/assets/img/interactive/seattubean.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerseattubean"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                          data-src="/assets/img/interactive/standover.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerstandover"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                          data-src="/assets/img/interactive/eyetoeye.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layereyetoeye"></span><span
-                        class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                          data-src="/assets/img/interactive/base.png?new=true" class="lazyload"
-                          alt="Geometry Illustration Layerbase"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        </ng-container>
       </div>
       <div [ngSwitch]="viewMode" class="size_chart__wrapper">
         <div class="geometry__wrapper size_chart__wrapper" *ngSwitchCase="'tab1'">
