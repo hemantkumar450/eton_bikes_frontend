@@ -1,16 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { KeyValue } from '../../models/product.model';
+import { KeyValue } from "@angular/common";
+import { Component, OnInit, Input } from "@angular/core";
+import { KeyValueModel } from "src/app/auth/core/model/product.model";
 
 @Component({
-  selector: 'app-components',
-  templateUrl: './components.component.html',
-  styleUrls: ['./components.component.scss']
+  selector: "app-components",
+  templateUrl: "./components.component.html",
+  styleUrls: ["./components.component.scss"],
 })
 export class ComponentsComponent implements OnInit {
-  @Input() data:Array<KeyValue>;
-  constructor() { }
+  @Input() data: KeyValueModel[];
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

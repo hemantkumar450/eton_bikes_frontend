@@ -114,6 +114,62 @@
                 ],
                 "_id": "5f788a3b906f5355c4303236",
                 "key": "27.5"
+            },
+            {
+                "high": [
+                    {
+                        "_id": "5f788a3b906f5355c4303237",
+                        "key": {
+                            "category": "geometry",
+                            "is_deleted": false,
+                            "_id": "5f78886a4b2ef939a4118b01",
+                            "order": "a",
+                            "name": "teach",
+                            "added_on": "2020-10-03T14:19:22.720Z",
+                            "updated_on": "2020-10-03T14:19:22.720Z",
+                            "__v": 0,
+                            "id": "5f78886a4b2ef939a4118b01"
+                        },
+                        "small": 16.22,
+                        "medium": 17.2,
+                        "large": 18.19
+                    }
+                ],
+                "low": [
+                    {
+                        "_id": "5f788a3b906f5355c4303238",
+                        "key": {
+                            "category": "geometry",
+                            "is_deleted": false,
+                            "_id": "5f78886a4b2ef939a4118b01",
+                            "order": "a",
+                            "name": "Teach",
+                            "added_on": "2020-10-03T14:19:22.720Z",
+                            "updated_on": "2020-10-03T14:19:22.720Z",
+                            "__v": 0,
+                            "id": "5f78886a4b2ef939a4118b01"
+                        },
+                        "small": 16.14,
+                        "medium": 17.13,
+                        "large": 18.11
+                    }
+                ],
+                "frame_size": [
+                    {
+                        "_id": "5f788a3b906f5355c4303239",
+                        "key": "S",
+                        "from": 5.2,
+                        "to": 5.7
+                    },
+                    {
+                        "_id": "5f788a3b906f5355c430323a",
+                        "key": "M",
+                        "from": 5.7,
+                        "to": 5.2
+                    }
+                ],
+                "_id": "5f788a3b906f5355c4303236",
+                "key": "29.6"
             }
         ],
         "added_on": "2020-10-03T14:21:30.610Z",

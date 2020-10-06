@@ -6,25 +6,34 @@
 
       <div class="tabs">
         <ul>
-          <li class="js-tab-trigger tabs__option tabs__option--faq" [class.js-tabs__option--active]="techSupp == 'faq'" rel="faq" (click)="techSupp ='faq'">
-            <a >FAQs</a>
+          <li class="js-tab-trigger tabs__option tabs__option--faq" [class.js-tabs__option--active]="techSupp == 'faqs'"
+            rel="faq" (click)="techSupp ='faqs'">
+            <a>FAQs</a>
           </li>
-          <li class="js-tab-trigger tabs__option tabs__option--components" [class.js-tabs__option--active]="techSupp == 'comp'" rel="comp" (click)="techSupp ='comp'">
-            <a >Components</a>
+          <li class="js-tab-trigger tabs__option tabs__option--components"
+            [class.js-tabs__option--active]="techSupp == 'components'" rel="components" (click)="techSupp ='components'">
+            <a>Components</a>
           </li>
-          <li class="js-tab-trigger tabs__option tabs__option--warranty" [class.js-tabs__option--active]="techSupp == 'warranty_and_reg'" rel="warranty_and_reg" (click)="techSupp ='warranty_and_reg'">
-            <a >Warranty<span class="tabs__option-abbr">
+          <li class="js-tab-trigger tabs__option tabs__option--warranty"
+            [class.js-tabs__option--active]="techSupp == 'warranty_and_registration'" rel="warranty_and_registration"
+            (click)="techSupp ='warranty_and_registration'">
+            <a>Warranty<span class="tabs__option-abbr">
                 &amp; Registration</span></a>
-          </li> 
+          </li>
         </ul>
       </div>
 
       <div class="tab-content" [ngSwitch]="techSupp">
-        
-        <ng-container  *ngSwitchCase="'faq'"> <app-faq [data]="faq"></app-faq></ng-container>
-        <ng-container  *ngSwitchCase="'comp'"> <app-components [data]="comp"></app-components></ng-container>
-        <ng-container  *ngSwitchCase="'warranty_and_reg'"> <app-warranty-and-reg [data]="warrantAndReg"></app-warranty-and-reg></ng-container>       
-        
+        <ng-container *ngSwitchCase="'faqs'">
+          <app-faq *ngIf="techSupport" [data]="techSupport.faqs"></app-faq>
+        </ng-container>
+        <ng-container *ngSwitchCase="'components'">
+          <app-components *ngIf="techSupport" [data]="techSupport.components"></app-components>
+        </ng-container>
+        <ng-container *ngSwitchCase="'warranty_and_registration'">
+          <app-warranty-and-reg *ngIf="techSupport" [data]="techSupport.warranty_and_registration"></app-warranty-and-reg>
+        </ng-container>
+
       </div>
     </div>
 

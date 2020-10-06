@@ -3,10 +3,10 @@
   <section class="product-intro product-intro__frame">
     <div class="product-intro__wrapper l-wrapper clearfix">
 
-      <h2 class="product-intro__slug" [innerHTML]="overviewData.title"></h2>
+      <h2 class="product-intro__slug" [innerHTML]="overview.title"></h2>
       <div class="product-intro__text">
         <div class="product-intro__text-copy">
-          <div class="text-editor" [innerHTML]="overviewData.description">          
+          <div class="text-editor" [innerHTML]="overview.description">
           </div>
         </div>
       </div>
@@ -14,7 +14,7 @@
       <div class="features-list features-list__items--product product-intro__features">
         <h3 class="features-list__title">Key Features:</h3>
 
-        <ul class="features-list__items" *ngFor="let feature of overviewData.features">
+        <ul class="features-list__items" *ngFor="let feature of overview.features">
           <li class="features-list__item">
             <span class="features-list__item-label">{{feature.key}}:</span>
             <span class="features-lsit__item-value">
@@ -48,7 +48,7 @@
   <section class="frame-overview-imagery">
     <div class="l-wrapper">
       <div class="gallery gallery--frame gallery--frame-overview gallery--items-5">
-        <div class="gallery__item gallery-trigger lazypreload lazyloaded" *ngFor="let image of overviewData.long_shot_media"
+        <div class="gallery__item gallery-trigger lazypreload lazyloaded" *ngFor="let image of overview.long_shot_media"
           [style.background-image]="'url(&quot;' + image + '&quot;)'">
         </div>
       </div>

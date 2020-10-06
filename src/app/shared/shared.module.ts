@@ -1,20 +1,18 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { TabComponent } from "./tab/tab.component";
-import { TabsComponent } from "./tabs/tabs.component";
 import { NguCarouselModule } from "@ngu/carousel";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from "@angular/common/http";
 
 const MODULES = [
   CommonModule,
   FormsModule,
   ReactiveFormsModule,
   NguCarouselModule,
-  HttpClientModule
+  HttpClientModule,
 ];
 const DIRECTIVES = [];
-const COMPONENTS = [TabsComponent, TabComponent];
+const COMPONENTS = [];
 
 @NgModule({
   declarations: [DIRECTIVES, COMPONENTS],
