@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { section } from "src/app/core/model/page.model";
 
 @Component({
   selector: "app-media-panel",
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./media-panel.component.scss"],
 })
 export class MediaPanelComponent implements OnInit {
-  @Input() media_side: string;
+  @Input() section: section;
   @Input() image: string = "";
 
   constructor() {}
@@ -15,7 +16,7 @@ export class MediaPanelComponent implements OnInit {
 
   setImageSide() {
     let css = null;
-    switch (this.media_side) {
+    switch (this.section.media_side) {
       case "left":
         css = "media-panel--beige media-panel--text-last";
         break;

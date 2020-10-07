@@ -1,25 +1,16 @@
 <main id="main" role="main">
   <div class="region region-content">
-    <app-banner></app-banner>
+    <div *ngFor="let section of page.sections;let index= index">
+      <app-banner *ngIf="section.sectionType == 'banner'" [section]="section"></app-banner>
 
-    <app-media-panel image="/assets/img/kep_181023_sbts_trailcrew_1685_web.jpg" media_side="right"></app-media-panel>
+      <app-media-panel *ngIf="section.sectionType == 'media_panel'"
+        image="/assets/img/kep_181023_sbts_trailcrew_1685_web.jpg" [section]="section"></app-media-panel>
 
-    <app-product-brief></app-product-brief>
+      <app-product-brief *ngIf="section.sectionType == 'api_call'"></app-product-brief>
 
-    <app-media-panel image="/assets/img/scb_dh_metabief_keno-060_web_100.jpg" media_side="center"></app-media-panel>
+      <app-slider *ngIf="section.sectionType == 'slider'"></app-slider>
 
-    <app-media-panel image="/assets/img/scb_my21_5010_50to01_dpaley-294_5050.jpg" media_side="right">
-    </app-media-panel>
-
-    <app-media-panel image="/assets/img/my21_stig_details_008_web_5050.jpg" media_side="left">
-    </app-media-panel>
-
-    <app-media-panel image="/assets/img/am_chileroadie-sc-200212-3129.jpg" media_side="right">
-    </app-media-panel>
-
-    <app-slider></app-slider>
-
-    <app-social-media></app-social-media>
-
+      <app-social-media *ngIf="section.sectionType == 'social_media'"></app-social-media>
+    </div>
   </div>
 </main>

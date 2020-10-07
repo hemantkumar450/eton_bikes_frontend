@@ -1,0 +1,144 @@
+{
+  "success": true,
+  "message": "Home Page data",
+  "data": {
+    "is_deleted": false,
+    "_id": "5f7d94e740b1982af80e59c2",
+    "name": "home",
+    "heading": "main page",
+    "content": "content will add soon",
+    "sections": [{
+        "media_side": "left",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59c3",
+        "name": "QUALITY BICYCLES SINCE 1994",
+        "heading": "QUALITY BICYCLES SINCE 1994",
+        "order": 1,
+        "content": "",
+        "redirect_detail": [],
+        "sectionType": "banner"
+      },
+      {
+        "media_side": "right",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59c4",
+        "name": "PayDirt Grant Recipients Announced",
+        "heading": "PayDirt Grant Recipients Announced",
+        "order": 2,
+        "content": "We founded PayDirt in 2019 and pledged $1 million to fund recreational mountain bike trail opportunities around the world. <br> Now we’re announcing our first round of grant recipients for PayDirt. Seventeen groups from around the world were selected, and these groups range from land trusts to advocacy to high school race teams and grassroots trail builders. Meet the people making it happen and learn about their projects.",
+        "redirect_detail": [{
+          "_id": "5f7d94e740b1982af80e59c5",
+          "button_text": "See Paydirt",
+          "redirect_url": "www.google.com"
+        }],
+        "sectionType": "media_panel"
+      },
+      {
+        "media_side": "left",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59c6",
+        "name": "Explore our lineup",
+        "heading": "Explore our lineup",
+        "order": 3,
+        "content": "",
+        "redirect_detail": [],
+        "sectionType": "api_call"
+      },
+      {
+        "media_side": "center",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59c7",
+        "name": "PayDirt Grant Recipients Announced",
+        "heading": "PayDirt Grant Recipients Announced",
+        "order": 4,
+        "content": "We founded PayDirt in 2019 and pledged $1 million to fund recreational mountain bike trail opportunities around the world. <br> Now we’re announcing our first round of grant recipients for PayDirt. Seventeen groups from around the world were selected, and these groups range from land trusts to advocacy to high school race teams and grassroots trail builders. Meet the people making it happen and learn about their projects.",
+        "redirect_detail": [{
+          "_id": "5f7d94e740b1982af80e59c8",
+          "button_text": "See Paydirt One",
+          "redirect_url": "www.google.com"
+        }],
+        "sectionType": "media_panel"
+      },
+      {
+        "media_side": "right",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59c9",
+        "name": "PayDirt Grant Recipients Announced",
+        "heading": "PayDirt Grant Recipients Announced",
+        "order": 5,
+        "content": "We founded PayDirt in 2019 and pledged $1 million to fund recreational mountain bike trail opportunities around the world. <br> Now we’re announcing our first round of grant recipients for PayDirt. Seventeen groups from around the world were selected, and these groups range from land trusts to advocacy to high school race teams and grassroots trail builders. Meet the people making it happen and learn about their projects.",
+        "redirect_detail": [{
+          "_id": "5f7d94e740b1982af80e59ca",
+          "button_text": "See Paydirt One",
+          "redirect_url": "www.google.com"
+        }],
+        "sectionType": "media_panel"
+      },
+      {
+        "media_side": "left",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59cb",
+        "name": "PayDirt Grant Recipients Announced",
+        "heading": "PayDirt Grant Recipients Announced",
+        "order": 6,
+        "content": "We founded PayDirt in 2019 and pledged $1 million to fund recreational mountain bike trail opportunities around the world. <br> Now we’re announcing our first round of grant recipients for PayDirt. Seventeen groups from around the world were selected, and these groups range from land trusts to advocacy to high school race teams and grassroots trail builders. Meet the people making it happen and learn about their projects.",
+        "redirect_detail": [{
+          "_id": "5f7d94e740b1982af80e59cc",
+          "button_text": "See Paydirt One",
+          "redirect_url": "www.google.com"
+        }],
+        "sectionType": "media_panel"
+      },
+      {
+        "media_side": "right",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59cd",
+        "name": "PayDirt Grant Recipients Announced",
+        "heading": "PayDirt Grant Recipients Announced",
+        "order": 7,
+        "content": "We founded PayDirt in 2019 and pledged $1 million to fund recreational mountain bike trail opportunities around the world. <br> Now we’re announcing our first round of grant recipients for PayDirt. Seventeen groups from around the world were selected, and these groups range from land trusts to advocacy to high school race teams and grassroots trail builders. Meet the people making it happen and learn about their projects.",
+        "redirect_detail": [{
+          "_id": "5f7d94e740b1982af80e59ce",
+          "button_text": "See Paydirt One",
+          "redirect_url": "www.google.com"
+        }],
+        "sectionType": "media_panel"
+      },
+      {
+        "media_side": "left",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59cf",
+        "name": "News & Updates",
+        "heading": "News & Updates",
+        "order": 8,
+        "content": "",
+        "redirect_detail": [{
+          "_id": "5f7d94e740b1982af80e59d0",
+          "button_text": "See Paydirt One",
+          "redirect_url": "www.google.com"
+        }],
+        "sectionType": "slider"
+      },
+      {
+        "media_side": "left",
+        "medias": [],
+        "_id": "5f7d94e740b1982af80e59d1",
+        "name": "Share your ride",
+        "heading": "Share your ride",
+        "order": 9,
+        "content": "All the latest straight from our Instagram.",
+        "redirect_detail": [{
+          "_id": "5f7d94e740b1982af80e59d2",
+          "button_text": "Follow @etinBikes",
+          "redirect_url": "www.google.com"
+        }],
+        "sectionType": "social_media"
+      }
+    ],
+    "pageType": "home",
+    "added_on": "2020-10-07T10:13:59.528Z",
+    "updated_on": "2020-10-07T10:13:59.528Z",
+    "__v": 0,
+    "id": "5f7d94e740b1982af80e59c2"
+  }
+}

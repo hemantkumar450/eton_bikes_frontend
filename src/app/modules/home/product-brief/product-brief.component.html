@@ -74,279 +74,35 @@
       <div class="product-explorer pex-toggle-processed">
         <div class="l-wrapper">
           <div class="product-explorer__image-wrapper" [ngSwitch]="exLineup">
-            <a href="/en-US/bikes/v10" *ngSwitchCase="'tab1'"><img lass=" lazyloaded" alt="Eton Bicycles"
-                src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"></a>
-            <a href="/en-US/bikes/v10" *ngSwitchCase="'tab2'"><img class=" lazyloaded" alt="Eton Bicycles"
-                src="/assets/img/thumbs/nomad_updated_thumb.jpg"></a>
+            <div *ngFor="let bike of bikes; let index = index">
+              <a href="/en-US/bikes/v10" *ngSwitchCase="index"><img lass=" lazyloaded" alt="Eton Bicycles"
+                  [src]="bike.image_url"></a>
+            </div>
           </div>
+
           <div class="product-explorer__text-wrapper">
             <ul>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab1'" rel="tab1"
-                (click)="exLineup ='tab1'">
+              <li *ngFor="let bike of bikes; let index= index" class="product-explorer__item"
+              [class.js-product-explorer--inactive]="exLineup !== index"
+                [class.js-product-explorer--active]="exLineup == index" rel="tab1" (click)="onBikeChangeEvent(index, 'onClick')">
                 <div class="product-explorer__image">
                   <a href="/en-US/bikes/v10"><img data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"></a>
+                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles" [src]="bike.image_url"></a>
                 </div>
-                <div class="product-explorer__title">V10<span class="product-explorer__tag">New</span></div>
+                <div class="product-explorer__title">
+                  {{bike.name}} -- {{exLineup}}
+                  <span class="product-explorer__tag" *ngIf="bike.is_new">New </span>
+                </div>
                 <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Puzzling Ain’t Easy
+                  <div class="product-explorer__description">{{bike.description}}
                   </div>
                   <div class="product-explorer__buttons">
                     <a href="/en-US/bikes/v10" class="btn-primary">More Info</a>
                     <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
                   </div>
                 </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab2'" rel="tab2"
-                (click)="exLineup ='tab2'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/nomad"><img data-src="/assets/img/thumbs/nomad_updated_thumb.jpg"
-                      class=" lazyloaded" width="1100" height="704"
-                      alt="Eton Bicycles - Nomad 4 Eggplant and Aquarius Green"
-                      title="Nomad 4 Eggplant and Aquarius Green" src="/assets/img/thumbs/nomad_updated_thumb.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Nomad</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">V10 handling at
-                    Syndicate speeds.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/nomad" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab3'" rel="tab3"
-                (click)="exLineup ='tab3'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/megatower"><img data-src="/assets/img/thumbs/scb_mega_storm_thumb.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/scb_mega_storm_thumb.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Megatower</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">The ultimate
-                    power-wheeling, bump-chewing sidekick.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/megatower" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab4'" rel="tab4"
-                (click)="exLineup ='tab4'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/heckler"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0010_my21_heckler_1.0_cc_xo1_rsv_blackout.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0010_my21_heckler_1.0_cc_xo1_rsv_blackout.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Heckler</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Let The Heckling
-                    Begin</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/heckler" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab5'" rel="tab5"
-                (click)="exLineup ='tab5'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/bronson"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0014_my21_bronson_cc_xo1_rsv_beef.jpg" class=" lazyloaded"
-                      width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0014_my21_bronson_cc_xo1_rsv_beef.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Bronson</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Not to be typecast
-                  </div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/bronson" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab6'" rel="tab6"
-                (click)="exLineup ='tab6'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/5010"><img data-src="/assets/img/thumbs/scb_thumbnail_5010_aqua.jpg"
-                      class=" lazyloaded" width="1027" height="704" alt="Eton Bicycles 5010" title="Eton Bicycles 5010"
-                      src="/assets/img/thumbs/scb_thumbnail_5010_aqua.jpg"></a>
-                </div>
-                <div class="product-explorer__title">5010<span class="product-explorer__tag">New</span></div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Get creative with
-                    your surroundings.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/5010" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab7'" rel="tab7"
-                (click)="exLineup ='tab7'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/hightower"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0007_my21_hightower_cc_xx1_rsv_grey.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0007_my21_hightower_cc_xx1_rsv_grey.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Hightower</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Our greatest hits
-                    compiled into one bike—just hit play.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/hightower" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab8'" rel="tab8"
-                (click)="exLineup ='tab8'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/tallboy"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0004_my21_tallboy_cc_xx1_rsv_ivory.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0004_my21_tallboy_cc_xx1_rsv_ivory.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Tallboy</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">If ever there was a
-                    gravity riders’ XC bike, the Tallboy is it.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/tallboy" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab9'" rel="tab9"
-                (click)="exLineup ='tab9'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/blur"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0016_my21_blur_cc_xx1_rsv_aqua.jpg" class=" lazyloaded"
-                      width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0016_my21_blur_cc_xx1_rsv_aqua.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Blur</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Full gas, 24/7.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/blur" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab10'" rel="tab10"
-                (click)="exLineup ='tab10'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/highball-29"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0009_my21_highball_cc_xo1_rsv_ember.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0009_my21_highball_cc_xo1_rsv_ember.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Highball</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Wide open, dawn to
-                    dusk.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/highball-29" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab11'" rel="tab11"
-                (click)="exLineup ='tab11'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/stigmata"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0005_my21_stigmata_cc_rival_blue.jpg" class=" lazyloaded"
-                      width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0005_my21_stigmata_cc_rival_blue.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Stigmata</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">The road goes on
-                    forever and the party never ends</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/stigmata" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab12'" rel="tab12"
-                (click)="exLineup ='tab12'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/chameleon"><img
-                      data-src="/assets/img/thumbs/my21_thumb_0013_my21_chameleon_al_r_29_fog.jpg" class=" lazyloaded"
-                      width="1100" height="704" alt="Eton Bicycles"
-                      src="/assets/img/thumbs/my21_thumb_0013_my21_chameleon_al_r_29_fog.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Chameleon</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Carbon, carbon,
-                    carbon, carbon, carbon Chameleon…</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/chameleon" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
-              </li>
-              <li class="product-explorer__item" [class.js-product-explorer--active]="exLineup == 'tab13'" rel="tab13"
-                (click)="exLineup ='tab13'">
-                <div class="product-explorer__image">
-                  <a href="/en-US/bikes/jackal"><img data-src="/assets/img/thumbs/jackal_thumb.jpg" class=" lazyloaded"
-                      width="1100" height="704" alt="Eton Bicycles Jackal" title="Eton Bicycles Jackal"
-                      src="/assets/img/thumbs/jackal_thumb.jpg"></a>
-                </div>
-                <div class="product-explorer__title">Jackal</div>
-                <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">Jackal is an
-                    opportunistic scavenger of man-made terrain.</div>
-                  <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/jackal" class="btn-primary">More
-                      Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
-                  </div>
-                </div>
-                <a href="#" title="Up" class="pex-up pex-toggle">Up</a>
-                <a href="#" title="Down" class="pex-down pex-toggle">Down</a>
+                <a title="Up" (click)="onBikeChangeEvent(index-1, 'onUp')" class="pex-up pex-toggle">Up</a>
+                <a title="Down" (click)="onBikeChangeEvent(index+1, 'onDown')" class="pex-down pex-toggle">Down</a>
               </li>
             </ul>
             <div class="product-explorer-toggle__gradient"></div>
@@ -354,55 +110,5 @@
         </div>
       </div>
     </div>
-
-
   </div>
-  <!-- <div
-                      class="view view-bikes-for-homepage view-id-bikes_for_homepage view-display-id-block_3">
-
-                      <div class="view-content slick-initialized slick-slider"><a href="#" title="Previous" class="pex-prev slick-arrow" style="display: block;">&lt;</a>
-
-                          <div class="slick-list draggable"><div class="slick-track"><div class="slick-slide slick-cloned"  data-slick-index="-1" aria-hidden="true" tabindex="-1">
-                          <div class="product-explorer__image-slickjs">
-                      <a href="/en-US/bikes/jackal" tabindex="-1"><img data-src="/assets/img/thumbs/jackal_thumb.jpg" class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles Jackal" title="Eton Bicycles Jackal" src="/assets/img/thumbs/jackal_thumb.jpg"></a>
-                      </div>
-                      <div class="product-explorer__title-slickjs">Jackal</div>
-                          <div class="product-explorer__details-container-slickjs">
-                          <div class="product-explorer__description">Jackal is an opportunistic scavenger of man-made terrain.</div>
-                          <div class="product-explorer__buttons">
-                              <a href="/en-US/bikes/jackal" class="btn-primary" tabindex="-1">More Info</a>
-                          </div>
-                      </div>  </div><div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1">
-                          <div class="product-explorer__image-slickjs">
-                      <a href="/en-US/bikes/v10" tabindex="-1"><img data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg" class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles" src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"></a>
-                      </div>
-                      <div class="product-explorer__title-slickjs">V10<span class="product-explorer__tag">New</span></div>
-                          <div class="product-explorer__details-container-slickjs">
-                          <div class="product-explorer__description">Puzzling Ain’t Easy</div>
-                          <div class="product-explorer__buttons">
-                              <a href="/en-US/bikes/v10" class="btn-primary" tabindex="-1">More Info</a>
-                          </div>
-                      </div>  </div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1">
-                          <div class="product-explorer__image-slickjs">
-                      <a href="/en-US/bikes/nomad" tabindex="-1"><img data-src="/assets/img/thumbs/nomad_updated_thumb.jpg" class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles - Nomad 4 Eggplant and Aquarius Green" title="Nomad 4 Eggplant and Aquarius Green" src="/assets/img/thumbs/nomad_updated_thumb.jpg"></a>
-                      </div>
-                      <div class="product-explorer__title-slickjs">Nomad</div>
-                          <div class="product-explorer__details-container-slickjs">
-                          <div class="product-explorer__description">V10 handling at Syndicate speeds.</div>
-                          <div class="product-explorer__buttons">
-                              <a href="/en-US/bikes/nomad" class="btn-primary" tabindex="-1">More Info</a>
-                          </div>
-                      </div>  </div><div class="slick-slide slick-cloned" data-slick-index="25" aria-hidden="true" tabindex="-1">
-                          <div class="product-explorer__image-slickjs">
-                      <a href="/en-US/bikes/jackal" tabindex="-1"><img data-src="/assets/img/thumbs/jackal_thumb.jpg" class="lazyload" width="1100" height="704" alt="Eton Bicycles Jackal" title="Eton Bicycles Jackal"></a>
-                      </div>
-                      <div class="product-explorer__title-slickjs">Jackal</div>
-                          <div class="product-explorer__details-container-slickjs">
-                          <div class="product-explorer__description">Jackal is an opportunistic scavenger of man-made terrain.</div>
-                          <div class="product-explorer__buttons">
-                              <a href="/en-US/bikes/jackal" class="btn-primary" tabindex="-1">More Info</a>
-                          </div>
-                      </div>  </div></div></div><a href="#" title="Previous" class="pex-next slick-arrow" style="display: block;">&gt;</a></div>
-
-                  </div> -->
 </section>

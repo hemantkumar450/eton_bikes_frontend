@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, ViewChild } from "@angular/core";
 import { NguCarousel, NguCarouselConfig } from "@ngu/carousel";
+import { PageModal } from "src/app/core/model/page.model";
+import { PageService } from "src/app/core/services/page.service";
 
 @Component({
   selector: "app-home",
@@ -7,7 +9,11 @@ import { NguCarousel, NguCarouselConfig } from "@ngu/carousel";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent {
-  constructor(private cdr: ChangeDetectorRef) {}
+  page: PageModal;
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private pageService: PageService
+  ) {}
   name = "Angular";
   slideNo = 0;
   withAnim = true;
@@ -27,7 +33,16 @@ export class HomeComponent {
   exLineup = "tab1";
 
   // tslint:disable-next-line: use-lifecycle-interface
-  ngOnInit() {}
+  ngOnInit() {
+    this.getPageByType();
+  }
+
+  getPageByType() {
+    this.pageService.getPageByType().subscribe((res) => {
+      this.page = res.data;
+      console.log(this.page);
+    });
+  }
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngAfterViewInit() {
@@ -41,6 +56,4 @@ export class HomeComponent {
   moveTo(slide) {
     this.myCarousel.moveTo(slide, !this.withAnim);
   }
-
-  
 }
