@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Geometry, Frame } from "src/app/auth/core/model/product.model";
+import { Geometry, Frame } from "src/app/core/model/product.model";
 
 @Component({
   selector: "app-geometry",

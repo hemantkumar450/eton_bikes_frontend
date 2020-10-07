@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { TechSupport } from "src/app/auth/core/model/product.model";
+import { TechSupport } from "src/app/core/model/product.model";
 
 @Component({
   selector: "app-tech-support",

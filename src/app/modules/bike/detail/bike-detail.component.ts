@@ -1,6 +1,6 @@
 import { Component, HostListener } from "@angular/core";
-import { Product, TechSupport } from "src/app/auth/core/model/product.model";
-import { ProductService } from "src/app/auth/core/services/product.service";
+import { Product, TechSupport } from "src/app/core/model/product.model";
+import { ProductService } from "src/app/core/services/product.service";
 
 @Component({
   selector: "app-bike-detail",

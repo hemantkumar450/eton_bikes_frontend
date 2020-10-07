@@ -1,6 +1,6 @@
 import { KeyValue } from "@angular/common";
 import { Component, OnInit, Input } from "@angular/core";
-import { KeyValueModel } from "src/app/auth/core/model/product.model";
+import { KeyValueModel } from "src/app/core/model/product.model";
 
 @Component({
   selector: "app-components",

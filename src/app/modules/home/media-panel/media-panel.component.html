@@ -1,0 +1,31 @@
+<!-- 
+    media-panel--full-bg
+    media-panel--beige
+    media-panel--text-first
+    media-panel--text-last
+-->
+<div class="media-panels media-panels--no_space">
+  <section class="media-panel media-panel--vh-default  media-panel--space-none" [ngClass]="setImageSide()"
+    style="background-color: #1f1f1f;">
+    <div class="media-panel__wrapper">
+      <div class="media-panel__image" [style.background-image]="'url(' + image + ')'">
+      </div>
+      <div class="media-panel__text-wrapper">
+        <div class="media-panel__text-inner" style="color: #ffffff;">
+          <h4 class="media-panel__title" style="color: #ffffff;">
+            PayDirt Grant Recipients Announced</h4>
+          <div class="media-panel__text text-editor">
+            <p>We founded PayDirt in 2019 and pledged $1 million to fund recreational
+              mountain bike trail opportunities around the world.&nbsp;</p>
+            <p>Now we’re announcing our first round of grant recipients for PayDirt.
+              Seventeen groups from around the world were selected, and these groups
+              range from land trusts to advocacy to high school race teams and
+              grassroots trail builders. Meet the people making it happen and learn
+              about their projects.</p>
+          </div>
+          <a href="https://www.etonbicycles.com/en-US/paydirt" class="btn-primary">See PayDirt Grantees</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

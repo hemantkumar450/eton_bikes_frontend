@@ -1,12 +1,12 @@
-import { ChangeDetectorRef, Component, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { NguCarousel, NguCarouselConfig } from "@ngu/carousel";
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  selector: "app-slider",
+  templateUrl: "./slider.component.html",
+  styleUrls: ["./slider.component.scss"],
 })
-export class HomeComponent {
+export class SliderComponent implements OnInit {
   constructor(private cdr: ChangeDetectorRef) {}
   name = "Angular";
   slideNo = 0;
@@ -41,6 +41,4 @@ export class HomeComponent {
   moveTo(slide) {
     this.myCarousel.moveTo(slide, !this.withAnim);
   }
-
-  
 }
