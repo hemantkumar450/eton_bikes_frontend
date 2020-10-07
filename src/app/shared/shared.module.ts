@@ -3,6 +3,8 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NguCarouselModule } from "@ngu/carousel";
 import { HttpClientModule } from "@angular/common/http";
+import { CarouselModule } from "primeng/carousel";
+import { ButtonModule } from "primeng/button";
 
 const MODULES = [
   CommonModule,
@@ -10,6 +12,8 @@ const MODULES = [
   ReactiveFormsModule,
   NguCarouselModule,
   HttpClientModule,
+  CarouselModule,
+  ButtonModule,
 ];
 const DIRECTIVES = [];
 const COMPONENTS = [];

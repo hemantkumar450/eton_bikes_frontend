@@ -66,5 +66,4 @@ export class ProductBriefComponent implements OnInit {
       this.exLineup = index;
     }
   }
-
 }
