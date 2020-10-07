@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { BikeRoutingModule } from "./bike-routing.module";
+// import { LightboxModule } from 'ngx-lightbox';
 import { BikeComponent } from "./bike.component";
 import { SharedModule } from "../../shared/shared.module";
 import { TopFrameComponent } from "./detail/top-frame/top-frame.component";
