@@ -8,10 +8,17 @@ import { KeyValueModel } from "src/app/auth/core/model/product.model";
 })
 export class FaqComponent implements OnInit {
   @Input() data: Array<KeyValueModel>;
-  clicked = -1;
+  // clicked = -1;
+  faqClicked:object = {};
   constructor() {}
 
   ngOnInit(): void {
     // console.log(this.data, 'faq');
+  }
+
+  handleFaqClick(i) {
+    const show = this.faqClicked[i] && this.faqClicked[i]['show'] ? false : true;
+    this.faqClicked[i] = {};
+    this.faqClicked[i]['show'] = show;
   }
 }
