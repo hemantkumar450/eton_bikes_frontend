@@ -15,4 +15,5 @@ export class PageService {
       `./assets/files/home-page.json`
     );
   }
+  
 }

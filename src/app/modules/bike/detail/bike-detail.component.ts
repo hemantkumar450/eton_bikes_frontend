@@ -1,5 +1,5 @@
 import { Component, HostListener } from "@angular/core";
-import { Product, TechSupport } from "src/app/core/model/product.model";
+import { Product, TechSupport, BuildSpecs } from "src/app/core/model/product.model";
 import { ProductService } from "src/app/core/services/product.service";
 
 @Component({
@@ -9,6 +9,7 @@ import { ProductService } from "src/app/core/services/product.service";
 })
 export class BikeDetailComponent {
   productDetail: Product;
+  buildSpecs: BuildSpecs;
   constructor(private productService: ProductService) {}
 
   @HostListener("window:scroll", ["$event"])
@@ -26,8 +27,15 @@ export class BikeDetailComponent {
 
   ngOnInit() {
     this.getProductDetail();
+    this.getProductBuildSpecs();
   }
 
+  getProductBuildSpecs() {
+    this.productService.getProductBuilds().subscribe((builds) => {
+      this.buildSpecs = builds.data;
+      console.log(this.buildSpecs, 'buuld');
+    });
+  }
   getProductDetail() {
     this.productService.getProductDetail().subscribe((product) => {
       this.productDetail = product.data;

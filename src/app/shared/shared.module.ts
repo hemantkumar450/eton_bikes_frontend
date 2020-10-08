@@ -6,6 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { CarouselModule } from "primeng/carousel";
 import { ButtonModule } from "primeng/button";
+import {DropdownModule} from 'primeng/dropdown';
+
 
 import { MatDialogModule } from "@angular/material/dialog";
 import { ModalComponent } from "./modal/modal.component";
@@ -19,6 +21,7 @@ const MODULES = [
   HttpClientModule,
   CarouselModule,
   ButtonModule,
+  DropdownModule
 ];
 const DIRECTIVES = [];
 const COMPONENTS = [];

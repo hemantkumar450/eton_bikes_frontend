@@ -54,7 +54,7 @@
       <!-- end #overview -->
 
       <!-- build_price -->
-      <app-build-price></app-build-price>
+      <app-build-price *ngIf="buildSpecs" [builds]="buildSpecs"></app-build-price>
       <!-- end #build_price -->
 
       <!-- detail_images -->
