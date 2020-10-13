@@ -7,6 +7,18 @@ import { BuildSpecs, BuildPriceItem, KeyValueModel } from 'src/app/core/model/pr
   styleUrls: ['./build-price.component.scss']
 })
 export class BuildPriceComponent implements OnInit {
+  products = [
+    {
+      id: "1000",
+      code: "f230fh0g3",
+      name: "Bamboo Watch",
+    },
+    {
+      id: "1002",
+      code: "zz21cz3c1",
+      name: "Blue Band",
+    },
+  ];
   @Input() builds:BuildSpecs[];
   selectedBuildPrice:string;
   specsClicked = 0;
