@@ -9,6 +9,22 @@ export interface TechSupport {
   warranty_and_registration: string;
 }
 
+export interface BuildPriceItem {
+  label: string,
+  value: string
+}
+export interface DetailModel {
+  name: string,
+  media: string,
+  icon: string
+}
+export interface BuildSpecs {
+  name: string,
+  description: string,
+  product: string,
+  detail: DetailModel,
+  build_specs: KeyValueModel[]
+}
 export interface Product {
   name: string;
   title: string;
