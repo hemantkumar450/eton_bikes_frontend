@@ -11,7 +11,7 @@
           class="js-tab-target gallery gallery--frame gallery--frame-detail gallery--items-13">
 
           <div class="gallery__item gallery-trigger lazypreload lazyloaded" *ngFor="let image of images; let i = index;"
-            [style.background-image]="'url(&quot;' + image + '&quot;)'" (click)="showFullImage(image, i)">
+            [style.background-image]="'url(&quot;' + filePath+image.media_link + '&quot;)'" (click)="showFullImage(image, i)">
           </div>
           <!-- <div *ngFor="let image of _albums; let i=index">
             <img [src]="image.thumb" (click)="open(i)" />

@@ -8,9 +8,9 @@
           <div id="builder-config--h1p5d" class="clearfix builder-config">
             <div class="builder-config__image" >
               <div class="builder-canvas clearfix">
-                <img src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg" />
+                <img [src]="mediaDetail.media ? path+mediaDetail.media.media_link : (mediaDetail.icon ? mediaDetail.icon.media_link : defaultImage)" default="" />
               </div>
-              <div class="builder-image-expander is-collapsed"><span class="builder-image-expander__text">Expand</span>
+              <div *ngIf="mediaDetail.media || mediaDetail.icon" class="builder-image-expander is-collapsed" (click)="showPopupImage()"><span class="builder-image-expander__text">Expand</span>
               </div>
             </div>
             <div class="builder-config__settings js-builder-config__settings--hidden">
@@ -68,10 +68,12 @@
                       <!-- react-text: 41 -->{{builds[0].name}}
                       <!-- /react-text -->
                     </li>
-                    <li class="builder-summary__item builder-summary__item--weight" *ngFor="let price of buildPriceSummmary">
+                    <ng-container *ngFor="let price of buildPriceSummmary">
+                    <li *ngIf="price.value" class="builder-summary__item builder-summary__item--weight" >
                       <span class="builder-summary__item-label">{{price.key}}</span>
                         {{price.value}}
-                    </li>                    
+                    </li>  
+                  </ng-container>                  
                   </ul>
                   <div class="builder-summary__buttons"><a
                       class="button builder-summary__button builder-summary__button--changes" href="#">Customize</a><a
@@ -105,13 +107,13 @@
             </div>
 
           </div>
-          <div id="builder-specs--h1p5d" class="builder-specs no-next-page no-next">
+          <div id="builder-specs--h1p5d" class="builder-specs" [ngClass]="{ ' no-next-page no-next' : sliderCurr === 'prev', 'no-prev-page no-prev' : sliderCurr === 'next'}">
             <div class="builder-specs__header">
               <div class="specs-header clearfix">
                 <h4 class="specs-header__title">Build Specs</h4>
               </div>
             </div>
-            <div class="builder-specs__table builder-specs__table--collapsed">
+            <div class="builder-specs__table" [ngClass]="{'builder-specs__table--collapsed' : buildSpec === 'less'}">
               <div class="specs-table clearfix">
                 <ul class="specs-table__header" style="width: 135.19px;">
                   <li data-id="kitname" class="specs-table__header-item specs-table__header-item--kitname"
@@ -119,7 +121,7 @@
                   <li data-id="price" *ngFor="let item of specsSidebar" class="specs-table__header-item specs-table__header-item--price"
                     style="height: 41px;"><span>{{item}}</span></li>                  
                 </ul>
-                <div class="specs-table__items selected--5 material--all" style="transform: translateX(-87.5048px);">            
+                <div class="specs-table__items selected--5 material--all" style="transform: translateX(-87.5048px);" [ngStyle]="{'transform' : sliderCurr === 'next' ? 'translateX(-87.5048px)' : 'translateX(135px)'}">            
                   <ng-container *ngFor="let item of specsData; let k = index">
                   <ul  class="specs-table__list-item specs-table__list-item--1363" style="width: 196.886px;" (click)="specsClicked = k" [ngClass]="{ 'selected': specsClicked == k}">
                     <li *ngFor="let ele of item; let i = index;" data-id="kitname" class="specs-table__item specs-table__item--kitname" [ngStyle]="{ 'height' : i == 0 ? '63px' : '41px'}">
@@ -131,15 +133,14 @@
             </div>
             <div class="builder-specs__footer">
               <div class="specs-prevnext"><span
-                  class="specs-prevnext__control specs-prevnext__control--prev prev">Prev</span><span
-                  class="specs-prevnext__control specs-prevnext__control--next next">Next</span>
+                  class="specs-prevnext__control specs-prevnext__control--prev prev" (click)="sliderCurr = 'next'">Prev</span><span
+                  class="specs-prevnext__control specs-prevnext__control--next next" (click)="sliderCurr = 'prev'">Next</span>
               </div>
               <div class="specs-pager"> <span class="specs-pager__item"><i>Go to
                     Page1</i></span><span class="specs-pager__item selected"><i>Go to
                     Page2</i></span>
               </div>
-              <div class="specs-expander"><span class="specs-expander__button">Show Full
-                  Specs</span></div>
+              <div class="specs-expander"><span class="specs-expander__button" (click)="shhowFullOrLess()">{{buildSpecsText}}</span></div>
             </div>
           </div>
         </div>

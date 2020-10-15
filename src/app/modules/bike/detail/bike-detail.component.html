@@ -58,7 +58,7 @@
       <!-- end #build_price -->
 
       <!-- detail_images -->
-      <app-detail-images ></app-detail-images>
+      <app-detail-images *ngIf="productDetail" [close_up_media]="productDetail.close_up_media"></app-detail-images>
       <!-- end #detail_images -->
 
       <!-- geometry -->

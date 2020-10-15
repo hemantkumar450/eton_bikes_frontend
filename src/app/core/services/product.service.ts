@@ -10,11 +10,14 @@ import { Product, BuildSpecs } from "../model/product.model";
   providedIn: "root",
 })
 export class ProductService {
+  api:string = environment.apiEndPoint;
   constructor(private http: HttpClient) {}
 
-  getProductDetail(): Observable<ApiResponse<Product>> {
+  getProductDetail(product:string = 'v10'): Observable<ApiResponse<Product>> {
+    // console.log(this.api, 'environments');
+    const path = `${this.api}customer/products/${product}`
     return this.http.get<ApiResponse<Product>>(
-      `./assets/files/productDetail.json`
+      path
     );
   }
   getProductBuilds(): Observable<ApiResponse<BuildSpecs>> {

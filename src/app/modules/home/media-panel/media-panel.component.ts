@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { section } from "src/app/core/model/page.model";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: "app-media-panel",
@@ -9,7 +10,8 @@ import { section } from "src/app/core/model/page.model";
 export class MediaPanelComponent implements OnInit {
   @Input() section: section;
   @Input() image: string = "";
-
+  path = environment.filePath;
+  noImage = environment.noImagePath;
   constructor() {}
 
   ngOnInit(): void {}

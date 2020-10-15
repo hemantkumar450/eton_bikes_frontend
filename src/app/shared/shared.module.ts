@@ -11,6 +11,7 @@ import {DropdownModule} from 'primeng/dropdown';
 
 import { MatDialogModule } from "@angular/material/dialog";
 import { ModalComponent } from "./modal/modal.component";
+import { DefaultImageDirective } from './defaultImage.directive';
 
 const MODULES = [
   CommonModule,
@@ -23,7 +24,7 @@ const MODULES = [
   ButtonModule,
   DropdownModule
 ];
-const DIRECTIVES = [];
+const DIRECTIVES = [DefaultImageDirective];
 const COMPONENTS = [];
 
 @NgModule({
