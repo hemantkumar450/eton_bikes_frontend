@@ -3,6 +3,7 @@ import {
   Component,
   OnDestroy,
   ViewChild,
+  Input,
 } from '@angular/core';
 import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 
@@ -12,7 +13,7 @@ import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
   styleUrls: ['./bike.component.scss'],
 })
 export class BikeComponent {
-
+  @Input() popupDisplay = false;
   constructor(private cdr: ChangeDetectorRef) {}
   name = 'Angular';
   slideNo = 0;
@@ -39,7 +40,10 @@ export class BikeComponent {
   ngAfterViewInit() {
     this.cdr.detectChanges();
   }
-
+  closeBikes() {
+    this.popupDisplay = false;
+  }
+  
   reset() {
     this.myCarousel.reset(!this.resetAnim);
   }

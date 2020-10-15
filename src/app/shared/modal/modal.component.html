@@ -1,10 +1,10 @@
 <span class="close" mat-button (click)="onNoClick()"></span>
 <div mat-dialog-content>
-    <div class="flex-direction-nav arrow">
+    <div class="flex-direction-nav arrow" *ngIf="!data.singleImage">
         <a class="flex-prev" (click)="showImage(prev)"></a>
         <a class="flex-next" (click)="showImage(next)" ></a>
     </div>
-    <img [src]="imageSrc"/>
+    <img [src]="path+imageSrc.media_link"/>
     
 </div>
 <!-- <h1 mat-dialog-title>Want to receive our emails?</h1> -->

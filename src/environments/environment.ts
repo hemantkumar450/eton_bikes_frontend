@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiEndPoint: "https://api.pumpumpum.com/api/v1/customer",
+  apiEndPoint: "http://148.72.208.32:5000/api/",
+  filePath: "http://148.72.208.32:5000/",
+  noImagePath: "/assets/images/default/no-image.png"
 };
 
 /*

@@ -1,10 +1,13 @@
 import { Component, OnInit, Inject, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Media } from 'src/app/core/model/product.model';
+import { environment } from 'src/environments/environment';
 
 interface DialogData {
-  src: string,
+  curr: Media,
   allImage:[],
-  index:number
+  index:number,
+  singleImage?: string
 }
 
 @Component({
@@ -14,17 +17,19 @@ interface DialogData {
   // encapsulation: ViewEncapsulation.None
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  imageSrc:string;
-  allImage:[] = [];
+  path = environment.filePath;
+  imageSrc:Media;
+  allImage:Media[];
+  // singleImage:string = '';
   prev:number;
   next:number;
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
       console.log(this.data, 'modal');
-      this.imageSrc = this.data.src;
+      this.imageSrc = this.data.curr;
       this.allImage = this.data.allImage;
-      this.calculatePrevNext(this.data.index);
+      !this.data.singleImage && this.calculatePrevNext(this.data.index);
     }
     showImage(index: number) {
       // console.log(index);
@@ -43,7 +48,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
   ngOnDestroy() {
-    this.imageSrc = '';
+    this.imageSrc = null;
     this.allImage= null;
     this.prev = null;
     this.next = null;

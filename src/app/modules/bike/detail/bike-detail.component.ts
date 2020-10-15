@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import { Component, HostListener, ViewChild, ElementRef, AfterViewInit, OnInit } from "@angular/core";
 import { Product, TechSupport, BuildSpecs } from "src/app/core/model/product.model";
 import { ProductService } from "src/app/core/services/product.service";
 import { OverviewComponent } from './overview/overview.component';
@@ -8,9 +8,9 @@ import { OverviewComponent } from './overview/overview.component';
   templateUrl: "./bike-detail.component.html",
   styleUrls: ["./bike-detail.component.scss"],
 })
-export class BikeDetailComponent {
+export class BikeDetailComponent implements OnInit{
   productDetail: Product;
-  buildSpecs: BuildSpecs;
+  buildSpecs: BuildSpecs[];
   // @ViewChild('overview') overview: OverviewComponent;
   // @ViewChild('buildprice') buildprice: ElementRef;
   // @ViewChild('detailimage') detailimage: ElementRef;
@@ -64,27 +64,28 @@ export class BikeDetailComponent {
   }
   ngOnInit() {
     this.getProductDetail();
-    this.getProductBuildSpecs();
+    // this.getProductBuildSpecs();
   }
 
-  getProductBuildSpecs() {
-    this.productService.getProductBuilds().subscribe((builds) => {
-      this.buildSpecs = builds.data;
-      console.log(this.buildSpecs, 'buuld');
-    });
-  }
+  // getProductBuildSpecs() {
+  //   this.productService.getProductBuilds().subscribe((builds) => {
+  //     this.buildSpecs = builds.data;
+  //     console.log(this.buildSpecs, 'buuld');
+  //   });
+  // }
   getProductDetail() {
     this.productService.getProductDetail().subscribe((product) => {
       this.productDetail = product.data;
-
+      this.buildSpecs = this.productDetail.sub_products
+      console.log(this.productDetail.close_up_media, 'details');
       /** TODO this will get it from APIs */
-      this.productDetail.long_shot_media = [
-        "/assets/img/files/ftwilliam19_h1d6041_1.jpg",
-        "/assets/img/files/ftwilliam19a63i0632_1.jpg",
-        "/assets/img/files/ftwilliam19bb019807_0.jpg",
-        "/assets/img/files/ftwilliam19_h1d7631_0.jpg",
-        "/assets/img/files/ftwilliam19_m1_0797_2.jpg",
-      ];
+      // this.productDetail.long_shot_media = [
+      //   "/assets/img/files/ftwilliam19_h1d6041_1.jpg",
+      //   "/assets/img/files/ftwilliam19a63i0632_1.jpg",
+      //   "/assets/img/files/ftwilliam19bb019807_0.jpg",
+      //   "/assets/img/files/ftwilliam19_h1d7631_0.jpg",
+      //   "/assets/img/files/ftwilliam19_m1_0797_2.jpg",
+      // ];
     });
   }
 }

@@ -18,19 +18,23 @@
             {
                 "key": "Weight",
                 "value": "16.59kg / 36.57lbs"
-            }
-        ]
-    },
-    {
-        "name": "V11",
-        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
-        "product": "5f7888ea6fa150400c65928a",
-        "detail": {
-            "name": "test",
-            "media": "5f789dfd4d43c734a03a3957",
-            "icon": "5f789dfd4d43c734a03a3957"
-        },
-        "build_specs": [
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
             {
                 "key": "Price",
                 "value": "$499USD"
@@ -58,6 +62,30 @@
             {
                 "key": "Weight",
                 "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
             }
         ]
     },
@@ -71,6 +99,74 @@
             "icon": "5f789dfd4d43c734a03a3957"
         },
         "build_specs": [
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            }
+        ]
+    },
+    {
+        "name": "V11",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "product": "5f7888ea6fa150400c65928a",
+        "detail": {
+            "name": "test",
+            "media": "5f789dfd4d43c734a03a3957",
+            "icon": "5f789dfd4d43c734a03a3957"
+        },
+        "build_specs": [
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
             {
                 "key": "Price",
                 "value": "$499USD"
@@ -100,5 +196,222 @@
                 "value": "12.59kg / 16.57lbs"
             }
         ]
-    }]
+    },
+    {
+        "name": "V11",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "product": "5f7888ea6fa150400c65928a",
+        "detail": {
+            "name": "test",
+            "media": "5f789dfd4d43c734a03a3957",
+            "icon": "5f789dfd4d43c734a03a3957"
+        },
+        "build_specs": [
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            }
+        ]
+    },
+    {
+        "name": "V11",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "product": "5f7888ea6fa150400c65928a",
+        "detail": {
+            "name": "test",
+            "media": "5f789dfd4d43c734a03a3957",
+            "icon": "5f789dfd4d43c734a03a3957"
+        },
+        "build_specs": [
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            }
+        ]
+    },
+    {
+        "name": "V10",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "product": "5f7888ea6fa150400c65928a",
+        "detail": {
+            "name": "test",
+            "media": "5f789dfd4d43c734a03a3957",
+            "icon": "5f789dfd4d43c734a03a3957"
+        },
+        "build_specs": [
+            {
+                "key": "Price",
+                "value": "$2999USD"
+            },
+            {
+                "key": "Weight",
+                "value": "12.59kg / 16.57lbs"
+            }
+        ]
+    },
+    {
+        "name": "V11",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "product": "5f7888ea6fa150400c65928a",
+        "detail": {
+            "name": "test",
+            "media": "5f789dfd4d43c734a03a3957",
+            "icon": "5f789dfd4d43c734a03a3957"
+        },
+        "build_specs": [
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            }
+        ]
+    },
+    {
+        "name": "V11",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "product": "5f7888ea6fa150400c65928a",
+        "detail": {
+            "name": "test",
+            "media": "5f789dfd4d43c734a03a3957",
+            "icon": "5f789dfd4d43c734a03a3957"
+        },
+        "build_specs": [
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            },
+            {
+                "key": "Price",
+                "value": "$499USD"
+            },
+            {
+                "key": "Weight",
+                "value": "17.59kg / 46.57lbs"
+            }
+        ]
+    },
+    {
+        "name": "V10",
+        "description": "The V10 is designed to be exactly the right bike for anyone who steps up to the startline with eyes on a podium. The racer who chooses a V10 is the recipient of every bit of work and puzzling that’s gone into the Syndicate’s race bikes.",
+        "product": "5f7888ea6fa150400c65928a",
+        "detail": {
+            "name": "test",
+            "media": "5f789dfd4d43c734a03a3957",
+            "icon": "5f789dfd4d43c734a03a3957"
+        },
+        "build_specs": [
+            {
+                "key": "Price",
+                "value": "$2999USD"
+            },
+            {
+                "key": "Weight",
+                "value": "12.59kg / 16.57lbs"
+            }
+        ]
+    }
+]
 }

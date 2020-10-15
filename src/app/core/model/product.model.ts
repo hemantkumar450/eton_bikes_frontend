@@ -10,20 +10,32 @@ export interface TechSupport {
 }
 
 export interface BuildPriceItem {
-  label: string,
-  value: string
+  label: string;
+  value: string;
+}
+export interface Media {
+  caption: string
+  media_type: string;
+  is_deleted: boolean;
+  _id: string;
+  name:string;
+  media_link: string;
+  added_on: string;
+  updated_on: string;
+  __v: number;
+  id: string;
 }
 export interface DetailModel {
-  name: string,
-  media: string,
-  icon: string
+  name: string;
+  media: Media;
+  icon: Media;
 }
 export interface BuildSpecs {
-  name: string,
-  description: string,
-  product: string,
-  detail: DetailModel,
-  build_specs: KeyValueModel[]
+  name: string;
+  description: string;
+  product: string;
+  detail: DetailModel;
+  build_specs: KeyValueModel[];
 }
 export interface Product {
   name: string;
@@ -31,11 +43,12 @@ export interface Product {
   description: string;
   features: KeyValueModel[];
   slug: string;
-  close_up_media: Array<object>;
-  long_shot_media: string[];
+  close_up_media: Media[];
+  long_shot_media: Media[];
   media_urls: Media[];
   geometry: Geometry[];
   tech_support: TechSupport;
+  sub_products: BuildSpecs[];
   is_deleted: boolean;
 }
 

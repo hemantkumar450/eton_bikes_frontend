@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, ViewChild, OnInit } from "@angular/core";
 import { NguCarousel, NguCarouselConfig } from "@ngu/carousel";
 import { PageModal } from "src/app/core/model/page.model";
 import { PageService } from "src/app/core/services/page.service";
@@ -8,7 +8,7 @@ import { PageService } from "src/app/core/services/page.service";
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   page: PageModal;
   constructor(
     private cdr: ChangeDetectorRef,

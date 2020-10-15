@@ -317,11 +317,11 @@
             <aside class="geometry__toggles">
               <div class="toggle">
                 <span class="toggle__label">Show: </span>
-                <span class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m" data-measure="m">
+                <span class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m measure-toggle--i js-toggle__option--active" data-measure="m">
                   <a class="toggle__option-link" href="#">cm</a>
                 </span>
                 <span
-                  class="toggle__option toggle__option--aluminium measure-toggle measure-toggle--i js-toggle__option--active"
+                  class="toggle__option toggle__option--aluminium measure-toggle "
                   data-measure="i">
                   <a class="toggle__option-link" href="#">in</a>
                 </span>
@@ -332,7 +332,7 @@
               <div class="geometry_size__record geometry_size-1 " [ngClass]="{'geometry_size--active': viewMode == i}">
                 <div class="size-chart">
                   <ng-container *ngFor="let frame of item.frame_size; let k =  index;">
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">{{frame.key}}</strong>
+                  <div class="size-chart__size"><strong class="label size-chart__line-label">{{frame.key === 'small' ? 'S' : frame.key === 'large' ? 'L' : 'M'}}</strong>
                     <div class="size-chart__line-contents">
                       <div class="size-chart__line-item" [ngStyle]="getFrameSizeStyle(frame)" [attr.data-size]="frame.key">
                         <span class="num min measure measure-i">{{frame.from}}"</span>
@@ -431,5 +431,4 @@
       </div>
     </div>
   </section>
-
 </div>

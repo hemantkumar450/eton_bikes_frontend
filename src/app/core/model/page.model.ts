@@ -1,3 +1,5 @@
+import { Media } from './product.model';
+
 export interface PageModal {
   name: string;
   heading: string;
@@ -14,7 +16,7 @@ export interface section {
   media_side: string;
   redirect_detail: RedirectDetail[];
   content: string;
-  medias: string[];
+  medias: Media[];
   sectionType: string;
 }
 

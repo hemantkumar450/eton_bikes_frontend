@@ -1,16 +1,17 @@
 <main id="main" role="main">
   <div class="region region-content">
-    <div *ngFor="let section of page.sections;let index= index">
-      <app-banner *ngIf="section.sectionType == 'banner'" [section]="section"></app-banner>
+    <ng-container *ngIf="page">
+      <div *ngFor="let section of page.sections;let index= index">
+        <app-banner *ngIf="section.sectionType == 'banner'" [section]="section"></app-banner>
 
-      <app-media-panel *ngIf="section.sectionType == 'media_panel'"
-        image="/assets/img/kep_181023_sbts_trailcrew_1685_web.jpg" [section]="section"></app-media-panel>
+        <app-media-panel *ngIf="section.sectionType == 'media_panel'" [section]="section"></app-media-panel>
 
-      <app-product-brief *ngIf="section.sectionType == 'api_call'"></app-product-brief>
+        <app-product-brief *ngIf="section.sectionType == 'api_call'"></app-product-brief>
 
-      <app-slider *ngIf="section.sectionType == 'slider'"></app-slider>
+        <app-slider *ngIf="section.sectionType == 'slider'" [section]="section"></app-slider>
 
-      <app-social-media *ngIf="section.sectionType == 'social_media'"></app-social-media>
-    </div>
+        <app-social-media *ngIf="section.sectionType == 'social_media'"></app-social-media>
+      </div>
+    </ng-container>
   </div>
 </main>

@@ -49,7 +49,7 @@
     <div class="l-wrapper">
       <div class="gallery gallery--frame gallery--frame-overview gallery--items-5">
         <div class="gallery__item gallery-trigger lazypreload lazyloaded" *ngFor="let image of overview.long_shot_media; let i = index;"
-          [style.background-image]="'url(&quot;' + image + '&quot;)'" (click)="showFullImage(image, i)">
+          [style.background-image]="'url(&quot;' + path+image.media_link + '&quot;)'" (click)="showFullImage(image, i)">
         </div>
       </div>
     </div>
