@@ -74,27 +74,27 @@
       <div class="product-explorer pex-toggle-processed">
         <div class="l-wrapper">
           <div class="product-explorer__image-wrapper" [ngSwitch]="exLineup">
-            <div *ngFor="let bike of bikes; let index = index">
+            <div *ngFor="let bike of productBrief; let index = index">
               <a href="/en-US/bikes/v10" *ngSwitchCase="index"><img lass=" lazyloaded" alt="Eton Bicycles"
-                  [src]="bike.image_url"></a>
+                  default="" [src]="bike?.media?.url || noImage "></a>
             </div>
           </div>
 
           <div class="product-explorer__text-wrapper">
             <ul>
-              <li *ngFor="let bike of bikes; let index= index" class="product-explorer__item"
+              <li *ngFor="let bike of productBrief; let index= index" class="product-explorer__item"
               [class.js-product-explorer--inactive]="exLineup !== index"
                 [class.js-product-explorer--active]="exLineup == index" rel="tab1" (click)="onBikeChangeEvent(index, 'onClick')">
                 <div class="product-explorer__image">
                   <a href="/en-US/bikes/v10"><img data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles" [src]="bike.image_url"></a>
+                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles" [src]="bike?.media?.url || noImage" default=""></a>
                 </div>
                 <div class="product-explorer__title" (click)="exLineup = index">
                   {{bike.name}} -- {{exLineup}}
                   <span class="product-explorer__tag" *ngIf="bike.is_new">New </span>
                 </div>
                 <div class="product-explorer__details-container">
-                  <div class="product-explorer__description">{{bike.description}}
+                  <div class="product-explorer__description" [innerHTML]="bike.description | slice: 0: 50">
                   </div>
                   <div class="product-explorer__buttons">
                     <a href="/en-US/bikes/v10" class="btn-primary">More Info</a>

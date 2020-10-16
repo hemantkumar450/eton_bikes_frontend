@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 import { ApiResponse } from "../model/api-response.model";
-import { Product, BuildSpecs } from "../model/product.model";
+import { Product, BuildSpecs, Products } from "../model/product.model";
 
 @Injectable({
   providedIn: "root",
@@ -17,6 +17,12 @@ export class ProductService {
     // console.log(this.api, 'environments');
     const path = `${this.api}customer/products/${product}`
     return this.http.get<ApiResponse<Product>>(
+      path
+    );
+  }
+  getProducts() : Observable<ApiResponse<Products>>{
+    const path = `${this.api}customer/products`;
+    return this.http.get<ApiResponse<Products>>(
       path
     );
   }

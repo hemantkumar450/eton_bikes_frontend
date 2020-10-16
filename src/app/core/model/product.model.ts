@@ -57,6 +57,11 @@ export interface Media {
   url: string;
 }
 
+export interface Products {
+  products: Product[],
+  totalRecords: number
+}
+
 export interface Geometry {
   key: string;
   high: Measure[];
