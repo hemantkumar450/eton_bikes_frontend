@@ -4,21 +4,17 @@
       <section class="hero-panel hero-panel--text-left  hero-panel--no-text hero-panel--image" style="display: block;">
         <div class="hero-panel__inner">
           <picture>
-            <img data-src="/assets/img/hero/my21_hero_v10_mx.jpg?itok=X_NHnVKY" class=" lazyloaded"
-              alt="Eton Bicycles v10 mx" title="v10 mx" src="/assets/img/hero/my21_hero_v10_mx.jpg?itok=X_NHnVKY">
+            <img class=" lazyloaded" title="v10 mx" [src]="imageUrl">
           </picture>
         </div>
       </section>
     </div>
     <div class="frame-hero__swatches fixedBottom">
       <div class="swatches swatches--full">
-        <div class="swatch js-swatch--selected" style="background-color: #362A2E"><span class="swatch__inner">MY21
-            Oxblood</span><span class="swatch__decal" style="border-bottom-color: #d6d2c4"> &amp; MY21 Fog</span>
+        <div *ngFor="let media of bannerImages;let index = index" class="swatch" style="background-color: #3B393A"
+          (click)="onImageChangeEvent(media)">
+          <span class="swatch__inner">{{index}}</span>
         </div>
-        <div class="swatch" style="background-color: #3B393A"><span class="swatch__inner">MY21 Matte
-            Carbon</span></div>
-        <div class="swatch" style="background-color: #979590"><span class="swatch__inner">MY21
-            Battleship Grey</span></div>
       </div>
     </div>
   </div>

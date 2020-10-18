@@ -66,7 +66,7 @@
                           <ng-container *ngFor="let high of item.high; let j = index;">
                             <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
                               <td class="geometry-table__item-icon"><span
-                                  class="geom-table-icon geom-table-icon--A">{{ j + 1}}</span>
+                                  class="geom-table-icon geom-table-icon--A">{{ high.order}}</span>
                               </td>
                               <td class="label geometry-table__item-label">
                                 {{high.key.name}}</td>
@@ -88,68 +88,7 @@
                       </table>
                     </div>
                     <div class="geometry-detail__image">
-                      <div class="geometry-table__interactive-image"><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                            data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerreach"
-                            src="/assets/img/interactive/reach.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                            data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerstack"
-                            src="/assets/img/interactive/stack.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                            data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerheadtubean"
-                            src="/assets/img/interactive/headtubean.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                            data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerseattubelen"
-                            src="/assets/img/interactive/seattubelen.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                            data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerfrontcenter"
-                            src="/assets/img/interactive/frontcenter.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                            data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerbbheight"
-                            src="/assets/img/interactive/bbheight.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                            data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerbbdrop"
-                            src="/assets/img/interactive/bbdrop.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                            data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerwheelbase"
-                            src="/assets/img/interactive/wheelbase.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                            data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerchainstay"
-                            src="/assets/img/interactive/chainstay.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                            data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerheadtubelen"
-                            src="/assets/img/interactive/headtubelen.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                            data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layertoptube"
-                            src="/assets/img/interactive/toptube.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                            data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerseattubean"
-                            src="/assets/img/interactive/seattubean.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                            data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerstandover"
-                            src="/assets/img/interactive/standover.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                            data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layereyetoeye"
-                            src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                            data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerbase"
-                            src="/assets/img/interactive/base.png?new=true"></span>
-                      </div>
+                      <app-geometry-image></app-geometry-image>
                     </div>
                   </div>
                 </div>
@@ -178,7 +117,7 @@
                             <tr class="geom-table-row geom-table-row--reach" [ngClass]="{odd:odd, even: even}"
                               data-id="reach">
                               <td class="geometry-table__item-icon"><span
-                                  class="geom-table-icon geom-table-icon--A">{{ j + 1}}</span>
+                                  class="geom-table-icon geom-table-icon--A">{{ low.order}}</span>
                               </td>
                               <td class="label geometry-table__item-label">
                                 {{low.key.name}}</td>
@@ -196,108 +135,12 @@
                               </td>
                             </tr>
                           </ng-container>
-                          <!-- <tr class="geom-table-row geom-table-row--seatpostlength geom-table-row--empty even"
-                            data-id="seatpostlength">
-                            <td class="geometry-table__item-icon"></td>
-                            <td class="label geometry-table__item-label">
-                              Seatpost Length</td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                          </tr>
-                          <tr class="geom-table-row geom-table-row--stemlength geom-table-row--empty odd"
-                            data-id="stemlength">
-                            <td class="geometry-table__item-icon"></td>
-                            <td class="label geometry-table__item-label">
-                              Stem Length</td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                          </tr>
-                          <tr class="geom-table-row geom-table-row--cranklength geom-table-row--empty even"
-                            data-id="cranklength">
-                            <td class="geometry-table__item-icon"></td>
-                            <td class="label geometry-table__item-label">
-                              Crank Length</td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                            <td class="value geometry-table__item-value">
-                            </td>
-                          </tr> -->
+
                         </tbody>
                       </table>
                     </div>
                     <div class="geometry-detail__image">
-                      <div class="geometry-table__interactive-image"><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--reach"><img
-                            data-src="/assets/img/interactive/reach.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerreach"
-                            src="/assets/img/interactive/reach.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--stack"><img
-                            data-src="/assets/img/interactive/stack.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerstack"
-                            src="/assets/img/interactive/stack.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubean"><img
-                            data-src="/assets/img/interactive/headtubean.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerheadtubean"
-                            src="/assets/img/interactive/headtubean.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubelen"><img
-                            data-src="/assets/img/interactive/seattubelen.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerseattubelen"
-                            src="/assets/img/interactive/seattubelen.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--frontcenter"><img
-                            data-src="/assets/img/interactive/frontcenter.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerfrontcenter"
-                            src="/assets/img/interactive/frontcenter.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbheight"><img
-                            data-src="/assets/img/interactive/bbheight.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerbbheight"
-                            src="/assets/img/interactive/bbheight.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--bbdrop"><img
-                            data-src="/assets/img/interactive/bbdrop.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerbbdrop"
-                            src="/assets/img/interactive/bbdrop.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--wheelbase"><img
-                            data-src="/assets/img/interactive/wheelbase.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerwheelbase"
-                            src="/assets/img/interactive/wheelbase.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--chainstay"><img
-                            data-src="/assets/img/interactive/chainstay.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerchainstay"
-                            src="/assets/img/interactive/chainstay.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--headtubelen"><img
-                            data-src="/assets/img/interactive/headtubelen.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerheadtubelen"
-                            src="/assets/img/interactive/headtubelen.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--toptube"><img
-                            data-src="/assets/img/interactive/toptube.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layertoptube"
-                            src="/assets/img/interactive/toptube.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--seattubean"><img
-                            data-src="/assets/img/interactive/seattubean.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerseattubean"
-                            src="/assets/img/interactive/seattubean.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--standover"><img
-                            data-src="/assets/img/interactive/standover.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerstandover"
-                            src="/assets/img/interactive/standover.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--eyetoeye"><img
-                            data-src="/assets/img/interactive/eyetoeye.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layereyetoeye"
-                            src="/assets/img/interactive/eyetoeye.png?new=true"></span><span
-                          class="geometry-table__interactive-layer geometry-table__interactive-layer--base"><img
-                            data-src="/assets/img/interactive/base.png?new=true" class=" lazyloaded"
-                            alt="Geometry Illustration Layerbase"
-                            src="/assets/img/interactive/base.png?new=true"></span>
-                      </div>
+                      <app-geometry-image></app-geometry-image>
                     </div>
                   </div>
                 </div>
@@ -317,12 +160,12 @@
             <aside class="geometry__toggles">
               <div class="toggle">
                 <span class="toggle__label">Show: </span>
-                <span class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m measure-toggle--i js-toggle__option--active" data-measure="m">
+                <span
+                  class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m measure-toggle--i js-toggle__option--active"
+                  data-measure="m">
                   <a class="toggle__option-link" href="#">cm</a>
                 </span>
-                <span
-                  class="toggle__option toggle__option--aluminium measure-toggle "
-                  data-measure="i">
+                <span class="toggle__option toggle__option--aluminium measure-toggle " data-measure="i">
                   <a class="toggle__option-link" href="#">in</a>
                 </span>
               </div>
@@ -332,99 +175,21 @@
               <div class="geometry_size__record geometry_size-1 " [ngClass]="{'geometry_size--active': viewMode == i}">
                 <div class="size-chart">
                   <ng-container *ngFor="let frame of item.frame_size; let k =  index;">
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">{{frame.key === 'small' ? 'S' : frame.key === 'large' ? 'L' : 'M'}}</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" [ngStyle]="getFrameSizeStyle(frame)" [attr.data-size]="frame.key">
-                        <span class="num min measure measure-i">{{frame.from}}"</span>
-                        <span
-                          class="num min measure measure-m">155</span><span class="divider">&nbsp;—&nbsp;</span>
-                          <span
-                          class="num max measure measure-i">{{frame.to}}"</span><span
-                          class="num max measure measure-m">168cm</span>
+                    <div class="size-chart__size"><strong
+                        class="label size-chart__line-label">{{frame.key === 'small' ? 'S' : frame.key === 'large' ? 'L' : 'M'}}</strong>
+                      <div class="size-chart__line-contents">
+                        <div class="size-chart__line-item" [ngStyle]="getFrameSizeStyle(frame)"
+                          [attr.data-size]="frame.key">
+                          <span class="num min measure measure-i">{{frame.from}}"</span>
+                          <span class="num min measure measure-m">155</span><span class="divider">&nbsp;—&nbsp;</span>
+                          <span class="num max measure measure-i">{{frame.to}}"</span><span
+                            class="num max measure measure-m">168cm</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" style="width: 38.461538461538%; margin-left: 38.461538461538%"
-                        data-size="M"><span class="num min measure measure-i">5'6"</span><span
-                          class="num min measure measure-m">168</span><span class="divider">&nbsp;—&nbsp;</span><span
-                          class="num max measure measure-i">5'10"</span><span
-                          class="num max measure measure-m">178cm</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" style="width: 38.461538461538%; margin-left: 61.538461538462%"
-                        data-size="L"><span class="num min measure measure-i">5'9"</span><span
-                          class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
-                          class="num max measure measure-i">6'1"</span><span
-                          class="num max measure measure-m">185cm</span>
-                      </div>
-                    </div>
-                  </div> -->
-                </ng-container>
+                  </ng-container>
                 </div>
               </div>
-              <!-- <div class="geometry_size__record geometry_size-2 geometry_size--active">
-                <div class="size-chart">
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" style="width: 36.363636363636%; margin-left: 0%" data-size="M">
-                        <span class="num min measure measure-i">5'7"</span><span
-                          class="num min measure measure-m">170</span><span class="divider">&nbsp;—&nbsp;</span><span
-                          class="num max measure measure-i">5'10"</span><span
-                          class="num max measure measure-m">178cm</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" style="width: 45.454545454545%; margin-left: 18.181818181818%"
-                        data-size="L"><span class="num min measure measure-i">5'9"</span><span
-                          class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
-                          class="num max measure measure-i">6'1"</span><span
-                          class="num max measure measure-m">185cm</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">XL</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" style="width: 45.454545454545%; margin-left: 54.545454545455%"
-                        data-size="XL"><span class="num min measure measure-i">6'1"</span><span
-                          class="num min measure measure-m">185</span><span class="divider">&nbsp;—&nbsp;</span><span
-                          class="num max measure measure-i">6'5"</span><span
-                          class="num max measure measure-m">196cm</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="geometry_size__record geometry_size-3 geometry_size--active">
-                <div class="size-chart">
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">M</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" style="width: 57.142857142857%; margin-left: 0%" data-size="M">
-                        <span class="num min measure measure-i">5'7"</span><span
-                          class="num min measure measure-m">170</span><span class="divider">&nbsp;—&nbsp;</span><span
-                          class="num max measure measure-i">5'10"</span><span
-                          class="num max measure measure-m">178cm</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="size-chart__size"><strong class="label size-chart__line-label">L</strong>
-                    <div class="size-chart__line-contents">
-                      <div class="size-chart__line-item" style="width: 71.428571428571%; margin-left: 28.571428571429%"
-                        data-size="L"><span class="num min measure measure-i">5'9"</span><span
-                          class="num min measure measure-m">175</span><span class="divider">&nbsp;—&nbsp;</span><span
-                          class="num max measure measure-i">6'1"</span><span
-                          class="num max measure measure-m">185cm</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
         </ng-container>
