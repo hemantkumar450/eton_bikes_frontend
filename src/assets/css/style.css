@@ -13896,6 +13896,10 @@ body.js-alert-header--active .alert-header {
   top: 17px;
 }
 
+.product-explorer__image-wrapper a > img {
+  margin-bottom: 50px;
+}
+
 .product-explorer__image-wrapper .product-explorer__image {
   margin-left: 0;
 }
