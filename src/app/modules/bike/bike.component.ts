@@ -4,6 +4,8 @@ import {
   OnDestroy,
   ViewChild,
   Input,
+  EventEmitter,
+  Output,
 } from '@angular/core';
 import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 
@@ -32,6 +34,7 @@ export class BikeComponent {
   carouselItems = [1, 2, 3];
 
   exLineup = 'tab1';
+  @Output() handleToggleCondition = new EventEmitter<boolean>();
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {}
@@ -42,13 +45,17 @@ export class BikeComponent {
   }
   closeBikes() {
     this.popupDisplay = false;
+    this.handleToggleCondition.emit(false);
   }
-  
   reset() {
     this.myCarousel.reset(!this.resetAnim);
   }
 
   moveTo(slide) {
     this.myCarousel.moveTo(slide, !this.withAnim);
+  }
+  handleItemClick() {
+    this.popupDisplay = false;
+    this.handleToggleCondition.emit(false);
   }
 }

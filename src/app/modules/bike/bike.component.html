@@ -2,7 +2,7 @@
 <div class="nav-dropdown__display-container" id="nav-dropdown__bike_menu" *ngIf="popupDisplay" [ngClass]="popupDisplay ? 'js-nav-link--is-active' : ''">
     <div class="nav-header">
         <div class="nav-header__inner">
-            <div class="nav-header__link"><a (click)="popupDisplay = false" routerLink="#">See All Bikes</a></div>
+            <div class="nav-header__link"><a (click)="handleItemClick()" routerLink="#">See All Bikes</a></div>
             <div class="nav-header__close" (click)="closeBikes()">
                 <svg id="close--small" viewBox="0 0 512 512">
                     <title>Close</title>
@@ -25,7 +25,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="/bike/detail/V10">
+                                                (click)="handleItemClick()" routerLink="/bike/detail/V10">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -52,7 +52,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                            (click)="popupDisplay = false" routerLink="/bike/detail/Nomad">
+                                            (click)="handleItemClick()" routerLink="/bike/detail/Nomad">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -79,7 +79,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                            (click)="popupDisplay = false" routerLink="/bike/detail/Heckler">
+                                            (click)="handleItemClick()" routerLink="/bike/detail/Heckler">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -106,7 +106,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="/bike/detail/Bronson">
+                                            (click)="handleItemClick()" routerLink="/bike/detail/Bronson">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -133,7 +133,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="/bike/detail/5010">
+                                            (click)="handleItemClick()" routerLink="/bike/detail/5010">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -165,7 +165,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="/bike/detail/V10">
+                                                (click)="handleItemClick()" routerLink="/bike/detail/V10">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -192,7 +192,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                            (click)="popupDisplay = false" routerLink="/bike/detail/Megatower">
+                                            (click)="handleItemClick()" routerLink="/bike/detail/Megatower">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -220,7 +220,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                            (click)="popupDisplay = false" routerLink="/bike/detail/Hightower">
+                                            (click)="handleItemClick()" routerLink="/bike/detail/Hightower">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -248,7 +248,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                            (click)="popupDisplay = false" routerLink="/bike/detail/Tallboy">
+                                            (click)="handleItemClick()" routerLink="/bike/detail/Tallboy">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -275,7 +275,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="#">
+                                                (click)="handleItemClick()" routerLink="#">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -302,7 +302,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="#">
+                                                (click)="handleItemClick()" routerLink="#">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -329,7 +329,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="#">
+                                                (click)="handleItemClick()" routerLink="#">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -362,7 +362,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="#">
+                                                (click)="handleItemClick()" routerLink="#">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -392,7 +392,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="#">
+                                                (click)="handleItemClick()" routerLink="#">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -419,7 +419,7 @@
                                     <li class="bike-dd__list-item">
                                         <div class="polaroid-horizontal">
                                             <a class="polaroid-horizontal__link"
-                                                (click)="popupDisplay = false" routerLink="#">
+                                                (click)="handleItemClick()" routerLink="#">
                                                 <div class="polaroid-horizontal__image">
                                                     <picture>
                                                         <source
@@ -469,7 +469,7 @@
                                             <div class="feature-block__text-container">
                                                 <h2 class="feature-block__title">Get Creative With Your
                                                     Surroundings</h2>
-                                                <a (click)="popupDisplay = false" routerLink="#"
+                                                <a (click)="handleItemClick()" routerLink="#"
                                                     class="feature-block__cta">See the new 5010 </a>
                                             </div>
                                         </section>
@@ -481,17 +481,17 @@
 
 
 
-                            </div><a (click)="popupDisplay = false" routerLink="#" class="btn-primary dealer-link"
+                            </div><a (click)="handleItemClick()" routerLink="#" class="btn-primary dealer-link"
                                 data-gtm_context="bikes">Find Your Local Dealer</a>
                         </div>
                         <div class="nav-dropdown__bikes-extra-item bikes-extra-item__support">
                             <h1 class="bikes-extra-item__support-title">Demo &amp; Support</h1>
                             <ul class="bikes-extra-item__support-list">
-                                <li class="first"><a (click)="popupDisplay = false" routerLink="#">Factory Demo</a></li>
-                                <li><a (click)="popupDisplay = false" routerLink="#">Demo Tour</a></li>
-                                <li><a (click)="popupDisplay = false" routerLink="#">Bike Archive</a></li>
-                                <li><a (click)="popupDisplay = false" routerLink="#">Warranty</a></li>
-                                <li class="last"><a (click)="popupDisplay = false" routerLink="#">Tech Support</a></li>
+                                <li class="first"><a (click)="handleItemClick()" routerLink="#">Factory Demo</a></li>
+                                <li><a (click)="handleItemClick()" routerLink="#">Demo Tour</a></li>
+                                <li><a (click)="handleItemClick()" routerLink="#">Bike Archive</a></li>
+                                <li><a (click)="handleItemClick()" routerLink="#">Warranty</a></li>
+                                <li class="last"><a (click)="handleItemClick()" routerLink="#">Tech Support</a></li>
                             </ul>
 
 

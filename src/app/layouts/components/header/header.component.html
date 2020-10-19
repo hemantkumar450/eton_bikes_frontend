@@ -12,7 +12,7 @@
 
       <nav class="nav-links" role="navigation">
           <ul class="nav-links__list">
-              <li class="nav-links__item first"><a 
+              <li class="nav-links__item first"><a href="javascript:void(0);"
                       class="nav-links__item-link nav-dropdown__bike_menu" (click)="showBikes()">Bikes</a></li>
               <li class="nav-links__item"><a href="#"
                       class="nav-links__item-link nav-dropdown__components_menu">Wheels</a></li>
@@ -96,7 +96,7 @@
 
 <div id="nav_dropdowns">
 
-    <app-bike [popupDisplay]="bike_menu"></app-bike>
+    <app-bike [popupDisplay]="bike_menu" (handleToggleCondition)="handleToggleCondition($event)"></app-bike>
 
 </div>
 
