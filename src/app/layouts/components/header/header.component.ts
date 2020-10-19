@@ -8,26 +8,23 @@ import { AuthService } from "src/app/core/services/auth.service";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-
-  
   public bike_menu: boolean = false;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {}
 
-  showBikes(){
-    console.log(this.bike_menu, 'toggle ');
+  showBikes() {
+    console.log(this.bike_menu, "toggle ");
     this.bike_menu = !this.bike_menu;
   }
 
   handleToggleCondition(data) {
-    console.log(data, 'received form nav bar');
+    console.log(data, "received form nav bar");
     this.bike_menu = data;
-  }  
-
-  openLoginModal() {
-    this.authService.openAuthDialog(AuthType.LOGIN);
   }
 
+  openLoginModal() {
+    // this.authService.openAuthDialog(AuthType.LOGIN);
+  }
 }
