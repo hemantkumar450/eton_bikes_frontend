@@ -41,11 +41,38 @@ p {
   border-radius: 0;
   box-shadow: none;
   padding: 0;
-  color: #888;    
+  color: #888;
 }
 
 .forget-link {
   position: relative;
   text-align: right;
   top: -20px;
+}
+
+
+
+button,
+input[type='reset'],
+input[type='button'],
+input[type='submit'] {
+  /* display: inline-block;  */
+  /* padding: .875rem 1.625rem .8125rem; */
+  /* cursor: pointer; */
+  /* font-size: .6875rem; */
+  /* font-weight: 700; */
+  /* color: #fff; */
+  /* text-transform: uppercase; */
+  /* border: none; */
+  /* border-radius: 0; */
+  /* outline: none; */
+  /* -webkit-appearance: none; */
+  /* position: relative; */
+  /* -webkit-transform: perspective(1px) translateZ(0); */
+  /* transform: perspective(1px) translateZ(0); */
+  /* background-color: #e5001c; */
+  /* color: #fff; */
+  /* margin-right: .8125rem; */
+  /* margin-bottom: .8125rem; */
+  /* transition: background-color .15s;*/
 }

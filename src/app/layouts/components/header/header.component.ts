@@ -21,4 +21,5 @@ export class HeaderComponent {
   openLoginModal() {
     this.authService.openAuthDialog(AuthType.LOGIN);
   }
+
 }

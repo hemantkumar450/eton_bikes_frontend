@@ -7,6 +7,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { CarouselModule } from "primeng/carousel";
 import { ButtonModule } from "primeng/button";
 import { DropdownModule } from "primeng/dropdown";
+import { DialogModule } from "primeng/dialog";
 
 import { MatDialogModule } from "@angular/material/dialog";
 import { ModalComponent } from "./modal/modal.component";
@@ -17,11 +18,14 @@ import { AuthDialogComponent } from "./components/auth-dialog/auth-dialog.compon
 import { InputValidationComponent } from "./components/input-validator/input-validation.component";
 import { LoginFormComponent } from "./components/login-form/login-form.component";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { ForgotPasswordFormComponent } from "./components/forgot-password-form/forgot-password-form.component";
+import { RegisterFormComponent } from "./components/register-form/register-form.component";
 
 const MODULES = [
   CommonModule,
   FormsModule,
   MatDialogModule,
+  DialogModule,
   ReactiveFormsModule,
   NguCarouselModule,
   HttpClientModule,
@@ -34,6 +38,8 @@ const COMPONENTS = [
   InputValidationComponent,
   AuthDialogComponent,
   LoginFormComponent,
+  ForgotPasswordFormComponent,
+  RegisterFormComponent,
 ];
 
 @NgModule({
