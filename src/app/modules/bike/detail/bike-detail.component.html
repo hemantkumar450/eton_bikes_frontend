@@ -2,7 +2,7 @@
 
   <div class="region region-content">
 
-    <app-top-frame></app-top-frame>
+    <app-top-frame [bannerImages]='bannerImages'></app-top-frame>
 
     <div id="frame_page" class="tab-accordion-processed" (scroll)="onWindowScroll($event);">
 
@@ -16,22 +16,32 @@
             <nav class="secondary-navigation__scroll-nav">
               <nav class="scroll-toggle">
                 <ul>
-                  <li class="scroll-toggle__option scroll-toggle__option--overview" [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 1}">
-                    <a href="javascript:void(0);" (click)="scrollToElement('overview')" class="toggle__option-link">Overview</a>
+                  <li class="scroll-toggle__option scroll-toggle__option--overview"
+                    [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 1}">
+                    <a href="javascript:void(0);" (click)="scrollToElement('overview')"
+                      class="toggle__option-link">Overview</a>
                   </li>
-                  <li class="scroll-toggle__option scroll-toggle__option--build" [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 2}">
-                    <a href="javascript:void(0);" class="toggle__option-link" (click)="scrollToElement('build_price')">Build &amp;
+                  <li class="scroll-toggle__option scroll-toggle__option--build"
+                    [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 2}">
+                    <a href="javascript:void(0);" class="toggle__option-link"
+                      (click)="scrollToElement('build_price')">Build &amp;
                       Price</a>
                   </li>
-                  <li class="scroll-toggle__option scroll-toggle__option--images" [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 3}">
-                    <a href="javascript:void(0);" (click)="scrollToElement('detail_images')" class="toggle__option-link">Detail
+                  <li class="scroll-toggle__option scroll-toggle__option--images"
+                    [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 3}">
+                    <a href="javascript:void(0);" (click)="scrollToElement('detail_images')"
+                      class="toggle__option-link">Detail
                       Images</a>
                   </li>
-                  <li class="scroll-toggle__option scroll-toggle__option--geometry" [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 4}">
-                    <a href="javascript:void(0);" (click)="scrollToElement('geometry')" class="toggle__option-link">Geometry</a>
+                  <li class="scroll-toggle__option scroll-toggle__option--geometry"
+                    [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 4}">
+                    <a href="javascript:void(0);" (click)="scrollToElement('geometry')"
+                      class="toggle__option-link">Geometry</a>
                   </li>
-                  <li class="scroll-toggle__option scroll-toggle__option--support" [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 5}">
-                    <a href="javascript:void(0);" (click)="scrollToElement('tech_support')" class="toggle__option-link">Tech Support</a>
+                  <li class="scroll-toggle__option scroll-toggle__option--support"
+                    [ngClass]="{'js-scroll-toggle__option--active' : currentActive == 5}">
+                    <a href="javascript:void(0);" (click)="scrollToElement('tech_support')"
+                      class="toggle__option-link">Tech Support</a>
                   </li>
                 </ul>
               </nav>
@@ -49,12 +59,12 @@
       </section>
 
       <!-- overview -->
-      <app-overview  *ngIf="productDetail" [overview]="productDetail">
+      <app-overview *ngIf="productDetail" [overview]="productDetail">
       </app-overview>
       <!-- end #overview -->
 
       <!-- build_price -->
-      <app-build-price  *ngIf="buildSpecs" [builds]="buildSpecs"></app-build-price>
+      <app-build-price *ngIf="buildSpecs" [builds]="buildSpecs"></app-build-price>
       <!-- end #build_price -->
 
       <!-- detail_images -->
@@ -62,11 +72,11 @@
       <!-- end #detail_images -->
 
       <!-- geometry -->
-      <app-geometry  *ngIf="productDetail" [data]="productDetail.geometry"></app-geometry>
+      <app-geometry *ngIf="productDetail" [data]="productDetail.geometry"></app-geometry>
       <!-- end #geometry -->
 
       <!-- tech_support -->
-      <app-tech-support  *ngIf="productDetail" [techSupport]="productDetail.tech_support"></app-tech-support>
+      <app-tech-support *ngIf="productDetail" [techSupport]="productDetail.tech_support"></app-tech-support>
       <!-- end #tech_support -->
     </div>
   </div>

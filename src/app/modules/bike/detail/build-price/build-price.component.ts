@@ -3,7 +3,7 @@ import { BuildSpecs, BuildPriceItem, KeyValueModel, DetailModel } from 'src/app/
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/shared/modal/modal.component';
 import { environment } from 'src/environments/environment';
-
+const defaultSliderData = 6;
 @Component({
   selector: 'app-build-price',
   templateUrl: './build-price.component.html',
@@ -36,6 +36,9 @@ export class BuildPriceComponent implements OnInit {
   specsSidebar:string[];
   specsData = [];
   mediaDetail:DetailModel = null;
+  sliderValue = 0;
+  rightSlider = 0;
+  totalSlider = 0;
   ngOnInit(): void {
     // this.builds[0]
     
@@ -49,6 +52,7 @@ export class BuildPriceComponent implements OnInit {
     console.log(this.buildPriceItems, 'bu')
     this.createBuildPriceSummary(this.builds[0].name);
     this.generateBuildSpecs();
+    this.sliderValue = this.sliderCurr === 'next' ? -87.5048 : 135;
   }
 
   generateBuildSpecs() {
@@ -62,7 +66,8 @@ export class BuildPriceComponent implements OnInit {
       })
       this.specsData.push(temp);
     });
-    console.log(this.specsSidebar, this.specsData);
+    this.totalSlider = this.specsData.length > defaultSliderData ? this.specsData.length - defaultSliderData : 0;
+    // console.log(this.specsData, 'specs DAta');
   }
   handleBuildPrice(e: Event) {
     this.createBuildPriceSummary(this.selectedBuildPrice);
@@ -96,8 +101,25 @@ export class BuildPriceComponent implements OnInit {
     this.buildSpecsText = this.buildSpec === 'less' ? 'Show Full Specs' : 'Show Less';
   }
   buildSpecSlide(curr: string) {
-    
   }
-
-
+  handleSliderLeftClick() {    
+    this.rightSlider -= 1;
+    if (this.rightSlider === 0) {
+      this.sliderValue += 100;
+    } else {
+      this.sliderValue += 200
+    }
+    this.specsClicked -= 1;
+    // console.log(this.rightSlider, this.specsClicked, 'left click')
+  }
+  handleSliderRightClick() {
+    // console.log(this.rightSlider, 'right click')
+    this.rightSlider += 1;
+    if (this.rightSlider === this.totalSlider) {
+      this.sliderValue -= 100;
+    } else {
+      this.sliderValue -= 200
+    }
+    this.specsClicked += 1;
+  }
 }

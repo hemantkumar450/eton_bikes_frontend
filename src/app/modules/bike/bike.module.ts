@@ -14,6 +14,7 @@ import { OverviewComponent } from "./detail/overview/overview.component";
 import { FaqComponent } from "./detail/tech-support/faq/faq.component";
 import { ComponentsComponent } from "./detail/tech-support/components/components.component";
 import { WarrantyAndRegComponent } from "./detail/tech-support/warranty-and-reg/warranty-and-reg.component";
+import { GeometryImageComponent } from './detail/geometry/geometry-image/geometry-image.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { WarrantyAndRegComponent } from "./detail/tech-support/warranty-and-reg/
     FaqComponent,
     ComponentsComponent,
     WarrantyAndRegComponent,
+    GeometryImageComponent,
   ],
   imports: [CommonModule, BikeRoutingModule, SharedModule],
 })

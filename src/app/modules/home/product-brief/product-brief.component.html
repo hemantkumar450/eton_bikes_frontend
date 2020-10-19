@@ -87,7 +87,7 @@
                 [class.js-product-explorer--active]="exLineup == index" rel="tab1" (click)="onBikeChangeEvent(index, 'onClick')">
                 <div class="product-explorer__image">
                   <a href="/en-US/bikes/v10"><img data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"
-                      class=" lazyloaded" width="1100" height="704" alt="Eton Bicycles" [src]="bike?.media?.url || noImage" default=""></a>
+                      class=" lazyloaded"  width="50" height="50" alt="Eton Bicycles" [src]="bike?.media?.url || noImage" default=""/></a>
                 </div>
                 <div class="product-explorer__title" (click)="exLineup = index">
                   {{bike.name}} -- {{exLineup}}

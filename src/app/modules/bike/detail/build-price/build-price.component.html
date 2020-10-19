@@ -18,7 +18,7 @@
                 <div class="builder-product">
                   <h3 class="builder-product__title">Choose Build Kit &amp;
                     Frame</h3>
-                    <p-dropdown class="builder-product__input builder-product__input--select" [options]="buildPriceItems" [(ngModel)]="selectedBuildPrice" (onChange)="handleBuildPrice($event)"></p-dropdown>
+                    <p-dropdown class="builder-product__input builder-product__input--select" [options]="buildPriceItems" [(ngModel)]="selectedBuildPrice" (onChange)="handleBuildPrice($event)" [style]="{'width':'270px'}"></p-dropdown>
                   <!-- <div class="builder-product__input builder-product__input--select">
                     <div class="Select Select--single has-value"><input type="hidden" name="product_selector"
                         value="1368">
@@ -107,7 +107,8 @@
             </div>
 
           </div>
-          <div id="builder-specs--h1p5d" class="builder-specs" [ngClass]="{ ' no-next-page no-next' : sliderCurr === 'prev', 'no-prev-page no-prev' : sliderCurr === 'next'}">
+          <!-- need to add class here -->
+          <div id="builder-specs--h1p5d" class="builder-specs" [ngClass]="{ ' no-next-page no-next' : rightSlider > totalSlider , 'no-prev-page no-prev' : rightSlider < 1}"> 
             <div class="builder-specs__header">
               <div class="specs-header clearfix">
                 <h4 class="specs-header__title">Build Specs</h4>
@@ -121,20 +122,20 @@
                   <li data-id="price" *ngFor="let item of specsSidebar" class="specs-table__header-item specs-table__header-item--price"
                     style="height: 41px;"><span>{{item}}</span></li>                  
                 </ul>
-                <div class="specs-table__items selected--5 material--all" style="transform: translateX(-87.5048px);" [ngStyle]="{'transform' : sliderCurr === 'next' ? 'translateX(-87.5048px)' : 'translateX(135px)'}">            
+                <div class="specs-table__items selected--5 material--all" [ngStyle]="{'transform':'translateX('+sliderValue+'px)'}">            
                   <ng-container *ngFor="let item of specsData; let k = index">
                   <ul  class="specs-table__list-item specs-table__list-item--1363" style="width: 196.886px;" (click)="specsClicked = k" [ngClass]="{ 'selected': specsClicked == k}">
                     <li *ngFor="let ele of item; let i = index;" data-id="kitname" class="specs-table__item specs-table__item--kitname" [ngStyle]="{ 'height' : i == 0 ? '63px' : '41px'}">
                       <span>{{ele}}</span></li>                    
                   </ul>
-                </ng-container>                 
+                </ng-container>
                 </div>
               </div>
             </div>
             <div class="builder-specs__footer">
               <div class="specs-prevnext"><span
-                  class="specs-prevnext__control specs-prevnext__control--prev prev" (click)="sliderCurr = 'next'">Prev</span><span
-                  class="specs-prevnext__control specs-prevnext__control--next next" (click)="sliderCurr = 'prev'">Next</span>
+                  class="specs-prevnext__control specs-prevnext__control--prev prev" (click)="handleSliderLeftClick()" *ngIf="rightSlider >= 0">Prev</span><span *ngIf="rightSlider <= totalSlider"
+                  class="specs-prevnext__control specs-prevnext__control--next next" (click)="handleSliderRightClick()">Next</span>
               </div>
               <div class="specs-pager"> <span class="specs-pager__item"><i>Go to
                     Page1</i></span><span class="specs-pager__item selected"><i>Go to

@@ -17,18 +17,7 @@ export class SliderComponent implements OnInit {
   withAnim = true;
   resetAnim = true;
 
-  products = [
-    {
-      id: "1000",
-      code: "f230fh0g3",
-      name: "Bamboo Watch",
-    },
-    {
-      id: "1002",
-      code: "zz21cz3c1",
-      name: "Blue Band",
-    },
-  ];
+  
 
   exLineup = "tab1";
 
@@ -41,17 +30,10 @@ export class SliderComponent implements OnInit {
   splitArray(arr, size) {
     console.log(arr, size);
     const len = (arr && arr.slice && arr.length) | 0;
-
-    //check if size is > 1 and is an integer
     if (size !== Math.floor(size) || size < 1) return null;
-    // if (!Array.isArray(arr) || arr.length < size)
     for (var chunks = [], i = 0; i < len; i += size) {
-      if (i > 0) size = 6;
-      // console.log(i, size, len, arr)
-      // console.log(arr.slice(i, i + size));
       chunks.push(arr.slice(i, i + size));
     }
-    // chunks.push(arr.slice(i, size));
     return chunks;
   }
   getSliderClass(parent, curr) {

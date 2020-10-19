@@ -23,19 +23,20 @@ export class GeometryComponent implements OnInit {
   }
   getFrameSizeStyle(f:Frame) {
     const style = {};
-    if ( f.key == 'S') {
+    if ( f.key == 'small') {
       style['width'] = '46.153846153846%';
       style['margin-left'] = '0%';
-    } else if( f.key == 'M') {
+    } else if( f.key == 'medium') {
       style['width'] = '38.461538461538%';
       style['margin-left'] = '38.461538461538%';
-    } else if (f.key == 'L') {
+    } else if (f.key == 'large') {
       style['width'] = '38.461538461538%';
       style['margin-left'] = '61.538461538462%';
-    } else if (f.key == 'XL') {
+    } else if (f.key == 'xl') {
       style['width'] = '45.454545454545%';
       style['margin-left'] = '54.545454545455%';
     }
+    console.log(style)
     return style;
   }
 }
