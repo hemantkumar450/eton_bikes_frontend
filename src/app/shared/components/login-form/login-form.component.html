@@ -1,0 +1,33 @@
+<h1 [class.large-title]="!isDialogModal">
+  Login with
+  <span>us</span>
+</h1>
+<p>Please login to browse through our Bikes</p>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formElements">
+  <div class="form-group">
+    <input type="text" formControlName="email" class="form-control" placeholder="Your Email" />
+    <app-input-validation [control]="loginForm.controls.email">
+    </app-input-validation>
+  </div>
+  <div class="form-group">
+    <input type="password" formControlName="password" class="form-control" placeholder="Your Password" />
+    <app-input-validation [control]="loginForm.controls.password">
+    </app-input-validation>
+    <div *ngIf="loginForm.get('password').errors?.serverError" class="error-message">
+      {{ loginForm.get('password').errors?.serverError }}
+    </div>
+  </div>
+
+  <div class="forget-link">
+    <button type="button" (click)="openForgotPasswordForm()" class="link-grey">Forgot Password?</button>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block" [appLoadingButton]="isSubmitting">
+    Login
+  </button>
+
+  <div *ngIf="!isLoginPage" class="text-center">
+    <button (click)="openRegisterForm()" class="link-btn" type="button">Don't have an account ? <span>Register
+        now</span></button>
+  </div>
+</form>

@@ -1,6 +1,8 @@
 import { DOCUMENT, isPlatformBrowser } from "@angular/common";
 import { Component, Inject, Input, OnInit, PLATFORM_ID } from "@angular/core";
 import { Title } from "@angular/platform-browser";
+import { Router } from "@angular/router";
+import { AuthType } from "src/app/core/enum/auth-type.enum";
 
 @Component({
   selector: "app-login",
@@ -8,13 +10,16 @@ import { Title } from "@angular/platform-browser";
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
+  AUTH_TYPES = AuthType;
+  @Input() authType: AuthType;
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     @Inject(DOCUMENT) private document: any,
-    private title: Title
+    private title: Title,
+    private router: Router
   ) {
-    // this.title.setTitle('CoFynd - Login');
-    // this.authType = AuthType.LOGIN;
+    this.title.setTitle("PumPumPum - Login");
+    this.authType = AuthType.LOGIN;
   }
 
   ngOnInit(): void {
@@ -31,6 +36,10 @@ export class LoginComponent implements OnInit {
   }
 
   openSignUpForm() {
-    // this.authType = AuthType.SIGN_UP;
+    this.authType = AuthType.SIGN_UP;
+  }
+
+  onLoginSuccess() {
+    this.router.navigateByUrl("/");
   }
 }

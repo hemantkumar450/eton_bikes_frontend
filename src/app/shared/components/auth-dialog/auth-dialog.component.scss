@@ -1,0 +1,13 @@
+.auth-dialog {
+  position: relative;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 65px 60px;
+
+
+  .icon-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}

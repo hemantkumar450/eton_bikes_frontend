@@ -6,32 +6,47 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { CarouselModule } from "primeng/carousel";
 import { ButtonModule } from "primeng/button";
-import {DropdownModule} from 'primeng/dropdown';
-
+import { DropdownModule } from "primeng/dropdown";
+import { DialogModule } from "primeng/dialog";
 
 import { MatDialogModule } from "@angular/material/dialog";
 import { ModalComponent } from "./modal/modal.component";
-import { DefaultImageDirective } from './defaultImage.directive';
+import { DefaultImageDirective } from "./defaultImage.directive";
+
+import { LoadingButtonDirective } from "./directives/loading-button.directive";
+import { AuthDialogComponent } from "./components/auth-dialog/auth-dialog.component";
+import { InputValidationComponent } from "./components/input-validator/input-validation.component";
+import { LoginFormComponent } from "./components/login-form/login-form.component";
+import { ModalModule } from "ngx-bootstrap/modal";
+import { ForgotPasswordFormComponent } from "./components/forgot-password-form/forgot-password-form.component";
+import { RegisterFormComponent } from "./components/register-form/register-form.component";
 
 const MODULES = [
   CommonModule,
   FormsModule,
   MatDialogModule,
+  DialogModule,
   ReactiveFormsModule,
   NguCarouselModule,
   HttpClientModule,
   CarouselModule,
   ButtonModule,
-  DropdownModule
+  DropdownModule,
 ];
-const DIRECTIVES = [DefaultImageDirective];
-const COMPONENTS = [];
+const DIRECTIVES = [DefaultImageDirective, LoadingButtonDirective];
+const COMPONENTS = [
+  InputValidationComponent,
+  AuthDialogComponent,
+  LoginFormComponent,
+  ForgotPasswordFormComponent,
+  RegisterFormComponent,
+];
 
 @NgModule({
   declarations: [DIRECTIVES, COMPONENTS, ModalComponent],
-  imports: [MODULES],
-  exports: [MODULES, DIRECTIVES, COMPONENTS],
-  entryComponents: [],
+  imports: [MODULES, ModalModule.forRoot()],
+  exports: [MODULES, ModalModule, DIRECTIVES, COMPONENTS],
+  entryComponents: [AuthDialogComponent],
   providers: [],
 })
 export class SharedModule {}

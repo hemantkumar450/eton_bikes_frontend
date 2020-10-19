@@ -36,7 +36,6 @@ export class GeometryComponent implements OnInit {
       style['width'] = '45.454545454545%';
       style['margin-left'] = '54.545454545455%';
     }
-    console.log(style)
     return style;
   }
 }

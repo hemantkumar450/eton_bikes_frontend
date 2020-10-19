@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthType } from "src/app/core/enum/auth-type.enum";
+import { AuthService } from "src/app/core/services/auth.service";
 
 @Component({
   selector: "app-header",
@@ -7,11 +9,12 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HeaderComponent implements OnInit {
 
-  public bike_menu = false;
-  constructor() {}
+  
+  public bike_menu: boolean = false;
 
-  ngOnInit() {
-  }
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {}
 
   showBikes(){
     console.log(this.bike_menu, 'toggle ');
@@ -21,5 +24,10 @@ export class HeaderComponent implements OnInit {
   handleToggleCondition(data) {
     console.log(data, 'received form nav bar');
     this.bike_menu = data;
+  }  
+
+  openLoginModal() {
+    this.authService.openAuthDialog(AuthType.LOGIN);
   }
+
 }

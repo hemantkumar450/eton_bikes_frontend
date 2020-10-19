@@ -25,14 +25,12 @@
         <li class="nav-links__item"><a href="#" class="nav-links__item-link nav-dropdown__news_menu">News</a></li>
         <li class="nav-links__item last"><a href="#" class="nav-links__item-link nav-dropdown__demo_menu">Demo</a></li>
       </ul>
-
-
     </nav>
 
     <div class="nav-icons">
       <ul>
-        <li>
-          <a class="nav-icon nav-icon__login" href="https://shop.etonbicycles.com/customer/account/" title="Log In">
+        <li (click)="openLoginModal()">
+          <a class="nav-icon nav-icon__login" title="Log In">
             <svg id="user-account" viewBox="0 0 20 20">
               <title>User Account</title>
               <path
