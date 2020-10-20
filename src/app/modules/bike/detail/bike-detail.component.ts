@@ -14,7 +14,7 @@ export class BikeDetailComponent implements OnInit {
 
   constructor(private productService: ProductService) {}
   public currentActive = 0;
-
+  loader = true;
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(e) {
     // NAv active class start
@@ -80,13 +80,21 @@ export class BikeDetailComponent implements OnInit {
   }
 
   getProductDetail() {
-    this.productService.getProductDetail().subscribe((product) => {
+    this.productService.getProductDetail().subscribe(
+      (product) => {
       this.productDetail = product.data;
       this.buildSpecs = this.productDetail.sub_products;
       this.bannerImages = this.productDetail.media_urls.filter(
         (media) => media.category == "banner"
       );
       console.log(this.productDetail.close_up_media, "details");
-    });
+    },
+    (error) => {
+
+    },
+    () => {
+      this.loader = false;
+    }
+    );
   }
 }

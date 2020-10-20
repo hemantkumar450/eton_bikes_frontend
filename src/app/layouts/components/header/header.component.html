@@ -2,7 +2,7 @@
   <nav class="navigation l-wrapper">
     <div class="nav-logo">
       <h1 class="u-hide-visual">Eton Bicycles</h1>
-      <a href="#" title="Home" rel="home" style="padding-top: 13px;">
+      <a routerLink="/" title="Home" rel="home" style="padding-top: 13px;">
         <!-- <svg id="eton-logo" viewBox="0 0 147.79 47.4">
           <title>Eton Bicycles</title>
           <path
@@ -17,13 +17,13 @@
       <ul class="nav-links__list">
         <li class="nav-links__item first"><a class="nav-links__item-link nav-dropdown__bike_menu"
             (click)="showBikes()" href="javascript:void(0);">Bikes</a></li>
-        <li class="nav-links__item"><a href="#" class="nav-links__item-link nav-dropdown__components_menu">Wheels</a>
+        <li class="nav-links__item"><a routerLink="/wheels" class="nav-links__item-link nav-dropdown__components_menu">Wheels</a>
         </li>
-        <li class="nav-links__item"><a href="#" class="nav-links__item-link nav-dropdown__paydirt_menu">Paydirt</a></li>
-        <li class="nav-links__item"><a href="#" class="nav-links__item-link nav-dropdown__gear_menu">Gear</a></li>
-        <li class="nav-links__item"><a href="#" class="nav-links__item-link nav-dropdown__teams_menu">Teams</a></li>
-        <li class="nav-links__item"><a href="#" class="nav-links__item-link nav-dropdown__news_menu">News</a></li>
-        <li class="nav-links__item last"><a href="#" class="nav-links__item-link nav-dropdown__demo_menu">Demo</a></li>
+        <li class="nav-links__item"><a routerLink="/paydirt" class="nav-links__item-link nav-dropdown__paydirt_menu" title="Coming Soon">Paydirt</a></li>
+        <li class="nav-links__item"><a routerLink="/gear" class="nav-links__item-link nav-dropdown__gear_menu" title="Coming Soon">Gear</a></li>
+        <li class="nav-links__item"><a routerLink="/teams" class="nav-links__item-link nav-dropdown__teams_menu" title="Coming Soon">Teams</a></li>
+        <li class="nav-links__item"><a title="Coming Soon" routerLink="/news" class="nav-links__item-link nav-dropdown__news_menu">News</a></li>
+        <li class="nav-links__item last"><a title="Coming Soon" routerLink="/demo" class="nav-links__item-link nav-dropdown__demo_menu">Demo</a></li>
       </ul>
     </nav>
 

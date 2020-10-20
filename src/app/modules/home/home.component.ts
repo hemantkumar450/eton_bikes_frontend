@@ -31,17 +31,25 @@ export class HomeComponent implements OnInit {
   carouselItems = [1, 2, 3];
 
   exLineup = "tab1";
-
+  loader = true
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
     this.getPageByType();
   }
 
   getPageByType() {
-    this.pageService.getPageByType().subscribe((res) => {
+    this.pageService.getPageByType().subscribe(
+      (res) => {
       this.page = res.data;
       console.log(this.page);
-    });
+    },
+    (error) => {
+
+    },
+    () => {
+      this.loader = false;
+    }
+    );
   }
 
   // tslint:disable-next-line: use-lifecycle-interface

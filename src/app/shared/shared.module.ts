@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NguCarouselModule } from "@ngu/carousel";
 import { HttpClientModule } from "@angular/common/http";
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { CarouselModule } from "primeng/carousel";
 import { ButtonModule } from "primeng/button";
@@ -32,6 +33,7 @@ const MODULES = [
   CarouselModule,
   ButtonModule,
   DropdownModule,
+  MatProgressBarModule
 ];
 const DIRECTIVES = [DefaultImageDirective, LoadingButtonDirective];
 const COMPONENTS = [
