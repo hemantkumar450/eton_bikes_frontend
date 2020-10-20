@@ -64,7 +64,7 @@
                         </thead>
                         <tbody>
                           <ng-container *ngFor="let high of item.high; let j = index;">
-                            <tr class="geom-table-row geom-table-row--reach odd" data-id="reach">
+                            <tr class="geom-table-row geom-table-row--reach odd" data-id="reach" (mouseover)="setActiveClass(high)">
                               <td class="geometry-table__item-icon"><span
                                   class="geom-table-icon geom-table-icon--A">{{ high.order}}</span>
                               </td>
@@ -88,7 +88,7 @@
                       </table>
                     </div>
                     <div class="geometry-detail__image">
-                      <app-geometry-image></app-geometry-image>
+                      <app-geometry-image [overValue]="hoverValue"></app-geometry-image>
                     </div>
                   </div>
                 </div>

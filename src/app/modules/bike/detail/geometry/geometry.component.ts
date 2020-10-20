@@ -10,11 +10,16 @@ export class GeometryComponent implements OnInit {
   @Input() data: Geometry;
   viewMode = 0;
   viewModeInner1 = "high";
+  hoverValue = '';
   // geometryInnerHeader
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.data, "Geometry");
+    // console.log(this.data, "Geometry");
+  }
+  setActiveClass(ele:any) {
+    this.hoverValue = ele.order;
+    // console.log(ele, 'elemn')
   }
 
   getMainActiveClass(i: number) {
