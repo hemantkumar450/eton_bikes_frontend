@@ -24,6 +24,11 @@ export class HeaderComponent implements OnInit {
     this.bike_menu = data;
   }
 
+  navToggle() {
+    const html = document.getElementsByTagName('html')[0];
+    html.classList.add('js-mobile-menu--is-active');
+  }  
+
   openLoginModal() {
     this.authService.openAuthDialog(AuthType.LOGIN);
   }

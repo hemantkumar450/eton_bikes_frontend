@@ -94,7 +94,7 @@
       </ul>
     </div>
 
-    <div class="nav-toggle">
+    <div class="nav-toggle" (click)="navToggle()">
       <span class="nav-toggle--top"></span>
       <span class="nav-toggle--middle"></span>
       <span class="nav-toggle--bottom"></span>
@@ -105,4 +105,36 @@
 
 <div id="nav_dropdowns">
   <app-bike [popupDisplay]="bike_menu" (handleToggleCondition)="handleToggleCondition($event)"></app-bike>
+</div>
+
+<div id="mobile_nav">
+  <nav class="mobile-nav" role="navigation">
+    <div class="search-form">
+      <form action="/search" method="get">
+        <div class="form-item form-item--textfield form-item--test-name">
+          <div class="form-item__element">
+            <input id="search-keys" placeholder="Search Site" name="keys" class="form-textfield" type="text">
+            <input name="op" type="submit" value="Search" class="form-submit">
+          </div>
+        </div>
+      </form>
+      <div class="search-form__close">
+        <svg role="img">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="https://www.santacruzbicycles.com/sites/all/themes/scb2017/assets/img/ref.svg#close--small-white">
+          </use>Close
+        </svg>
+      </div>
+    </div>
+    <ul class="mobile-nav__primary-list">
+      <li class="mobile-nav__primary-item"><a class="mobile-nav__primary-item-link" (click)="showBikes()" href="javascript:void(0);">Bikes</a></li>
+      <li class="mobile-nav__primary-item"><a routerLink="/wheels" class="mobile-nav__primary-item-link">Wheels</a>
+      </li>
+      <li class="mobile-nav__primary-item"><a routerLink="/paydirt" class="mobile-nav__primary-item-link" title="Coming Soon">Paydirt</a></li>
+      <li class="mobile-nav__primary-item"><a routerLink="/gear" class="mobile-nav__primary-item-link" title="Coming Soon">Gear</a></li>
+      <li class="mobile-nav__primary-item"><a routerLink="/teams" class="mobile-nav__primary-item-link" title="Coming Soon">Teams</a></li>
+      <li class="mobile-nav__primary-item"><a title="Coming Soon" routerLink="/news" class="mobile-nav__primary-item-link">News</a></li>
+      <li class="mobile-nav__primary-item"><a title="Coming Soon" routerLink="/demo" class="mobile-nav__primary-item-link">Demo</a></li>
+    </ul>
+  </nav>
 </div>
