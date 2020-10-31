@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Product, BuildSpecs } from "src/app/core/model/product.model";
 import { ProductService } from "src/app/core/services/product.service";
 
@@ -15,6 +15,7 @@ export class BikeDetailComponent implements OnInit {
   constructor(private productService: ProductService) {}
   public currentActive = 0;
   loader = true;
+  @ViewChild("toggleScroll") toggleScroll: ElementRef;
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(e) {
     // NAv active class start
@@ -71,6 +72,7 @@ export class BikeDetailComponent implements OnInit {
   }
 
   scrollToElement(to) {
+    this.toggleScroll.nativeElement.classList.remove('js-page-nav-active');
     document
       .querySelector(`#${to}`)
       .scrollIntoView({ behavior: "smooth", block: "start" });
@@ -78,7 +80,11 @@ export class BikeDetailComponent implements OnInit {
   ngOnInit() {
     this.getProductDetail();
   }
-
+  handleSroll(event:Event) {
+    event.stopImmediatePropagation();
+    // console.log(this.toggleScroll.nativeElement.classList, 'tt', this.toggleScroll.nativeElement);
+    this.toggleScroll.nativeElement.classList.toggle('js-page-nav-active');
+  }
   getProductDetail() {
     this.productService.getProductDetail().subscribe(
       (product) => {

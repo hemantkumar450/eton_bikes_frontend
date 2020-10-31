@@ -15,19 +15,24 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   showBikes() {
-    console.log(this.bike_menu, "toggle ");
+    // console.log(this.bike_menu, "toggle ");
     this.bike_menu = !this.bike_menu;
   }
-
+  toggleMobileNav() {
+    const html = document.getElementsByTagName('html')[0];
+    html.classList.remove('js-mobile-menu--is-active');
+  }
   handleToggleCondition(data) {
-    console.log(data, "received form nav bar");
+    // console.log(data, "received form nav bar");
     this.bike_menu = data;
+    const html = document.getElementsByTagName('html')[0];
+    html.classList.remove('js-mobile-menu--is-active');
   }
 
   navToggle() {
     const html = document.getElementsByTagName('html')[0];
-    html.classList.add('js-mobile-menu--is-active');
-  }  
+    html.classList.toggle('js-mobile-menu--is-active');
+  }
 
   openLoginModal() {
     this.authService.openAuthDialog(AuthType.LOGIN);

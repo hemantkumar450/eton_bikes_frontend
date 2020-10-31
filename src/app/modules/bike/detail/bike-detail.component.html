@@ -7,7 +7,7 @@
 
     <div id="frame_page" class="tab-accordion-processed" (scroll)="onWindowScroll($event);">
 
-      <section id="fixedTab" class="secondary-navigation fixedBottom">
+      <section id="fixedTab" class="secondary-navigation fixedBottom" #toggleScroll>
         <div class="secondary-navigation__wrapper">
           <div class="secondary-navigation__items">
             <div class="secondary-navigation__title">
@@ -47,7 +47,7 @@
                 </ul>
               </nav>
             </nav>
-            <div class="secondary-navigation__toggle">
+            <div class="secondary-navigation__toggle" (click)="handleSroll($event)">
               <svg id="nav-secondary-toggle" viewBox="0 0 612 612">
                 <title>Secondary Navigation Toggle</title>
                 <circle cx="139.091" cy="306" r="55.636"></circle>
