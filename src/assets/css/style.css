@@ -4970,10 +4970,10 @@ label {
 }
 
 @media (max-width:59.9375em) {
-  .js-product-explorer--active .product-explorer__image {
+  /* .js-product-explorer--active .product-explorer__image {
     height: auto;
     opacity: 1
-  }
+  } */
 }
 
 @media (max-width:59.9375em) {
@@ -14253,8 +14253,6 @@ body.u-freeze .secondary-navigation {
 }
 
 @media (max-width:60em) {
-
-  body.front .view-bikes-for-homepage.view-display-id-block_1,
   body.front .view-bikes-for-homepage.view-display-id-block_2 {
     display: none;
   }
@@ -14267,6 +14265,42 @@ body.front .view-bikes-for-homepage.view-display-id-block_3 {
 @media (max-width:60em) {
   body.front .view-bikes-for-homepage.view-display-id-block_3 {
     display: block;
+  }
+
+  .product-explorer .l-wrapper {
+    display: inline-block;
+  }
+  .product-explorer__image-wrapper {
+    width: 100%;
+  }
+  .product-explorer__text-wrapper {
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+    display: inline-block;
+  }
+  .product-explorer__item {
+    text-align: center;
+  }
+  li.product-explorer__item.js-product-explorer--inactive {
+    display: none;
+  }
+
+  .js-product-explorer--active .pex-toggleBox{
+    transform: rotate(-90deg);
+    position: absolute;
+    top: -30px;
+    margin-left: -38px;
+  }
+  .js-product-explorer--active .pex-toggle {
+    display: block;
+  }
+  .js-product-explorer--active .pex-toggle.pex-up {
+    background-position: 0px 8px;
+  }
+  .js-product-explorer--active .pex-toggle.pex-down {
+    top: 38px;
+    background-position: 0px -8px;
   }
 }
 

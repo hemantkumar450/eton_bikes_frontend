@@ -3,7 +3,7 @@
     <h1 class="product-explorer__panel-title">Explore our lineup</h1>
   </div>
 
-  <div class="view view-bikes-for-homepage view-id-bikes_for_homepage view-display-id-block_2">
+  <!-- <div class="view view-bikes-for-homepage view-id-bikes_for_homepage view-display-id-block_2">
 
 
 
@@ -67,7 +67,8 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
+ 
   <div class="view view-bikes-for-homepage view-id-bikes_for_homepage view-display-id-block_1">
 
     <div class="view-content">
@@ -102,8 +103,10 @@
                     <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
                   </div>
                 </div>
-                <a title="Up" (click)="onBikeChangeEvent(index-1, 'onUp')" class="pex-up pex-toggle">Up</a>
-                <a title="Down" (click)="onBikeChangeEvent(index+1, 'onDown')" class="pex-down pex-toggle">Down</a>
+                <span class="pex-toggleBox">
+                  <a title="Up" (click)="onBikeChangeEvent(index-1, 'onUp')" class="pex-up pex-toggle">Up</a>
+                  <a title="Down" (click)="onBikeChangeEvent(index+1, 'onDown')" class="pex-down pex-toggle">Down</a>
+                </span>
               </li>
             </ul>
             <div class="product-explorer-toggle__gradient"></div>
