@@ -25,6 +25,6 @@ export class HeaderComponent implements OnInit {
   }
 
   openLoginModal() {
-    // this.authService.openAuthDialog(AuthType.LOGIN);
+    this.authService.openAuthDialog(AuthType.LOGIN);
   }
 }
