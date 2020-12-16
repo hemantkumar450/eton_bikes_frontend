@@ -19,7 +19,9 @@
           <div class="media-panel__text text-editor">
             <p [innerHTML]="section.content"></p>
           </div>
-          <a href="https://www.etonbicycles.com/en-US/paydirt" class="btn-primary">See PayDirt Grantees</a>
+          <div *ngFor="let redirect of section.redirect_detail">
+            <a [href]="redirect.redirect_url" class="btn-primary">{{redirect.button_text}}</a>
+          </div>
         </div>
       </div>
     </div>

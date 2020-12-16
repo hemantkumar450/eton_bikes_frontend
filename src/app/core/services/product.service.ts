@@ -10,21 +10,16 @@ import { Product, BuildSpecs, Products } from "../model/product.model";
   providedIn: "root",
 })
 export class ProductService {
-  api:string = environment.apiEndPoint;
+  api: string = environment.apiEndPoint;
   constructor(private http: HttpClient) {}
 
-  getProductDetail(product:string = 'v10'): Observable<ApiResponse<Product>> {
-    // console.log(this.api, 'environments');
-    const path = `${this.api}customer/products/${product}`
-    return this.http.get<ApiResponse<Product>>(
-      path
-    );
+  getProductDetail(product: string): Observable<ApiResponse<Product>> {
+    const path = `${this.api}customer/products/${product}`;
+    return this.http.get<ApiResponse<Product>>(path);
   }
-  getProducts() : Observable<ApiResponse<Products>>{
+  getProducts(): Observable<ApiResponse<{ products: Product[] }>> {
     const path = `${this.api}customer/products`;
-    return this.http.get<ApiResponse<Products>>(
-      path
-    );
+    return this.http.get<ApiResponse<{ products: Product[] }>>(path);
   }
   getProductBuilds(): Observable<ApiResponse<BuildSpecs>> {
     return this.http.get<ApiResponse<BuildSpecs>>(
