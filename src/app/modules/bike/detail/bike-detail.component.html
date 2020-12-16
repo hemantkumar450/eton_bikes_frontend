@@ -11,8 +11,9 @@
         <div class="secondary-navigation__wrapper">
           <div class="secondary-navigation__items">
             <div class="secondary-navigation__title">
-              <img data-src="/assets/img/bikepage_titles_0007_v10_0.png" class=" lazyloaded" width="1800" height="121"
-                alt="Eton Bicycles" src="/assets/img/bikepage_titles_0007_v10_0.png">
+              <!-- <img data-src="/assets/img/bikepage_titles_0007_v10_0.png" class=" lazyloaded" width="1800" height="121"
+                alt="Eton Bicycles" src="/assets/img/bikepage_titles_0007_v10_0.png"> -->
+              {{productDetail.name.toUpperCase()}}
             </div>
             <nav class="secondary-navigation__scroll-nav">
               <nav class="scroll-toggle">
@@ -65,7 +66,7 @@
       <!-- end #overview -->
 
       <!-- build_price -->
-      <app-build-price *ngIf="buildSpecs" [builds]="buildSpecs"></app-build-price>
+      <app-build-price *ngIf="buildSpecs && buildSpecs.length" [builds]="buildSpecs"></app-build-price>
       <!-- end #build_price -->
 
       <!-- detail_images -->
