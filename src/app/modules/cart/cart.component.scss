@@ -32,6 +32,9 @@ table {
   padding: 20px 11px 10px;
 }
 
+.page-main{
+  padding: 0 3%;
+}
 
 .page-title {
   margin: 3% 2%;
@@ -133,12 +136,36 @@ caption {
 }
 
 .cart-actions {
-  padding: 2%;
+  padding: 5% 0%;
   border-top: 1px solid #ccc;
 }
 
 .update {
   float: right;
+}
+
+#shopping-cart-table img{
+    height: 100%;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+#shopping-cart-table img:hover{
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+
+.cartsum{
+  padding: 0 3%;
 }
 
 .clear,
@@ -186,9 +213,6 @@ caption {
   outline: none;
 }
 
-.cart-discount{
-  margin: 2%;
-}
 
 .discount-button, .input-group-text{
   display: inline-block;
