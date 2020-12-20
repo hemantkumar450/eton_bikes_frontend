@@ -17,9 +17,13 @@ export class ProductService {
     const path = `${this.api}customer/products/${product}`;
     return this.http.get<ApiResponse<Product>>(path);
   }
-  getProducts(): Observable<ApiResponse<{ products: Product[] }>> {
+  getProducts(): Observable<
+    ApiResponse<{ products: Product[]; totalRecords: number }>
+  > {
     const path = `${this.api}customer/products`;
-    return this.http.get<ApiResponse<{ products: Product[] }>>(path);
+    return this.http.get<
+      ApiResponse<{ products: Product[]; totalRecords: number }>
+    >(path);
   }
   getProductBuilds(): Observable<ApiResponse<BuildSpecs>> {
     return this.http.get<ApiResponse<BuildSpecs>>(

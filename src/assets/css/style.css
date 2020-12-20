@@ -519,6 +519,20 @@ img.u-image-not-responsive {
   height: 100%
 }
 
+.btn-primary:hover {
+  background-color: #b90017 !important;
+  border-color: revert !important;
+}
+
+.btn {
+  transition: none !important;
+}
+
+.btn-primary {
+  transform: revert !important;
+  -webkit-transform: revert !important;
+}
+
 body.u-freeze {
   position: relative;
   overflow: hidden;
@@ -13896,7 +13910,7 @@ body.js-alert-header--active .alert-header {
   top: 17px;
 }
 
-.product-explorer__image-wrapper a > img {
+.product-explorer__image-wrapper a>img {
   margin-bottom: 50px;
 }
 
@@ -14270,34 +14284,41 @@ body.front .view-bikes-for-homepage.view-display-id-block_3 {
   .product-explorer .l-wrapper {
     display: inline-block;
   }
+
   .product-explorer__image-wrapper {
     width: 100%;
   }
+
   .product-explorer__text-wrapper {
     padding-left: 0;
     margin-left: 0;
     width: 100%;
     display: inline-block;
   }
+
   .product-explorer__item {
     text-align: center;
   }
+
   li.product-explorer__item.js-product-explorer--inactive {
     display: none;
   }
 
-  .js-product-explorer--active .pex-toggleBox{
+  .js-product-explorer--active .pex-toggleBox {
     transform: rotate(-90deg);
     position: absolute;
     top: -30px;
     margin-left: -38px;
   }
+
   .js-product-explorer--active .pex-toggle {
     display: block;
   }
+
   .js-product-explorer--active .pex-toggle.pex-up {
     background-position: 0px 8px;
   }
+
   .js-product-explorer--active .pex-toggle.pex-down {
     top: 38px;
     background-position: 0px -8px;
@@ -14773,5 +14794,78 @@ html.js .js-hide {
 *:first-child+html .clearfix {
   min-height: 1%;
 }
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='number'],
+textarea,
+select {
+  max-width: 100%;
+}
+
+button:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
+  color: revert;
+}
+
+button:focus,
+button:hover,
+button:active {
+  outline: #fff !important;
+}
+
+.btn-primary.focus,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.1rem #e5001c73;
+}
+
+
+.page-main {
+  margin: 7% 1%;
+}
+
+.cart-table-scroll {
+  overflow-y: scroll;
+  height: 500px;
+  overflow-x: hidden;
+}
+
+.action-delete {
+  margin-right: 0%;
+}
+
+
+.clear:hover,
+.update:hover {
+  background-color: #e5001c !important;
+  color: #fff !important;
+  border: 1px solid #e5001c !important;
+  white-space: nowrap;
+  transform: none !important;
+}
+
+button::before,
+input[type='reset']::before,
+input[type='button']::before,
+input[type='submit']::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d52b1e;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition: transform .15s ease-out;
+  transition: transform .15s ease-out;
+}
+
 
 /* new file end */

@@ -32,6 +32,7 @@ table {
   padding: 20px 11px 10px;
 }
 
+
 .page-title {
   margin: 3% 2%;
   font-size: 30px;
@@ -154,12 +155,19 @@ caption {
   outline: none;
   -webkit-appearance: none;
   position: relative;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
   background-color: transparent;
   color: #e5001c;
   border: 1px solid #e5001c;
   white-space: nowrap
+}
+
+.clear:hover,
+.update:hover {
+  background-color: #e5001c !important;
+  color: #fff !important;
+  border: 1px solid #e5001c !important;
+  white-space: nowrap;
+  transform: none !important;
 }
 
 .continue {
@@ -167,7 +175,7 @@ caption {
   padding-right: 1%;
 }
 
-.discount-button {
+.discount-button{
   background-color: #fff;
   border: none;
   padding: 0 2%;
@@ -178,12 +186,11 @@ caption {
   outline: none;
 }
 
-.cart-discount {
+.cart-discount{
   margin: 2%;
 }
 
-.discount-button,
-.input-group-text {
+.discount-button, .input-group-text{
   display: inline-block;
   padding: 12px 20px;
   cursor: pointer;

@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  apiEndPoint: "https://148.72.208.32:5000/api/",
-  filePath: "https://148.72.208.32:5000/",
-  noImagePath: "/assets/images/default/no-image.png"
+  apiEndPoint: "http://localhost:5200/api/",
+  filePath: "http://localhost:5200/",
+  noImagePath: "/assets/images/default/no-image.png",
 };
 
 /*
