@@ -1,9 +1,22 @@
 <section class="page">
     <div class="l-site-wrapper">
         <app-header></app-header>
-        
+
         <router-outlet></router-outlet>
-                    
+        <div class="row verify_message">
+            <div style="font-size: 30px;
+            font-weight: bold;">
+                <img src="/assets/img/success.jpg" alt="Email_verified" height="200px" width="200px">Email Id Succesfully
+                Verified!
+            </div>
+
+
+            <div style="font-size: 30px;
+            font-weight: bold; display: none ;">
+                <img src="/assets/img/success.jpg" alt="Email_verified" height="200px" width="200px">Oops! Email is not
+                verified. Maybe because of expired token.
+            </div>
+        </div>
         <app-footer></app-footer>
     </div>
 </section>

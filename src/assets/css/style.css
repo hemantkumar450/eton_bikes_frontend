@@ -14867,5 +14867,10 @@ input[type='submit']::before {
   transition: transform .15s ease-out;
 }
 
+.verify_message{
+  place-content: center;
+  text-align: center;
+}
+
 
 /* new file end */
