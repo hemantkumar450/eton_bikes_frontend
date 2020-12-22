@@ -31,6 +31,7 @@ export interface DetailModel {
   icon: Media;
 }
 export interface BuildSpecs {
+  _id: string;
   name: string;
   description: string;
   product: string;

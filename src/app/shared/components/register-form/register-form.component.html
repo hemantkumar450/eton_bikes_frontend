@@ -2,51 +2,37 @@
   Create an
   <span>account</span>
 </h1>
-<form [formGroup]="registerForm"
-  (ngSubmit)="onSubmit()"
-  class="formElements">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="formElements">
   <div class="form-group">
-    <input type="text"
-      formControlName="name"
-      class="form-control"
-      placeholder="Your Name" />
+    <input type="text" formControlName="name" class="form-control" placeholder="Your Name" />
     <app-input-validation [control]="registerForm.controls.name">
     </app-input-validation>
   </div>
   <div class="form-group">
-    <input [ngClass]="{'is-loading': registerForm.controls['email'].pending }"
-      type="text"
-      formControlName="email"
-      class="form-control"
-      placeholder="Your Email" />
+    <input [ngClass]="{'is-loading': registerForm.controls['email'].pending }" type="text" formControlName="email"
+      class="form-control" placeholder="Your Email" />
     <app-input-validation [control]="registerForm.controls.email">
     </app-input-validation>
   </div>
   <div class="form-group">
-    <input type="text"
-      formControlName="mobile"
-      class="form-control"
-      placeholder="Your Mobile Number" />
-    <app-input-validation [control]="registerForm.controls.mobile">
+    <!-- <input type="text" formControlName="gender" class="form-control" placeholder="Your Mobile Number" /> -->
+    <p-dropdown class="builder-product__input builder-product__input--select" [options]="genderList"
+      [style]="{'width':'100%'}" placeholder="Select Gender" formControlName="gender">
+    </p-dropdown>
+    <app-input-validation [control]="registerForm.controls.gender">
     </app-input-validation>
   </div>
   <div class="form-group">
-    <input type="password"
-      formControlName="password"
-      class="form-control"
-      placeholder="Your Password" />
+    <input type="password" formControlName="password" class="form-control" placeholder="Your Password" />
     <app-input-validation [control]="registerForm.controls.password">
     </app-input-validation>
   </div>
 
-  <button type="submit"
-    class="btn btn-primary btn-block"
-    [appLoadingButton]="isSubmitting">
+  <button type="submit" class="btn btn-primary btn-block" [appLoadingButton]="isSubmitting">
     Register
   </button>
   <div class="text-center">
-    <button (click)="openLoginForm()"
-      class="link-btn"
-      type="button">Already have an account ? <span>Login now</span></button>
+    <button (click)="openLoginForm()" class="link-btn" type="button">Already have an account ? <span>Login
+        now</span></button>
   </div>
 </form>

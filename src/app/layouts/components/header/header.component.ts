@@ -40,6 +40,10 @@ export class HeaderComponent implements OnInit {
   }
 
   openCart() {
-    this.router.navigateByUrl("/cart");
+    if (this.authService.getToken()) {
+      this.router.navigateByUrl("/cart");
+    } else {
+      this.openLoginModal();
+    }
   }
 }

@@ -5,6 +5,7 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
 } from "@angular/router";
+import { AuthType } from "../enum/auth-type.enum";
 import { AuthService } from "../services/auth.service";
 
 @Injectable({ providedIn: "root" })
@@ -19,10 +20,12 @@ export class AuthGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(["/login"], {
+    this.router.navigate(["/"], {
       queryParams: { returnUrl: state.url },
       replaceUrl: true,
     });
+
+    this.authService.openAuthDialog(AuthType.LOGIN);
 
     return false;
   }

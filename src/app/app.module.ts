@@ -5,6 +5,7 @@ import { ToastrModule } from "ngx-toastr";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { SharedModule } from "./shared/shared.module";
+import { CoreModule } from "./core/core.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,9 +13,10 @@ import { SharedModule } from "./shared/shared.module";
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    CoreModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 2500,
+      timeOut: 3000,
       positionClass: "toast-top-center",
       preventDuplicates: true,
       countDuplicates: false,
