@@ -18,11 +18,16 @@
   border-bottom: 2px solid #dee2e6;
 }
 
+#shopping-cart-table tbody{
+  display: block; height: 300px; overflow-y: auto
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   max-width: 100%;
+  display: block;
 }
 
 .col.price,
@@ -49,6 +54,10 @@ table {
 .table td,
 .table th {
   border-top: none !important;
+}
+
+.item-actions{
+  border-bottom: 2px solid #dee2e6;
 }
 
 .cart-summary {
