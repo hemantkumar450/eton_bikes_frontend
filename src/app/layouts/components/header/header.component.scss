@@ -1,1 +1,13 @@
 // 
+
+.name-initial{
+    color: white;
+    padding: 0;
+    transition: all 0.5s;
+}
+
+.name-initial + button:hover, .name-initial::before, .name-initial:focus, .name-initial:active{
+    background: revert;
+    border: none;
+    outline: none;
+}
