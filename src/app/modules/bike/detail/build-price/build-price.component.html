@@ -6,7 +6,7 @@
         data-linkroot="/" data-region="us" data-restrictions="[]" data-hideprods="[]">
         <div data-reactroot="" class="builder builder-image--collapsed">
           <div id="builder-config--h1p5d" class="clearfix builder-config">
-            <div class="builder-config__image">
+            <div *ngIf="mediaDetail" class="builder-config__image">
               <div class="builder-canvas clearfix">
                 <img
                   [src]="mediaDetail.media ? path+mediaDetail.media.media_link : (mediaDetail.icon ? mediaDetail.icon.media_link : defaultImage)"
@@ -22,7 +22,8 @@
                   <h3 class="builder-product__title">Choose Build Kit &amp;
                     Frame</h3>
                   <p-dropdown class="builder-product__input builder-product__input--select" [options]="buildPriceItems"
-                    [(ngModel)]="selectedBuildPrice" (onChange)="handleBuildPrice($event)" [style]="{'width':'270px'}">
+                    [(ngModel)]="selectedBuildPrice" (onChange)="createBuildPriceSummary($event)"
+                    [style]="{'width':'270px'}">
                   </p-dropdown>
                   <!-- <div class="builder-product__input builder-product__input--select">
                     <div class="Select Select--single has-value"><input type="hidden" name="product_selector"
@@ -78,14 +79,16 @@
                         <span class="builder-summary__item-label">{{price.key}}</span>
                         {{price.value}}
                       </li>
-                    </ng-container> 
+                    </ng-container>
                   </ul>
                   <div class="builder-summary__buttons"><a
-                      class="button builder-summary__button builder-summary__button--changes" href="#">Customize</a><a
-                      class="button builder-summary__button builder-summary__button--dealers" href="javascript:void(0);">Add To Cart</a><a class="button builder-summary__button builder-summary__button--compare" href="#">
-                      <!-- react-text: 56 -->Compare
-                      <!-- /react-text --><span class="builder_compare__count builder_compare__count--0">0</span></a><a
-                      class="button builder-summary__button builder-summary__button--share" href="#"><span
+                      class="button builder-summary__button builder-summary__button--changes" href="#">Customize</a>
+                    <a class="button builder-summary__button builder-summary__button--dealers"
+                      href="javascript:void(0);" (click)="addTocart()">Add To Cart</a>
+                    <!-- <a class="button builder-summary__button builder-summary__button--compare" href="#">
+                      Compare
+                      <span class="builder_compare__count builder_compare__count--0">0</span></a> -->
+                    <a class="button builder-summary__button builder-summary__button--share" href="#"><span
                         class="btn-png-icon btn-png-icon--share">Share</span></a>
                   </div>
                   <div class="builder-summary__helper builder-summary__helper--frameonly">

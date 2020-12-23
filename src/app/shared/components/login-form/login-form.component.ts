@@ -13,9 +13,8 @@ import { CustomValidators } from "../../validators/custom-validators";
 })
 export class LoginFormComponent {
   @Input() isLoginPage: boolean;
-  @Output() loginSuccessEvent: EventEmitter<boolean> = new EventEmitter<
-    boolean
-  >();
+  @Output()
+  loginSuccessEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   loginForm: FormGroup;
 
   isDialogModal = true;
@@ -43,7 +42,7 @@ export class LoginFormComponent {
       this.authService.signInWithEmailAndPassword(loginPayload).subscribe(
         () => {
           this.isSubmitting = false;
-          this.loginSuccessEvent.emit(true);
+          this.authService.closeAuthDialog();
         },
         (error) => {
           this.isSubmitting = false;

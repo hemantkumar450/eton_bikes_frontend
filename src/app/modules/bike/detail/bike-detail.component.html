@@ -7,7 +7,7 @@
 
     <div id="frame_page" class="tab-accordion-processed" (scroll)="onWindowScroll($event);">
 
-      <section id="fixedTab" class="secondary-navigation fixedBottom" #toggleScroll>
+      <section *ngIf="productDetail" id="fixedTab" class="secondary-navigation fixedBottom" #toggleScroll>
         <div class="secondary-navigation__wrapper">
           <div class="secondary-navigation__items">
             <div class="secondary-navigation__title">

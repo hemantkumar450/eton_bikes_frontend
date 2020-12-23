@@ -1,13 +1,11 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AuthGuard } from "src/app/core/guards/auth.guard";
-import { CartComponent } from "./cart.component";
+import { ValidateComponent } from "./validate.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: CartComponent,
-    canActivate: [AuthGuard],
+    component: ValidateComponent,
   },
 ];
 
@@ -15,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CartRoutingModule {}
+export class ValidateRoutingModule {}

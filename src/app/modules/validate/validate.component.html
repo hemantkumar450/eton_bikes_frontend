@@ -1,0 +1,10 @@
+<div class="row verify_message">
+  <div *ngIf="isValid" style="font-size:30px;font-weight: bold;padding:5%">
+    <img style="width: 200px;margin-top: 12%;" src="/assets/img/verify.png" alt="Email_verified">
+    Email Id Succesfully Verified! You can login now.
+  </div>
+  <div *ngIf="!isValid" style="font-size: 30px;font-weight: bold;padding:5%">
+    <img src="/assets/img/expired.png" alt="Email_verified" style="width: 200px;">
+    Oops! Email is not verified. Maybe because of expired token or invalid token.
+  </div>
+</div>

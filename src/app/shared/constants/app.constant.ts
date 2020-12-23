@@ -4,7 +4,7 @@ export class AppConstant {
 
   // Local Storage Keys
   static readonly LS_TOKEN_KEY = "token";
-  static readonly LS_PROFILE_STATUS_KEY = "__PPP_STORAGE__";
+  static readonly LS_PROFILE_STATUS_KEY = "__ETON_STORAGE__";
 
   // OTP Interval
   static readonly OTP_TIME_INTERVAL = 30;

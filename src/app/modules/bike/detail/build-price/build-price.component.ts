@@ -8,7 +8,11 @@ import {
 import { MatDialog } from "@angular/material/dialog";
 import { ModalComponent } from "src/app/shared/modal/modal.component";
 import { environment } from "src/environments/environment";
+import { ProductService } from "src/app/core/services/product.service";
+import { ToastrService } from "ngx-toastr";
+import { Router } from "@angular/router";
 const defaultSliderData = 6;
+
 @Component({
   selector: "app-build-price",
   templateUrl: "./build-price.component.html",
@@ -32,16 +36,22 @@ export class BuildPriceComponent implements OnInit {
   rightSlider = 0;
   totalSlider = 0;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private productService: ProductService,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.buildPriceItems = this.builds.map((ele) => {
       return {
         label: ele.name,
-        value: ele.name,
+        value: ele._id,
       };
     });
-    this.createBuildPriceSummary(this.builds[0].name);
+    this.selectedBuildPrice = this.builds[0]._id;
+    this.createBuildPriceSummary();
     this.generateBuildSpecs();
     this.sliderValue = this.sliderCurr === "next" ? -87.5048 : 135;
   }
@@ -62,12 +72,9 @@ export class BuildPriceComponent implements OnInit {
         ? this.specsData.length - defaultSliderData
         : 0;
   }
-  handleBuildPrice(e: Event) {
-    this.createBuildPriceSummary(this.selectedBuildPrice);
-  }
 
-  createBuildPriceSummary(name) {
-    const item = this.builds.find((ele) => ele.name == name);
+  createBuildPriceSummary() {
+    const item = this.builds.find((ele) => ele._id == this.selectedBuildPrice);
     if (item) {
       this.buildPriceSummmary = item.build_specs;
       this.buildPriceSummmary = this.buildPriceSummmary.slice(0, 3);
@@ -117,5 +124,13 @@ export class BuildPriceComponent implements OnInit {
       this.sliderValue -= 200;
     }
     this.specsClicked += 1;
+  }
+
+  addTocart() {
+    this.productService
+      .addToCart({ sub_product: this.selectedBuildPrice })
+      .subscribe((res) => {
+        this.router.navigateByUrl("/cart");
+      });
   }
 }

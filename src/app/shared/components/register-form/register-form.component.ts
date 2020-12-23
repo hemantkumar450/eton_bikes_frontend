@@ -27,6 +27,11 @@ export class RegisterFormComponent {
   registerForm: FormGroup;
   isSubmitting: boolean;
   responseError: string;
+  genderList: any[] = [
+    { label: "Male", value: "male" },
+    { label: "Female", value: "female" },
+    { label: "Other", value: "other" },
+  ];
 
   // This will animate the label to feel like material
   isGenderDropDownOpen: boolean;
@@ -44,15 +49,16 @@ export class RegisterFormComponent {
     if (this.registerForm.valid) {
       this.isSubmitting = true;
       const loginPayload: User = this.registerForm.getRawValue();
-      // this.authService.signUp(loginPayload).subscribe(
-      //   () => {
-      //     this.isSubmitting = false;
-      //   },
-      //   (error) => {
-      //     this.isSubmitting = false;
-      //     this.responseError = error.error.message || "unable to proceed";
-      //   }
-      // );
+      this.authService.signUp(loginPayload).subscribe(
+        () => {
+          this.isSubmitting = false;
+          this.authService.closeAuthDialog();
+        },
+        (error) => {
+          this.isSubmitting = false;
+          this.responseError = error.error.message || "unable to proceed";
+        }
+      );
     }
   }
 
@@ -62,13 +68,13 @@ export class RegisterFormComponent {
   }
 
   existingEmailValidator() {
-    // return (control: AbstractControl): Observable<ValidationErrors | null> => {
-    //   return this.authService.checkIfUEmailExists(control.value).pipe(
-    //     map((res) => {
-    //       return res.doesExist ? { emailTaken: true } : null;
-    //     })
-    //   );
-    // };
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
+      return this.authService.checkIfUEmailExists(control.value).pipe(
+        map((res) => {
+          return res.data.doesExist ? { emailTaken: true } : null;
+        })
+      );
+    };
   }
 
   private buildForm() {
@@ -82,7 +88,7 @@ export class RegisterFormComponent {
           updateOn: "blur",
         },
       ],
-      mobile: ["", [Validators.required, CustomValidators.phoneValidator]],
+      gender: ["", Validators.required],
       password: ["", Validators.required],
     });
   }
