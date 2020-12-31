@@ -21,6 +21,7 @@ import { LoginFormComponent } from "./components/login-form/login-form.component
 import { ModalModule } from "ngx-bootstrap/modal";
 import { ForgotPasswordFormComponent } from "./components/forgot-password-form/forgot-password-form.component";
 import { RegisterFormComponent } from "./components/register-form/register-form.component";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const MODULES = [
   CommonModule,
@@ -33,7 +34,8 @@ const MODULES = [
   CarouselModule,
   ButtonModule,
   DropdownModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatProgressSpinnerModule
 ];
 const DIRECTIVES = [DefaultImageDirective, LoadingButtonDirective];
 const COMPONENTS = [

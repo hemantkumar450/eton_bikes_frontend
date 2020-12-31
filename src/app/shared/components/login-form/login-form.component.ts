@@ -46,6 +46,7 @@ export class LoginFormComponent {
         },
         (error) => {
           this.isSubmitting = false;
+          
           const formControl = this.loginForm.get("password");
           if (formControl) {
             formControl.setErrors({

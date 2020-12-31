@@ -10,13 +10,25 @@ import { AuthService } from "src/app/core/services/auth.service";
 })
 export class HeaderComponent implements OnInit {
   public bike_menu: boolean = false;
-
+  user_name = '';
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.authService.loggedInUser$.subscribe(
+      data => {
+        if (data) {
+          this.user_name = data.name;
+        } else {
+          this.user_name = '';
+        }
+      }
+    )
+  } 
+  logout() {
+    this.authService.clearLocalStorage();
+    // this.router.navigateByUrl('/');
+  }
   showBikes() {
-    // console.log(this.bike_menu, "toggle ");
     this.bike_menu = !this.bike_menu;
   }
   toggleMobileNav() {
@@ -24,7 +36,6 @@ export class HeaderComponent implements OnInit {
     html.classList.remove("js-mobile-menu--is-active");
   }
   handleToggleCondition(data) {
-    // console.log(data, "received form nav bar");
     this.bike_menu = data;
     const html = document.getElementsByTagName("html")[0];
     html.classList.remove("js-mobile-menu--is-active");

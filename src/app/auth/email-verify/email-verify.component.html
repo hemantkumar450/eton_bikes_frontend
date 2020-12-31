@@ -1,0 +1,11 @@
+
+<div class="loading-indicator" *ngIf="verifyLoader">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+    
+</div>
+<div class="container" *ngIf="!verifyLoader">
+    <div class="cnt_centr">
+        <div *ngIf="verified"> Your Email has been verified </div>
+        <div *ngIf="!verified"> {{errorText}} </div>
+    </div>
+</div>

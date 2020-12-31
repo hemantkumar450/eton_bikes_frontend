@@ -35,7 +35,7 @@
 
     <div class="nav-icons">
       <ul>
-        <li (click)="openLoginModal()">
+        <li (click)="openLoginModal()" *ngIf="!user_name">
           <a class="nav-icon nav-icon__login" title="Log In">
             <svg id="user-account" viewBox="0 0 20 20">
               <title>User Account</title>
@@ -49,12 +49,14 @@
           <a class="nav-icon nav-icon__login" title="Log In">
             <span class="dropdown">
               <div type="button" class="btn name-initial dropdown-toggle" data-toggle="dropdown">
-                HK
+                {{this.user_name}}
               </div>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Dashboard</a>
                 <a class="dropdown-item" href="#">Shop Here</a>
-                <a class="dropdown-item" href="#">Cart</a>
+                <a class="dropdown-item" routerLink
+                ="/cart">Cart</a>
+                <a class="dropdown-item" href="javscript:void(0);" (click)="logout()">Logout</a>
               </div>
             </span>
           </a>

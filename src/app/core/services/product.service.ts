@@ -41,6 +41,45 @@ export class ProductService {
     >(path, params);
   }
 
+  createOrder(): Observable<ApiResponse<{ order_id: string, booking_id: string, amount: number } >> {
+    const path = `${this.api}customer/order`;
+    return this.http.post<
+      ApiResponse<{ order_id: string, booking_id: string, amount: number }>
+    >(path, {});
+  }
+
+  capturePayment(params: any) : Observable<ApiResponse<any>> {
+    const path = `${this.api}customer/payment`;
+    return this.http.post<
+      ApiResponse<any>
+    >(path, params);
+  }
+
+  updateBookingFailed(params: any): Observable<ApiResponse<any>> {
+    const path = `${this.api}customer/update-booking-failed`;
+    return this.http.post<
+      ApiResponse<any>
+    >(path, params);
+  }
+
+  removeCartOneItem(
+    params
+  ): Observable<ApiResponse<{ products: Product[]; totalRecords: number }>> {
+    const path = `${this.api}customer/cart/remove/one`;
+    return this.http.post<
+      ApiResponse<{ products: Product[]; totalRecords: number }>
+    >(path, params);
+  }
+
+  removeCartItem(
+    params
+  ): Observable<ApiResponse<{ products: Product[]; totalRecords: number }>> {
+    const path = `${this.api}customer/cart/remove`;
+    return this.http.post<
+      ApiResponse<{ products: Product[]; totalRecords: number }>
+    >(path, params);
+  }
+
   getCartDetails(): Observable<
     ApiResponse<{ products: Product[]; totalRecords: number }>
   > {

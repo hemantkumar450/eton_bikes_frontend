@@ -2,11 +2,19 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// export const environment = {
+//   production: false,
+//   apiEndPoint: "https://etonbikes.com:5000/api/",
+//   filePath: "https://etonbikes.com:5000/",
+//   noImagePath: "/assets/images/default/no-image.png",
+// };
+
 export const environment = {
   production: false,
-  apiEndPoint: "https://etonbikes.com:5000/api/",
-  filePath: "https://etonbikes.com:5000/",
+  apiEndPoint: "http://localhost:5200/api/",
+  filePath: "http://localhost:5200/",
   noImagePath: "/assets/images/default/no-image.png",
+  rzp_key: "rzp_test_Z8LqVx1MG0AMZO"
 };
 
 /*

@@ -2,7 +2,8 @@
   <div class="row">
     <h1 class="page-title">Shopping Cart</h1>
   </div>
-  <div class="row" style="display: none;">
+  <mat-spinner style="margin:0 auto;" *ngIf="loading"></mat-spinner>
+  <div class="row" *ngIf="cartItems.length > 0">
     <div class="col-lg-8 col-md-8 col-sm-8">
       <table id="shopping-cart-table" class="cart items data table ">
         <caption class="table-caption">Shopping Cart Items</caption>
@@ -15,139 +16,71 @@
           </tr>
         </thead>
         <tbody class="cart item">
-          <tr class="item-info">
-            <td data-th="Item" class="col item">
-              <div class="row">
-                <div class="col-lg-4 col-sm-4 col-md-4">
-                  <a href="#">
-                    <span class="product-image-container" style="width:165px;">
-                      <span class="product-image-wrapper" style="padding-bottom: 100%;">
-                        <img class="product-item-photo"
-                          src="https://shop.santacruzbicycles.com/media/catalog/product/cache/6843cc4ccd608fca0a9c9bc0bafe8dfa/5/5/55-22429_stripe_tank_3.jpg"
-                          max-width="165" max-height="165" alt="JULIANA STRIPE TANK">
+          <ng-container *ngFor="let item of  cartItems">
+            <tr class="item-info">
+              <td data-th="Item" class="col item">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4 col-md-4">
+                    <a href="#">
+                      <span class="product-image-container" style="width:165px;">
+                        <span class="product-image-wrapper" style="padding-bottom: 100%;">
+                          <img class="product-item-photo"
+                            src="/assets/images/default/no-image.png"
+                            max-width="165" max-height="165" alt="JULIANA STRIPE TANK">
+                        </span>
                       </span>
-                    </span>
-                  </a>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-8">
-                  <div class="product-item-details">
-                    <strong class="product-item-name">
-                      <a href="https://shop.santacruzbicycles.com/juliana-stripe-tank-top.html">Juliana
-                        Stripe Tank Top<br>(55-22429-04-001)</a>
-                    </strong>
-                    <div><span>Color:&nbsp;</span><span>Grey</span></div>
-                    <div><span>Size:&nbsp;</span><span>L</span></div>
+                    </a>
+                  </div>
+                  <div class="col-lg-8 col-md-8 col-sm-8">
+                    <div class="product-item-details">
+                      <strong class="product-item-name">
+                        <a href="javascript:void(0);">{{item.name}}<br></a>
+                      </strong>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </td>
+              </td>
 
-            <td class="col price" data-th="Price">
-              <span class="price-excluding-tax" data-label="Excl. Tax">
-                <span class="cart-price">
-                  <span class="price">$35.00</span>
+              <td class="col price" data-th="Price">
+                <span class="price-excluding-tax" data-label="Excl. Tax">
+                  <span class="cart-price">
+                    <span class="price">{{item.rate}}&#8377;</span>
+                  </span>
                 </span>
-              </span>
-            </td>
+              </td>
 
-            <td class="col qty" data-th="Qty">
-              <div class="field qty">
-                <div class="control qty">
-                  <label for="Item-1">
-                    <input id="Item-1" name="" value="1" type="number" size="4" title="Qty" class="input-text qty"
-                      data-role="cart-item-qty">
-                  </label>
-                </div>
-              </div>
-            </td>
-
-            <td class="col subtotal" data-th="Subtotal">
-              <span class="price-excluding-tax" data-label="Excl. Tax">
-                <span class="cart-price">
-                  <span class="price">$35.00</span>
-                </span>
-              </span>
-            </td>
-          </tr>
-          <tr class="item-actions">
-            <td colspan="4">
-              <div class="row action-delete">
-                <a href="#" title="Remove item">
-                  <span>Remove item </span>
-                </a>
-              </div>
-            </td>
-          </tr>
-          <tr class="item-info">
-            <td data-th="Item" class="col item">
-              <div class="row">
-                <div class="col-lg-4 col-sm-4 col-md-4">
-                  <a href="#">
-                    <span class="product-image-container" style="width:165px;">
-                      <span class="product-image-wrapper" style="padding-bottom: 100%;">
-                        <img class="product-item-photo"
-                          src="https://shop.santacruzbicycles.com/media/catalog/product/cache/6843cc4ccd608fca0a9c9bc0bafe8dfa/5/5/55-22429_stripe_tank_3.jpg"
-                          max-width="165" max-height="165" alt="JULIANA STRIPE TANK">
-                      </span>
-                    </span>
-                  </a>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-8">
-                  <div class="product-item-details">
-                    <strong class="product-item-name">
-                      <a href="https://shop.santacruzbicycles.com/juliana-stripe-tank-top.html">Juliana
-                        Stripe Tank Top<br>(55-22429-04-001)</a>
-                    </strong>
-                    <div><span>Color:&nbsp;</span><span>Grey</span></div>
-                    <div><span>Size:&nbsp;</span><span>L</span></div>
+              <td class="col qty" data-th="Qty">
+                <div class="field qty">
+                  <div class="control qty">
+                    <label for="Item-1">
+                      <input id="Item-1" name="" value="{{item.count}}" (change)="handlePrice($event, item)" type="number" size="4" title="Qty" class="input-text qty"
+                        data-role="cart-item-qty" min="1" oninput="validity.valid||(value='');">
+                    </label>
                   </div>
                 </div>
-              </div>
-            </td>
+              </td>
 
-            <td class="col price" data-th="Price">
-              <span class="price-excluding-tax" data-label="Excl. Tax">
-                <span class="cart-price">
-                  <span class="price">$35.00</span>
+              <td class="col subtotal" data-th="Subtotal">
+                <span class="price-excluding-tax" data-label="Excl. Tax">
+                  <span class="cart-price">
+                    <span class="price">{{item.total}}&#8377;</span>
+                  </span>
                 </span>
-              </span>
-            </td>
-
-            <td class="col qty" data-th="Qty">
-              <div class="field qty">
-                <div class="control qty">
-                  <label for="Item-1">
-                    <input id="Item-1" name="" value="1" type="number" size="4" title="Qty" class="input-text qty"
-                      data-role="cart-item-qty">
-                  </label>
+              </td>
+            </tr>
+            <tr class="item-actions">
+              <td colspan="4">
+                <div class="row action-delete">
+                  <a href="javascript:void(0);" (click)="removeItem($event, item)" title="Remove item">
+                    <span>Remove item </span>
+                  </a>
                 </div>
-              </div>
-            </td>
-
-            <td class="col subtotal" data-th="Subtotal">
-              <span class="price-excluding-tax" data-label="Excl. Tax">
-                <span class="cart-price">
-                  <span class="price">$35.00</span>
-                </span>
-              </span>
-            </td>
-          </tr>
-          <tr class="item-actions">
-            <td colspan="4">
-              <div class="row action-delete">
-                <a href="#" title="Remove item">
-                  <span>Remove item </span>
-                </a>
-              </div>
-            </td>
-          </tr>
+              </td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
       <div class="cart main actions cart-actions">
-        <!-- <button type="button" name="update_cart_action" data-cart-empty="" value="empty_cart"
-          title="Clear Shopping Cart" class="action clear" id="empty_cart_button">
-          <span>Clear Shopping Cart</span>
-        </button> -->
         <button type="button" (click)="route()" name="update_cart_action" data-cart-item-update="" value="update_qty"
           title="Update Shopping Cart" class="action update">
           <span>Continue Shopping</span>
@@ -183,13 +116,13 @@
               <tr class="totals sub">
                 <th class="mark" scope="row">Subtotal</th>
                 <td class="amount">
-                  <span class="price" data-th="Subtotal">$65.00</span>
+                  <span class="price" data-th="Subtotal">{{totalAmnt}}&#8377;</span>
                 </td>
               </tr>
               <tr class="totals-tax">
                 <th class="mark" colspan="1" scope="row">Tax</th>
                 <td class="amount" data-th="Tax">
-                  <span class="price">$0.00</span>
+                  <span class="price">0.00&#8377;</span>
                 </td>
               </tr>
               <tr class="grand totals" style=" border-top: 1px solid #ccc;">
@@ -197,7 +130,7 @@
                   <strong>Order Total</strong>
                 </th>
                 <td class="amount" data-th="Order Total">
-                  <strong><span class="price">$65.00</span></strong>
+                  <strong><span class="price">{{totalAmnt}}&#8377;</span></strong>
                 </td>
               </tr>
             </tbody>
@@ -205,7 +138,7 @@
           <div>
             <ul class="checkout methods items checkout-methods-items">
               <li class="item"> <button type="button" data-role="proceed-to-checkout" title="Proceed to Checkout"
-                  class="action primary  checkoutButton">
+                  class="action primary  checkoutButton" (click)="proceedToBuy()">
                   <span>Proceed to Checkout</span>
                 </button>
               </li>
@@ -218,8 +151,8 @@
 
   <!-- Cart empty -->
 
-  <div class="cart-empty">
+  <div class="cart-empty" *ngIf="!cartItems.length">
     <div>You have no items in your shopping cart.</div>
     <p>Click <a href="#">here</a> to continue shopping.</p>
-    </div>
+  </div>
 </main>

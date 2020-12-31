@@ -39,7 +39,13 @@ export class AuthService {
     private router: Router,
     private modalService: BsModalService,
     @Inject(PLATFORM_ID) private platformId: any
-  ) {}
+  ) {
+    
+    const profile = localStorage.getItem(AppConstant.LS_PROFILE_STATUS_KEY);
+    if (profile) {
+      this.loggedInUser.next(JSON.parse(profile));
+    }
+  }
 
   signInWithEmailAndPassword(userPayload: User) {
     const path = `${this.api}customer/login`;
@@ -86,7 +92,9 @@ export class AuthService {
 
   getToken() {
     if (isPlatformBrowser(this.platformId)) {
-      const token = JSON.parse(localStorage.getItem(AppConstant.LS_TOKEN_KEY));
+      let token = localStorage.getItem(AppConstant.LS_TOKEN_KEY);
+      if (!token) return null;
+      token = JSON.parse(token);
       return token ? token : null;
     }
   }
