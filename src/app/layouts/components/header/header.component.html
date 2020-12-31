@@ -56,7 +56,7 @@
                 <a class="dropdown-item" href="#">Shop Here</a>
                 <a class="dropdown-item" routerLink
                 ="/cart">Cart</a>
-                <a class="dropdown-item" href="javscript:void(0);" (click)="logout()">Logout</a>
+                <a *ngIf="user_name" class="dropdown-item" href="javscript:void(0);" (click)="logout()">Logout</a>
               </div>
             </span>
           </a>
