@@ -40,7 +40,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         if (error instanceof HttpErrorResponse) {
           try {
             if (error.status === 401) {
-              this.authService.openAuthDialog(AuthType.LOGIN);
+              // this.authService.openAuthDialog(AuthType.LOGIN);
               this.authService.clearLocalStorage();
             } else {
               this.toasterService.error(error.error.message, error.error.type);

@@ -45,7 +45,7 @@
             </svg>
           </a>
         </li>
-        <li>
+        <li *ngIf="user_name">
           <a class="nav-icon nav-icon__login" title="Log In">
             <span class="dropdown">
               <div type="button" class="btn name-initial dropdown-toggle" data-toggle="dropdown">
@@ -54,15 +54,14 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Dashboard</a>
                 <a class="dropdown-item" href="#">Shop Here</a>
-                <a class="dropdown-item" routerLink
-                ="/cart">Cart</a>
-                <a *ngIf="user_name" class="dropdown-item" href="javscript:void(0);" (click)="logout()">Logout</a>
+                <a class="dropdown-item" routerLink="/cart">Cart</a>
+                <a class="dropdown-item" href="javscript:void(0);" (click)="logout()">Logout</a>
               </div>
             </span>
           </a>
         </li>
         <li>
-          <a class="nav-icon nav-icon__cart" (click)="openCart()"  title="Shopping Cart">
+          <a class="nav-icon nav-icon__cart" (click)="openCart()" title="Shopping Cart">
             <svg id="cart-empty" class="cart--empty" viewBox="0 0 25.17 18.65">
               <title>Shopping Cart</title>
               <path

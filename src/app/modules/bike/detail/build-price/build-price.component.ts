@@ -11,6 +11,8 @@ import { environment } from "src/environments/environment";
 import { ProductService } from "src/app/core/services/product.service";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
+import { AuthService } from "src/app/core/services/auth.service";
+import { AuthType } from "src/app/core/enum/auth-type.enum";
 const defaultSliderData = 6;
 
 @Component({
@@ -40,7 +42,8 @@ export class BuildPriceComponent implements OnInit {
     public dialog: MatDialog,
     private router: Router,
     private productService: ProductService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -127,10 +130,14 @@ export class BuildPriceComponent implements OnInit {
   }
 
   addTocart() {
-    this.productService
-      .addToCart({ sub_product: this.selectedBuildPrice })
-      .subscribe((res) => {
-        this.router.navigateByUrl("/cart");
-      });
+    if (this.authService.getToken()) {
+      this.productService
+        .addToCart({ sub_product: this.selectedBuildPrice })
+        .subscribe((res) => {
+          this.router.navigateByUrl("/cart");
+        });
+    } else {
+      this.authService.openAuthDialog(AuthType.LOGIN);
+    }
   }
 }
