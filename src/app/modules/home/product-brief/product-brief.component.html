@@ -68,7 +68,7 @@
     </div>
 
   </div> -->
- 
+
   <div class="view view-bikes-for-homepage view-id-bikes_for_homepage view-display-id-block_1">
 
     <div class="view-content">
@@ -87,9 +87,9 @@
                 [class.js-product-explorer--active]="exLineup == index" rel="tab1"
                 (click)="onBikeChangeEvent(index, 'onClick')">
                 <div class="product-explorer__image">
-                  <a href="/en-US/bikes/v10"><img data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg"
-                      class=" lazyloaded" width="50" height="50" alt="Eton Bicycles" [src]="bike?.media?.url || noImage"
-                      default="" /></a>
+                  <a [routerLink]="'/bike/detail/' + bike.slug"><img
+                      data-src="/assets/img/thumbs/my21_thumb_0000_my21_v10_mx_xo1.jpg" class=" lazyloaded" width="50"
+                      height="50" alt="Eton Bicycles" [src]="bike?.media?.url || noImage" default="" /></a>
                 </div>
                 <div class="product-explorer__title" (click)="exLineup = index">
                   {{bike.name}}
@@ -99,8 +99,8 @@
                   <div class="product-explorer__description" [innerHTML]="bike.description | slice: 0: 50">
                   </div>
                   <div class="product-explorer__buttons">
-                    <a href="/en-US/bikes/v10" class="btn-primary">More Info</a>
-                    <a href="/en-US/bikes" class="btn-tertiary">All Bikes</a>
+                    <a [routerLink]="'/bike/detail/' + bike.slug" class="btn-primary">More Info</a>
+                    <!-- <a [routerLink]="'/bike/detail/' + bike.slug" class="btn-tertiary">All Bikes</a> -->
                   </div>
                 </div>
                 <span class="pex-toggleBox">

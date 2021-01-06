@@ -10,31 +10,32 @@ import { AuthService } from "src/app/core/services/auth.service";
 })
 export class HeaderComponent implements OnInit {
   public bike_menu: boolean = false;
-  user_name = '';
+  user_name = "";
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    this.authService.loggedInUser$.subscribe(
-      data => {
-        if (data) {
-          this.user_name = data.name;
-        } else {
-          this.user_name = '';
-        }
+    this.authService.loggedInUser$.subscribe((data) => {
+      if (data) {
+        this.user_name = data.name;
+      } else {
+        this.user_name = "";
       }
-    )
-  } 
+    });
+  }
   logout() {
     this.authService.clearLocalStorage();
     // this.router.navigateByUrl('/');
   }
+
   showBikes() {
     this.bike_menu = !this.bike_menu;
   }
+
   toggleMobileNav() {
     const html = document.getElementsByTagName("html")[0];
     html.classList.remove("js-mobile-menu--is-active");
   }
+  
   handleToggleCondition(data) {
     this.bike_menu = data;
     const html = document.getElementsByTagName("html")[0];

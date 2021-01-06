@@ -17,19 +17,12 @@
       <ul class="nav-links__list">
         <li class="nav-links__item first"><a class="nav-links__item-link nav-dropdown__bike_menu" (click)="showBikes()"
             href="javascript:void(0);">Bikes</a></li>
-        <li class="nav-links__item"><a routerLink="/wheels"
-            class="nav-links__item-link nav-dropdown__components_menu">Wheels</a>
-        </li>
-        <li class="nav-links__item"><a routerLink="/paydirt" class="nav-links__item-link nav-dropdown__paydirt_menu"
-            title="Coming Soon">Paydirt</a></li>
         <li class="nav-links__item"><a routerLink="/gear" class="nav-links__item-link nav-dropdown__gear_menu"
             title="Coming Soon">Gear</a></li>
         <li class="nav-links__item"><a routerLink="/teams" class="nav-links__item-link nav-dropdown__teams_menu"
-            title="Coming Soon">Teams</a></li>
+            title="Coming Soon">Contact Us</a></li>
         <li class="nav-links__item"><a title="Coming Soon" routerLink="/news"
-            class="nav-links__item-link nav-dropdown__news_menu">News</a></li>
-        <li class="nav-links__item last"><a title="Coming Soon" routerLink="/demo"
-            class="nav-links__item-link nav-dropdown__demo_menu">Demo</a></li>
+            class="nav-links__item-link nav-dropdown__news_menu">About Us</a></li>
       </ul>
     </nav>
 
@@ -52,8 +45,7 @@
                 {{this.user_name}}
               </div>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Dashboard</a>
-                <a class="dropdown-item" href="#">Shop Here</a>
+                <a class="dropdown-item" href="#">Home</a>
                 <a class="dropdown-item" routerLink="/cart">Cart</a>
                 <a class="dropdown-item" href="javscript:void(0);" (click)="logout()">Logout</a>
               </div>
@@ -84,14 +76,14 @@
           </a>
         </li>
         <li>
-          <a class="nav-icon nav-icon__search" title="Search">
+          <!-- <a class="nav-icon nav-icon__search" title="Search">
             <svg id="search" viewBox="0 0 486 503.39">
               <title>Search</title>
               <path
                 d="M491.61,462.81,371.8,338.21a202.59,202.59,0,0,0,47.68-130.66c0-112.07-91.18-203.24-203.24-203.24S13,95.48,13,207.55s91.18,203.24,203.24,203.24A201.07,201.07,0,0,0,332.68,374L453.4,499.56a26.51,26.51,0,1,0,38.21-36.75ZM216.24,57.33c82.83,0,150.22,67.39,150.22,150.22S299.08,357.77,216.24,357.77,66,290.38,66,207.55,133.41,57.33,216.24,57.33Z"
                 transform="translate(-13 -4.31)"></path>
             </svg>
-          </a>
+          </a> -->
 
           <div class="search-form">
             <form action="/search" method="get">

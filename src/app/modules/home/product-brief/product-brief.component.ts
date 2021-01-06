@@ -7,6 +7,7 @@ interface ProductSlider {
   description: string;
   media: Media;
   is_new?: boolean;
+  slug?: string;
 }
 @Component({
   selector: "app-product-brief",
@@ -36,6 +37,7 @@ export class ProductBriefComponent implements OnInit {
             description: ele.description,
             media,
             is_new: i === 0,
+            slug: ele.slug,
           };
         });
       } else {
@@ -48,6 +50,7 @@ export class ProductBriefComponent implements OnInit {
             description: ele.description,
             media,
             is_new: i === 0,
+            slug: ele.slug,
           };
         });
       }
