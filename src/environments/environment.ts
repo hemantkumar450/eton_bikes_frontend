@@ -11,8 +11,8 @@
 
 export const environment = {
   production: false,
-  apiEndPoint: "http://localhost:5200/api/",
-  filePath: "http://localhost:5200/",
+  apiEndPoint: "https://etonbikes.com:5000/api/",
+  filePath: "https://etonbikes.com:5000/api/",
   noImagePath: "/assets/images/default/no-image.png",
   rzp_key: "rzp_test_Z8LqVx1MG0AMZO"
 };

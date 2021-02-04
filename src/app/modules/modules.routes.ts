@@ -15,6 +15,13 @@ export const routes: Routes = [
       import("./wheels/wheels.module").then((m) => m.WheelsModule),
   },
   {
+    path: "privacy-policy",
+    loadChildren: () =>
+      import("./privacy-policy/privacy-policy.module").then(
+        (m) => m.PrivacyPolicyModule
+      ),
+  },
+  {
     path: "paydirt",
     loadChildren: () =>
       import("./paydirt/paydirt.module").then((m) => m.PaydirtModule),
@@ -24,13 +31,14 @@ export const routes: Routes = [
     loadChildren: () => import("./gear/gear.module").then((m) => m.GearModule),
   },
   {
-    path: "teams",
+    path: "contact-us",
     loadChildren: () =>
-      import("./teams/teams.module").then((m) => m.TeamsModule),
+      import("./contact-us/contact-us.module").then((m) => m.ContactUsModule),
   },
   {
-    path: "news",
-    loadChildren: () => import("./news/news.module").then((m) => m.NewsModule),
+    path: "about-us",
+    loadChildren: () =>
+      import("./about-us/about-us.module").then((m) => m.AboutUsModule),
   },
   {
     path: "demo",
