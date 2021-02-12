@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
     },
     modal: {},
     theme: {
-      color: "#e5001c",
+      color: "#98FC01",
     },
   };
   constructor(

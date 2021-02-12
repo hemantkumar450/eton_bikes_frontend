@@ -207,7 +207,7 @@ p {
 }
 
 .hdr-one a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -236,7 +236,7 @@ p {
 }
 
 .hdr-two a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -264,7 +264,7 @@ p {
 }
 
 .hdr-three a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -293,7 +293,7 @@ p {
 }
 
 .sg-hdr-one a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -321,7 +321,7 @@ p {
 }
 
 .sg-hdr-two a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -349,7 +349,7 @@ p {
 }
 
 .sg-hdr-three a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -432,7 +432,7 @@ img {
 a {
   text-decoration: none;
   transition: color .15s;
-  color: #e5001c
+  color: #98FC01
 }
 
 a:hover {
@@ -520,7 +520,7 @@ img.u-image-not-responsive {
 }
 
 .btn-primary:hover {
-  background-color: #b90017 !important;
+  background-color: #6da01b !important;
   border-color: revert !important;
 }
 
@@ -763,7 +763,7 @@ a.icon-flag__link {
 }
 
 a:hover.icon-flag__link {
-  color: #e5001c
+  color: #98FC01
 }
 
 .icon-flag--us {
@@ -886,7 +886,7 @@ a:hover.icon-flag__link {
 }
 
 .nav-icon svg:hover {
-  fill: #e5001c
+  fill: #98FC01
 }
 
 .nav-icon__login {
@@ -1085,15 +1085,15 @@ svg.cart--active {
 
 @media (min-width:48em) {
   a.nav-links__item-link:hover {
-    color: #e5001c
+    color: #98FC01
   }
 
   a.nav-links__item-link.active {
-    border-bottom: 3px solid #e5001c
+    border-bottom: 3px solid #98FC01
   }
 
   .js-nav-link--is-active a.nav-links__item-link {
-    color: #e5001c;
+    color: #98FC01;
     border-bottom-color: transparent
   }
 
@@ -1407,7 +1407,7 @@ svg.cart--active {
   }
 
   .mobile-nav__shopping a:hover {
-    color: #e5001c
+    color: #98FC01
   }
 
   .mobile-nav__secondary-wrapper {
@@ -1487,12 +1487,12 @@ svg.cart--active {
     width: .3125rem;
     height: .125rem;
     margin-right: .5625rem;
-    background-color: #e5001c;
+    background-color: #98FC01;
     transition: width .15s, color .15s
   }
 
   .mobile-nav__secondary-list-item a:hover {
-    color: #e5001c
+    color: #98FC01
   }
 
   .mobile-nav__secondary-list-item a:hover::before {
@@ -1775,7 +1775,7 @@ svg.cart--active {
 }
 
 .social-channel__icon:hover svg {
-  fill: #e5001c
+  fill: #98FC01
 }
 
 .social-channel__icon svg {
@@ -2183,7 +2183,7 @@ html[xmlns] .flexslider .slides {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff
 }
 
@@ -2212,7 +2212,7 @@ html[xmlns] .flexslider .slides {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  background-color: #b90017
+  background-color: #6da01b
 }
 
 .btn-primary:hover::before {
@@ -2236,7 +2236,7 @@ html[xmlns] .flexslider .slides {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff
 }
 
@@ -2265,7 +2265,7 @@ html[xmlns] .flexslider .slides {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  background-color: #b90017
+  background-color: #6da01b
 }
 
 .btn-primary--small:hover::before {
@@ -2288,7 +2288,7 @@ html[xmlns] .flexslider .slides {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff;
   display: block;
   text-align: center;
@@ -2322,7 +2322,7 @@ html[xmlns] .flexslider .slides {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  background-color: #b90017
+  background-color: #6da01b
 }
 
 .btn-primary--full-width:hover::before {
@@ -2671,12 +2671,12 @@ html[xmlns] .flexslider .slides {
   width: 0rem;
   height: .125rem;
   margin-right: 0rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: all .15s
 }
 
 .link-dash__appear:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .link-dash__appear:hover::before {
@@ -2712,12 +2712,12 @@ html[xmlns] .flexslider .slides {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .link-dash__grow:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .link-dash__grow:hover::before {
@@ -2744,12 +2744,12 @@ html[xmlns] .flexslider .slides {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .link-dash__grow--grey:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .link-dash__grow--grey:hover::before {
@@ -2770,7 +2770,7 @@ a.link-dash__arrow {
 }
 
 a:hover.link-dash__arrow {
-  color: #e5001c
+  color: #98FC01
 }
 
 .features-list__title {
@@ -2787,7 +2787,7 @@ a:hover.link-dash__arrow {
 }
 
 .features-list__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -3067,7 +3067,7 @@ textarea {
 }
 
 .form-item--radio input[type='radio']:checked+label span::after {
-  background-color: #e5001c;
+  background-color: #98FC01;
   opacity: 1
 }
 
@@ -3137,7 +3137,7 @@ textarea {
   position:relative;
   -webkit-transform:perspective(1px) translateZ(0);
   transform:perspective(1px) translateZ(0);
-  background-color:#e5001c;
+  background-color:#98FC01;
   color:#fff;
   margin-right:.8125rem;
   margin-bottom:.8125rem;
@@ -3178,7 +3178,7 @@ input[type='submit']::before {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  /* background-color: #b90017 */
+  /* background-color: #6da01b */
 }
 
 button:hover::before,
@@ -3193,7 +3193,7 @@ button:hover,
 input[type='reset']:hover,
 input[type='button']:hover,
 input[type='submit']:hover {
-  /* background-color: #b90017 */
+  /* background-color: #6da01b */
 }
 
 button.btn-secondary,
@@ -3300,7 +3300,7 @@ label {
 
 .form-required {
   margin-left: .25rem;
-  color: #e5001c
+  color: #98FC01
 }
 
 .form-item__help {
@@ -3351,7 +3351,7 @@ label {
 }
 
 .related-products-list__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -3418,7 +3418,7 @@ label {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff
 }
 
@@ -3447,7 +3447,7 @@ label {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  background-color: #b90017
+  background-color: #6da01b
 }
 
 .related-products-list__item-btn:hover::before {
@@ -3520,7 +3520,7 @@ label {
 .js-active .toggle__option-link::after,
 .js-toggle__option--active .toggle__option-link::after {
   width: 100%;
-  background: #e5001c
+  background: #98FC01
 }
 
 .list-pipe {
@@ -3592,12 +3592,12 @@ label {
 
 .scroll-toggle__option.js-scroll-toggle__option--active a {
   color: #878787;
-  border-bottom-color: #e5001c
+  border-bottom-color: #98FC01
 }
 
 .scroll-toggle__option.js-scroll-toggle__option--active a::after {
   width: 100%;
-  background: #e5001c
+  background: #98FC01
 }
 
 @media (min-width:53.75em) {
@@ -3719,7 +3719,7 @@ label {
 .tabs__option.js-active,
 .tabs__option.js-tab--active,
 .tabs__option.js-tabs__option--active {
-  border-bottom-color: #e5001c;
+  border-bottom-color: #98FC01;
   background-color: #fff
 }
 
@@ -3727,7 +3727,7 @@ label {
 .tabs__option.js-tab--active::before,
 .tabs__option.js-tabs__option--active::before {
   width: 100%;
-  background: #e5001c
+  background: #98FC01
 }
 
 .tab-content {
@@ -4079,7 +4079,7 @@ label {
   left: 20%;
   width: 60%;
   height: 3px;
-  background-color: #e5001c
+  background-color: #98FC01
 }
 
 .pager__list-item--first,
@@ -4221,12 +4221,12 @@ label {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .nav-header__link a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .nav-header__link a:hover::before {
@@ -4249,7 +4249,7 @@ label {
 }
 
 .nav-header__close svg:hover {
-  fill: #e5001c;
+  fill: #98FC01;
   cursor: pointer
 }
 
@@ -4298,7 +4298,7 @@ label {
 }
 
 .share-block__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -4529,7 +4529,7 @@ label {
 }
 
 .alert-header-overlay__close:hover svg {
-  fill: #e5001c
+  fill: #98FC01
 }
 
 .js-alert-header-overlay--active .alert-header-overlay {
@@ -4602,7 +4602,7 @@ label {
 }
 
 .alert-header__close:hover svg {
-  fill: #e5001c
+  fill: #98FC01
 }
 
 .alert-footer {
@@ -4704,7 +4704,7 @@ label {
 }
 
 .alert-footer__close:hover svg {
-  fill: #e5001c
+  fill: #98FC01
 }
 
 .alert-footer__close svg {
@@ -4757,7 +4757,7 @@ label {
 }
 
 .product-explorer__panel-title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -4863,7 +4863,7 @@ label {
     width: 0rem;
     height: .125rem;
     margin-right: 0rem;
-    background-color: #e5001c;
+    background-color: #98FC01;
     transition: all .15s
   }
 
@@ -4880,7 +4880,7 @@ label {
 .product-explorer__tag {
   padding: .1875rem .375rem .1875rem;
   margin-left: .5rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff;
   font-size: .625rem;
   font-weight: 700;
@@ -4946,7 +4946,7 @@ label {
 }
 
 .js-product-explorer--active .product-explorer__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -5100,7 +5100,7 @@ label {
 
 .js-product-explorer-toggle--active .product-explorer-toggle__title::after {
   width: 100%;
-  background: #e5001c
+  background: #98FC01
 }
 
 .secondary-navigation {
@@ -5361,7 +5361,7 @@ label {
 }
 
 .hero-panel__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -5473,7 +5473,7 @@ label {
 }
 
 .text-panel__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -5790,7 +5790,7 @@ label {
 }
 
 .media-block__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -5819,7 +5819,7 @@ label {
 }
 
 .text-editor .media-block__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -5848,7 +5848,7 @@ label {
 }
 
 .media-block__name a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -5908,12 +5908,12 @@ label {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .media-block__cta:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .media-block__cta:hover::before {
@@ -6088,7 +6088,7 @@ label {
 }
 
 .flexslider-media-block__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -6297,7 +6297,7 @@ label {
 }
 
 .media-panel__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -6398,7 +6398,7 @@ label {
 }
 
 .feature-block__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -6434,12 +6434,12 @@ label {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .feature-block__cta:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .feature-block__cta:hover::before {
@@ -6535,7 +6535,7 @@ label {
 }
 
 .polaroid__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -6555,7 +6555,7 @@ label {
 }
 
 .polaroid__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .polaroid__text {
@@ -6602,12 +6602,12 @@ label {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .polaroid__category a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .polaroid__category a:hover::before {
@@ -6692,7 +6692,7 @@ label {
 }
 
 .polaroid-horizontal__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -6726,7 +6726,7 @@ label {
 }
 
 .polaroid-horizontal__link:hover .polaroid-horizontal__title {
-  color: #e5001c;
+  color: #98FC01;
   transition: color .15s
 }
 
@@ -6748,7 +6748,7 @@ label {
 }
 
 .newsletter-signup__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -6891,7 +6891,7 @@ label {
 }
 
 .language-menu__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -7123,7 +7123,7 @@ label {
 }
 
 .merch-card__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .card-pricing--is-on-sale .merch-card__badge {
@@ -7246,7 +7246,7 @@ label {
   }
 
   .bike-dd__list-category--title a:hover {
-    color: #e5001c
+    color: #98FC01
   }
 }
 
@@ -7319,7 +7319,7 @@ label {
 }
 
 .bikes-extra-item__support-title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -7355,12 +7355,12 @@ label {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .bikes-extra-item__support-list a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .bikes-extra-item__support-list a:hover::before {
@@ -7405,12 +7405,12 @@ label {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .bikes-extra-item__juliana-link:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .bikes-extra-item__juliana-link:hover::before {
@@ -7486,7 +7486,7 @@ label {
 }
 
 .polaroid-dd__list-item-title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -7527,12 +7527,12 @@ label {
   width: .3125rem;
   height: .125rem;
   margin-right: .5625rem;
-  background-color: #e5001c;
+  background-color: #98FC01;
   transition: width .15s, color .15s
 }
 
 .polaroid-dd__list-text-links--dash-grow a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .polaroid-dd__list-text-links--dash-grow a:hover::before {
@@ -7582,7 +7582,7 @@ label {
 }
 
 .compare-page__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -7755,7 +7755,7 @@ label {
 }
 
 .build-price__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -8165,7 +8165,7 @@ label {
 .builder-product__title a:hover,
 .builder-options__title a:hover,
 .builder-summary__heading a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -8244,7 +8244,7 @@ label {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff
 }
 
@@ -8273,7 +8273,7 @@ label {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  background-color: #b90017
+  background-color: #6da01b
 }
 
 .builder-summary__button--dealers:hover::before {
@@ -8350,7 +8350,7 @@ label {
 }
 
 .builder-modal__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -8439,7 +8439,7 @@ label {
   position: absolute;
   right: -8px;
   top: -8px;
-  background: #e5001c;
+  background: #98FC01;
   color: white;
   width: 18px;
   height: 18px;
@@ -8478,7 +8478,7 @@ label {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff
 }
 
@@ -8507,7 +8507,7 @@ label {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  background-color: #b90017
+  background-color: #6da01b
 }
 
 .builder-summary__button--changes:hover::before {
@@ -8571,7 +8571,7 @@ label {
 }
 
 .faq-item__question:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .faq-item__answer {
@@ -8653,7 +8653,7 @@ label {
 }
 
 .frame-detail-images__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -8946,7 +8946,7 @@ label {
 }
 
 .geometry__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -9206,7 +9206,7 @@ label {
 }
 
 .geometry-table__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -9302,7 +9302,7 @@ label {
 }
 
 .newsletter-form__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -9536,7 +9536,7 @@ label {
 }
 
 .product-intro__slug a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -9565,7 +9565,7 @@ label {
 }
 
 .product-intro__features-title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -9633,7 +9633,7 @@ label {
 }
 
 .shock-table__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -9719,7 +9719,7 @@ label {
 }
 
 .tech-support__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -10192,7 +10192,7 @@ label {
 }
 
 .reserve-wheels__form .hs-input.error {
-  border-color: #e5001c
+  border-color: #98FC01
 }
 
 .reserve-wheels__form .hs-button {
@@ -10313,7 +10313,7 @@ label {
 }
 
 .specs-table__list-item.selected li:first-child {
-  border-top-color: #e5001c
+  border-top-color: #98FC01
 }
 
 .specs-table__header-item,
@@ -10357,7 +10357,7 @@ label {
 }
 
 .specs-table__item--kitname:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 .dealer-record__header {
@@ -10418,7 +10418,7 @@ label {
 }
 
 .dealer-record__name a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -10577,7 +10577,7 @@ label {
 }
 
 .dealer-search__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -10630,7 +10630,7 @@ label {
 }
 
 .dealer-browse__title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -10693,7 +10693,7 @@ label {
 }
 
 .dealer-browse__section-label a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -10725,7 +10725,7 @@ label {
 }
 
 .dealer-browse__section--level-2 .dealer-browse__section-label a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -10772,7 +10772,7 @@ label {
 .dealer-browse__section-label:hover,
 .dealer-browse__section-header:hover,
 .dealer-browse__section.js-active>.dealer-browse__section-header * {
-  color: #e5001c
+  color: #98FC01
 }
 
 .dealer-browse__section--level-1.js-active {
@@ -11025,7 +11025,7 @@ label {
 }
 
 .demo-stop__date a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11055,7 +11055,7 @@ label {
 }
 
 .demo-stop__time a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11083,7 +11083,7 @@ label {
 }
 
 .demo-stop__label a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11116,7 +11116,7 @@ label {
 }
 
 .demo-stop__frames-title a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11284,7 +11284,7 @@ label {
 }
 
 .text-editor h2 a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11314,7 +11314,7 @@ label {
 }
 
 .text-editor h3 a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11343,7 +11343,7 @@ label {
 }
 
 .text-editor h4 a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11371,7 +11371,7 @@ label {
 }
 
 .text-editor h5 a:hover {
-  color: #e5001c
+  color: #98FC01
 }
 
 @media screen and (min-width:31.25em) {
@@ -11770,7 +11770,7 @@ label {
 
 .hbspt-form form label .hs-form-required {
   margin-left: .0625rem;
-  color: #e5001c;
+  color: #98FC01;
   font-weight: normal
 }
 
@@ -11961,7 +11961,7 @@ label {
 }
 
 .hbspt-form form ul.hs-error-msgs li label {
-  color: #e5001c
+  color: #98FC01
 }
 
 .hbspt-form form ul.inputs-list li {
@@ -12415,7 +12415,7 @@ body.logged-in.toolbar .modal-full__close {
 }
 
 .basic-page__title a:hover {
-  color: #e5001c;
+  color: #98FC01;
 }
 
 @media screen and (min-width:31.25em) {
@@ -13005,7 +13005,7 @@ body.js-modal-full__wrapper-darken--is-active .modal-full__inner.modal-full__pan
 
 .slide-ctrl--prev svg,
 .slide-ctrl--next svg {
-  fill: #e5001c;
+  fill: #98FC01;
 }
 
 .slide-ctrl--spacer {
@@ -13089,7 +13089,7 @@ body.js-modal-full__wrapper-darken--is-active .modal-full__inner.modal-full__pan
 }
 
 .site-switcher__icon--one :hover svg {
-  fill: #e5001c;
+  fill: #98FC01;
 }
 
 .site-switcher__icon--one svg {
@@ -13526,7 +13526,7 @@ select.hs-input {
 }
 
 .size-chart__line-item {
-  background: #e5001c;
+  background: #98FC01;
   color: #ffffff;
 }
 
@@ -13614,7 +13614,7 @@ select.hs-input {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #fff;
 }
 
@@ -13738,7 +13738,7 @@ select.hs-input {
   position: relative;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  background-color: #e5001c;
+  background-color: #98FC01;
   color: #ffffff;
 }
 
@@ -13767,7 +13767,7 @@ select.hs-input {
   transform-origin: 0 50%;
   -webkit-transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  background-color: #b90017;
+  background-color: #6da01b;
 }
 
 .button--more:hover::before {
@@ -14011,7 +14011,7 @@ body.js-alert-header--active .alert-header {
 }
 
 .frameonly__title a:hover {
-  color: #e5001c;
+  color: #98FC01;
 }
 
 @media screen and (min-width:31.25em) {
@@ -14183,7 +14183,7 @@ body.u-freeze .secondary-navigation {
 }
 
 .news-list-noresults__title a:hover {
-  color: #e5001c;
+  color: #98FC01;
 }
 
 @media screen and (min-width:31.25em) {
@@ -14435,7 +14435,7 @@ a.builder-summary__button--compare::before {
   transform-origin: 0 50%;
   -webkit-transition: transform .15s ease-out;
   transition: transform .15s ease-out;
-  background-color: #b90017;
+  background-color: #6da01b;
   z-index: -1;
 }
 
@@ -14819,7 +14819,7 @@ button:active {
 
 .btn-primary.focus,
 .btn-primary:focus {
-  box-shadow: 0 0 0 0.1rem #e5001c73;
+  box-shadow: 0 0 0 0.1rem #98FC0173;
 }
 
 
@@ -14840,9 +14840,9 @@ button:active {
 
 .clear:hover,
 .update:hover {
-  background-color: #e5001c !important;
+  background-color: #98FC01 !important;
   color: #fff !important;
-  border: 1px solid #e5001c !important;
+  border: 1px solid #98FC01 !important;
   white-space: nowrap;
   transform: none !important;
 }

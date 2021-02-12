@@ -40,7 +40,6 @@ export class AuthService {
     private modalService: BsModalService,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
-    
     const profile = localStorage.getItem(AppConstant.LS_PROFILE_STATUS_KEY);
     if (profile) {
       this.loggedInUser.next(JSON.parse(profile));
@@ -67,6 +66,11 @@ export class AuthService {
   checkIfUEmailExists(email): Observable<ApiResponse<{ doesExist: boolean }>> {
     const path = `${this.api}customer/emailVerify`;
     return this.http.post<ApiResponse<{ doesExist: boolean }>>(path, email);
+  }
+
+  addToContact(contactPayload) {
+    const path = `${this.api}customer/emailVerify`;
+    return this.http.post(path, contactPayload);
   }
 
   openAuthDialog(authType: AuthType) {

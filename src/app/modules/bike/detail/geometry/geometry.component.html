@@ -17,13 +17,13 @@
       <aside class="geometry__toggles">
         <div class="toggle">
           <span class="toggle__label">Show: </span>
-          <span class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m" data-measure="m">
-            <a class="toggle__option-link" href="#">mm</a>
+          <span [ngClass]="{'js-toggle__option--active':!isInchesEnabled}"
+            class="pointer toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m" data-measure="m">
+            <a class="toggle__option-link" (click)="isInchesEnabled = false">mm</a>
           </span>
-          <span
-            class="toggle__option toggle__option--aluminium measure-toggle measure-toggle--i js-toggle__option--active"
-            data-measure="i">
-            <a class="toggle__option-link" href="#">in</a>
+          <span [ngClass]="{'js-toggle__option--active':isInchesEnabled}"
+            class="pointer toggle__option toggle__option--aluminium measure-toggle measure-toggle--i" data-measure="i">
+            <a class="toggle__option-link" (click)="isInchesEnabled = true">in</a>
           </span>
         </div>
       </aside>
@@ -64,22 +64,23 @@
                         </thead>
                         <tbody>
                           <ng-container *ngFor="let high of item.high; let j = index;">
-                            <tr class="geom-table-row geom-table-row--reach odd" data-id="reach" (mouseover)="setActiveClass(high)">
+                            <tr class="geom-table-row geom-table-row--reach odd" data-id="reach"
+                              (mouseover)="setActiveClass(high)">
                               <td class="geometry-table__item-icon"><span
                                   class="geom-table-icon geom-table-icon--A">{{ high.order}}</span>
                               </td>
                               <td class="label geometry-table__item-label">
                                 {{high.key.name}}</td>
                               <td class="value geometry-table__item-value">
-                                <span class="measure measure-m">{{high.small}}<i>"</i></span><span
+                                <span class="measure measure-m">{{changeInValues(high.small)}}<i>"</i></span><span
                                   class="measure measure-i">16.22<i>"</i></span>
                               </td>
                               <td class="value geometry-table__item-value">
-                                <span class="measure measure-m">{{high.medium}}<i>"</i></span><span
+                                <span class="measure measure-m">{{changeInValues(high.medium)}}<i>"</i></span><span
                                   class="measure measure-i">17.2<i>"</i></span>
                               </td>
                               <td class="value geometry-table__item-value">
-                                <span class="measure measure-m">{{high.large}}<i>"</i></span><span
+                                <span class="measure measure-m">{{changeInValues(high.large)}}<i>"</i></span><span
                                   class="measure measure-i">18.19<i>"</i></span>
                               </td>
                             </tr>
@@ -160,13 +161,14 @@
             <aside class="geometry__toggles">
               <div class="toggle">
                 <span class="toggle__label">Show: </span>
-                <span
-                  class="toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m measure-toggle--i js-toggle__option--active"
+                <span [ngClass]="{'js-toggle__option--active':!isInchesEnabled}"
+                  class="pointer toggle__option toggle__option--carbon_c measure-toggle measure-toggle--m measure-toggle--i"
                   data-measure="m">
-                  <a class="toggle__option-link" href="#">cm</a>
+                  <a class="toggle__option-link" (click)="isInchesEnabled = false">mm</a>
                 </span>
-                <span class="toggle__option toggle__option--aluminium measure-toggle " data-measure="i">
-                  <a class="toggle__option-link" href="#">in</a>
+                <span [ngClass]="{'js-toggle__option--active':isInchesEnabled}"
+                  class="pointer toggle__option toggle__option--aluminium measure-toggle " data-measure="i">
+                  <a class="toggle__option-link" (click)="isInchesEnabled = true">in</a>
                 </span>
               </div>
             </aside>
@@ -181,9 +183,12 @@
                         <div class="size-chart__line-item" [ngStyle]="getFrameSizeStyle(frame)"
                           [attr.data-size]="frame.key">
                           <span class="num min measure measure-i">{{frame.from}}"</span>
-                          <span class="num min measure measure-m">155</span><span class="divider">&nbsp;—&nbsp;</span>
-                          <span class="num max measure measure-i">{{frame.to}}"</span><span
-                            class="num max measure measure-m">168cm</span>
+                          <span class="num min measure measure-m">{{changeInValues(frame.from)}}"</span>
+                          <span class="divider">&nbsp;—&nbsp;</span>
+                          <span class="num max measure measure-i">{{frame.to}}"</span>
+                          <span class="num max measure measure-m">
+                            {{changeInValues(frame.from)}}"{{isInchesEnabled?' in':' mm'}}
+                          </span>
                         </div>
                       </div>
                     </div>
