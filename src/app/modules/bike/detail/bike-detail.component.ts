@@ -5,7 +5,8 @@ import {
   ViewChild,
   ElementRef,
 } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { Product, BuildSpecs } from "src/app/core/model/product.model";
 import { ProductService } from "src/app/core/services/product.service";
 
@@ -20,6 +21,7 @@ export class BikeDetailComponent implements OnInit {
   bannerImages: any[] = [];
   public currentActive = 0;
   loader = true;
+  urlSafe: SafeResourceUrl;
   @ViewChild("toggleScroll") toggleScroll: ElementRef;
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(e) {
@@ -85,8 +87,17 @@ export class BikeDetailComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private router: Router,
+    public sanitizer: DomSanitizer
+  ) {
+    router.events.subscribe((val) => {
+      // see also
+      if (val instanceof NavigationEnd) {
+        this.getProductDetail();
+      }
+    });
+  }
 
   ngOnInit() {
     this.getProductDetail();
@@ -110,11 +121,32 @@ export class BikeDetailComponent implements OnInit {
           (media) => media.category == "banner"
         );
         console.log(this.productDetail.close_up_media, "details");
+        this.getYouTubeLink();
       },
       (error) => {},
       () => {
         this.loader = false;
       }
     );
+  }
+
+  getYouTubeLink() {
+    const videoId = this.getVideoId(this.productDetail.media_urls);
+    const url = `https://www.youtube.com/embed/${videoId}?wmode=opaque&amp;controls=&amp;rel=0&amp;showinfo=0&amp;theme=light&amp;autohide=1`;
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  getVideoId(media_urls: any[]) {
+    const item = media_urls.find((ele) => ele.category === "youtube");
+    if (!item) return "error";
+    const url = item.url;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+      return match[2];
+    } else {
+      return "error";
+    }
   }
 }

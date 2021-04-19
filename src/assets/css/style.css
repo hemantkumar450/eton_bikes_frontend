@@ -1597,15 +1597,15 @@ svg.cart--active {
 }
 
 .footer-links {
-  padding-top: 5.625rem;
-  padding-bottom: 3.125rem;
+  padding-top: 2.625rem;
+  padding-bottom: 1.125rem;
   background-color: #1f1f1f
 }
 
 @media (min-width:48em) {
   .footer-links {
-    padding-top: 6.5625rem;
-    padding-bottom: 5.125rem
+    padding-top: 3.5625rem;
+    padding-bottom: 3.125rem
   }
 }
 
@@ -4716,7 +4716,7 @@ label {
 }
 
 .product-explorer__panel {
-  padding-top: 3.625rem;
+  padding-top: 2.625rem;
   padding-bottom: 4.625rem;
   padding-bottom: 0;
   overflow: hidden;
@@ -4725,7 +4725,7 @@ label {
 
 @media (min-width:60em) {
   .product-explorer__panel {
-    padding-top: 7.25rem;
+    /* padding-top: 7.25rem; */
     padding-bottom: 9.3125rem
   }
 }
@@ -6055,21 +6055,21 @@ label {
 }
 
 .flexslider-media-block__wrapper {
-  padding-top: 3.625rem;
+  padding-top: 2.625rem;
   padding-bottom: 4.625rem;
   background-color: #f8f8f8
 }
 
 @media (min-width:60em) {
   .flexslider-media-block__wrapper {
-    padding-top: 7.25rem;
+    /* padding-top: 7.25rem; */
     padding-bottom: 9.3125rem
   }
 }
 
 @media (min-width:60em) {
   .flexslider-media-block__wrapper {
-    padding-bottom: 7rem
+    padding-bottom: 2rem
   }
 }
 
@@ -11601,7 +11601,7 @@ label {
 }
 
 .frame-section {
-  padding: 7.5rem 0
+  padding: 3.5rem 0
 }
 
 .frame-section--overview {
@@ -11609,7 +11609,7 @@ label {
 }
 
 .frame-overview-imagery {
-  padding: 7.5rem 0;
+  padding: 1.5rem 0;
   margin-top: 7.5rem;
   background: #f8f8f8
 }
@@ -13358,7 +13358,7 @@ blockquote.block-full.notused::after {
 }
 
 #frame_page {
-  padding-top: 9.625rem;
+  padding-top: 4.625rem;
 }
 
 .u-freeze .alert-header,
@@ -13488,7 +13488,7 @@ select.hs-input {
 }
 
 .product-intro__frame {
-  margin-bottom: 7.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .frame-section--overview .u-video-wrapper {

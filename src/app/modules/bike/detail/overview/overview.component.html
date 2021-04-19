@@ -27,29 +27,19 @@
     </div>
   </section>
 
-
-  <div *ngIf="urlSafe" id="file-14635--2" class="file file-video file-video-youtube">
-    <h2 class="element-invisible"><a href="/en-US/file/syndicate-mixed-opinions">The
-        Syndicate - Mixed Opinions</a></h2>
-    <div class="content">
-      <div class="media-youtube-video media-youtube-2">
-        <div class="u-video-wrapper" style="padding-bottom: 56.25%"><iframe class="media-youtube-player"
-            title="The Syndicate - Mixed Opinions"
-            [src]="urlSafe"
-            name="The Syndicate - Mixed Opinions" frameborder="0" allowfullscreen="">Video of
-            The Syndicate - Mixed Opinions</iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
   <!-- TODO Image open section -->
   <section class="frame-overview-imagery">
-    <div class="l-wrapper">
-      <div class="gallery gallery--frame gallery--frame-overview gallery--items-5">
-        <div class="gallery__item gallery-trigger lazypreload lazyloaded" *ngFor="let image of overview.long_shot_media; let i = index;"
-          [style.background-image]="'url(&quot;' + path+image.media_link + '&quot;)'" (click)="showFullImage(image, i)">
+    <div class="frame-detail-images__wrapper l-wrapper js-tabset">
+      <header class="frame-detail-images__header">
+        <h1 class="frame-detail-images__title">Galary</h1>
+      </header>
+      <div class="l-wrapper">
+        <div class="gallery gallery--frame gallery--frame-overview gallery--items-5">
+          <div class="gallery__item gallery-trigger lazypreload lazyloaded"
+            *ngFor="let image of overview.long_shot_media; let i = index;"
+            [style.background-image]="'url(&quot;' + path+image.media_link + '&quot;)'"
+            (click)="showFullImage(image, i)">
+          </div>
         </div>
       </div>
     </div>

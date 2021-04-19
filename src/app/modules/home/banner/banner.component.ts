@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { section } from "src/app/core/model/page.model";
-import { environment } from 'src/environments/environment';
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-banner",
@@ -12,5 +12,7 @@ export class BannerComponent implements OnInit {
   @Input() section: section;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.path + this.section.medias[0].media_link);
+  }
 }

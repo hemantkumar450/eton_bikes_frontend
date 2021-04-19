@@ -65,17 +65,33 @@
       </app-overview>
       <!-- end #overview -->
 
+      <!-- detail_images -->
+      <app-detail-images *ngIf="productDetail.close_up_media.length" [close_up_media]="productDetail.close_up_media">
+      </app-detail-images>
+      <!-- end #detail_images -->
+
       <!-- build_price -->
       <app-build-price *ngIf="buildSpecs && buildSpecs.length" [builds]="buildSpecs"></app-build-price>
       <!-- end #build_price -->
 
-      <!-- detail_images -->
-      <app-detail-images *ngIf="productDetail" [close_up_media]="productDetail.close_up_media"></app-detail-images>
-      <!-- end #detail_images -->
-
       <!-- geometry -->
       <app-geometry *ngIf="productDetail" [data]="productDetail.geometry"></app-geometry>
       <!-- end #geometry -->
+      <div id="overview" class="frame-section frame-section--overview">
+        <div *ngIf="urlSafe" id="file-14635--2" class="file file-video file-video-youtube">
+          <h2 class="element-invisible"><a href="/en-US/file/syndicate-mixed-opinions">The
+              Syndicate - Mixed Opinions</a></h2>
+          <div class="content">
+            <div class="media-youtube-video media-youtube-2">
+              <div class="u-video-wrapper" style="padding-bottom: 56.25%"><iframe class="media-youtube-player"
+                  title="The Syndicate - Mixed Opinions" [src]="urlSafe" name="The Syndicate - Mixed Opinions"
+                  frameborder="0" allowfullscreen="">Video of
+                  The Syndicate - Mixed Opinions</iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- tech_support -->
       <app-tech-support *ngIf="productDetail" [techSupport]="productDetail.tech_support"></app-tech-support>

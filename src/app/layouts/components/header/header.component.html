@@ -20,6 +20,10 @@
             href="javascript:void(0);">Bikes</a></li>
         <li class="nav-links__item"><a routerLink="/gear" (click)="this.bike_menu = false"
             class="nav-links__item-link nav-dropdown__gear_menu" title="Coming Soon">Gear</a></li>
+        <li class="nav-links__item"><a routerLink="/gear" (click)="this.bike_menu = false"
+            class="nav-links__item-link nav-dropdown__gear_menu" title="Coming Soon">Wheel</a></li>
+        <li class="nav-links__item"><a routerLink="/contact-us" (click)="this.bike_menu = false"
+            class="nav-links__item-link nav-dropdown__gear_menu" title="Coming Soon">Accessories</a></li>
         <li class="nav-links__item"><a routerLink="/contact-us" (click)="this.bike_menu = false"
             class="nav-links__item-link nav-dropdown__teams_menu" title="Coming Soon">Contact Us</a></li>
         <li class="nav-links__item"><a title="Coming Soon" (click)="this.bike_menu = false" routerLink="/about-us"
@@ -134,28 +138,23 @@
       </form>
       <div class="search-form__close">
         <svg role="img">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="https://www.santacruzbicycles.com/sites/all/themes/scb2017/assets/img/ref.svg#close--small-white">
-          </use>Close
+          Close
         </svg>
       </div>
     </div>
     <ul class="mobile-nav__primary-list">
       <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a class="mobile-nav__primary-item-link"
           (click)="showBikes()" href="javascript:void(0);">Bikes</a></li>
-      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a routerLink="/wheels"
-          class="mobile-nav__primary-item-link">Wheels</a>
-      </li>
-      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a routerLink="/paydirt"
-          class="mobile-nav__primary-item-link" title="Coming Soon">Paydirt</a></li>
       <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a routerLink="/gear"
-          class="mobile-nav__primary-item-link" title="Coming Soon">Gear</a></li>
-      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a routerLink="/teams"
-          class="mobile-nav__primary-item-link" title="Coming Soon">Teams</a></li>
-      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a title="Coming Soon" routerLink="/news"
-          class="mobile-nav__primary-item-link">News</a></li>
-      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a title="Coming Soon" routerLink="/demo"
-          class="mobile-nav__primary-item-link">Demo</a></li>
+          class="mobile-nav__primary-item-link">Gear</a> </li>
+      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a routerLink="/contact-us"
+          class="mobile-nav__primary-item-link" title="Coming Soon">Wheel</a></li>
+      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a routerLink="/contact-us"
+          class="mobile-nav__primary-item-link" title="Coming Soon">Accessories</a></li>
+      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a title="Coming Soon" routerLink="/contact-us"
+          class="mobile-nav__primary-item-link">Contact Us</a></li>
+      <li class="mobile-nav__primary-item" (click)="toggleMobileNav()"><a title="Coming Soon" routerLink="/about-us"
+          class="mobile-nav__primary-item-link">About Us</a></li>
     </ul>
   </nav>
 </div>

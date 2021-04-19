@@ -14,18 +14,18 @@
                   <ng-container *ngFor="let img of product; let i = index;">
                     <div class="media-block cat-news" [ngClass]="getSliderClass(index, i)">
                       <div class="media-block__image">
-                        <a href="/en-US/news/2020-czu-fire-eton">
+                        <a href="#">
                           <picture>
                             <img [src]="path+img.media_link" class="lazyload"
                               alt="Eton Image" title=""></picture>
                         </a>
                       </div>
-                      <div class="media-block__text-container">
+                      <!-- <div class="media-block__text-container">
                         <h2 class="media-block__title"><a
-                            href="/en-US/news/2020-czu-fire-eton">img {{i}}</a></h2>
-                        <a class="media-block__cta" href="/en-US/news/2020-czu-fire-eton">Read
+                            href="#">img {{i}}</a></h2>
+                        <a class="media-block__cta" href="#">Read
                           More</a>
-                      </div>
+                      </div> -->
                     </div>
                     <!-- <div class="media-block cat-news">
                       <div class="media-block__image">
