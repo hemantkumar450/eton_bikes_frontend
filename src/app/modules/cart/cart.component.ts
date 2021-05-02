@@ -12,6 +12,8 @@ declare let Razorpay: any;
   styleUrls: ["./cart.component.scss"],
 })
 export class CartComponent implements OnInit {
+  path = environment.filePath;
+  defaultImage = environment.noImagePath;
   cartItems: any = [];
   totalAmnt = 0;
   bookingId = "";
@@ -96,7 +98,7 @@ export class CartComponent implements OnInit {
         booking_id: this.bookingId,
         payment_id: response.razorpay_payment_id,
         amount: this.totalAmnt,
-        data: response
+        data: response,
       })
       .subscribe(
         (data) => {

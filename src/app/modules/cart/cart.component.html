@@ -25,8 +25,7 @@
                       <span class="product-image-container" style="width:165px;">
                         <span class="product-image-wrapper" style="padding-bottom: 100%;">
                           <img class="product-item-photo"
-                            src="/assets/images/default/no-image.png"
-                            max-width="165" max-height="165" alt="JULIANA STRIPE TANK">
+                            [src]="item.sub_product.detail.media ? path+item.sub_product.detail.media.media_link : (item.icon ? item.icon.media_link : defaultImage)">
                         </span>
                       </span>
                     </a>
@@ -53,8 +52,9 @@
                 <div class="field qty">
                   <div class="control qty">
                     <label for="Item-1">
-                      <input id="Item-1" name="" value="{{item.count}}" (change)="handlePrice($event, item)" type="number" size="4" title="Qty" class="input-text qty"
-                        data-role="cart-item-qty" min="1" oninput="validity.valid||(value='');">
+                      <input id="Item-1" name="" value="{{item.count}}" (change)="handlePrice($event, item)"
+                        type="number" size="4" title="Qty" class="input-text qty" data-role="cart-item-qty" min="1"
+                        oninput="validity.valid||(value='');">
                     </label>
                   </div>
                 </div>
