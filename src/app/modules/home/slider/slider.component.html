@@ -3,10 +3,10 @@
     <section class="flexslider-media-block__wrapper">
       <div class="l-wrapper">
         <div class="flexslider-media-block">
-          <p-carousel [value]="sliderImages" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true"
-            [autoplayInterval]="">
+          <p-carousel [value]="sliderImages" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1"
+            [circular]="true" [autoplayInterval]="">
             <ng-template pTemplate="header">
-              <h1 class="flexslider-media-block__title">News &amp; Updates</h1>
+              <h1 class="flexslider-media-block__title">{{section.heading}}</h1>
             </ng-template>
             <ng-template let-product let-index="rowIndex" pTemplate="item">
               <div class="media-block__carousel">
@@ -14,51 +14,12 @@
                   <ng-container *ngFor="let img of product; let i = index;">
                     <div class="media-block cat-news" [ngClass]="getSliderClass(index, i)">
                       <div class="media-block__image">
-                        <a href="#">
+                        <a (click)="openDialog(img, i)">
                           <picture>
-                            <img [src]="path+img.media_link" class="lazyload"
-                              alt="Eton Image" title=""></picture>
+                            <img [src]="path+img.media_link" class="lazyload" alt="Eton Image" title=""></picture>
                         </a>
-                      </div>
-                      <!-- <div class="media-block__text-container">
-                        <h2 class="media-block__title"><a
-                            href="#">img {{i}}</a></h2>
-                        <a class="media-block__cta" href="#">Read
-                          More</a>
-                      </div> -->
-                    </div>
-                    <!-- <div class="media-block cat-news">
-                      <div class="media-block__image">
-                        <a href="/en-US/news/2020-danny-macaskill-virtual-insanity">
-                          <picture>
-                            <img data-src="/assets/img/ponvr_1.55.1.jpg?itok=L1YrXJE3" class="lazyload" alt="Eton Image"
-                              title=""></picture>
-                        </a>
-                      </div>
-                      <div class="media-block__text-container">
-                        <div class="media-block__category"></div>
-                        <h2 class="media-block__title"><a
-                            href="/en-US/news/2020-danny-macaskill-virtual-insanity">{{product.name}}</a></h2>
-                        <a class="media-block__cta" href="/en-US/news/2020-danny-macaskill-virtual-insanity">Read
-                          More</a>
                       </div>
                     </div>
-                    <div class="media-block cat-news cat-562 cat-560">
-                      <div class="media-block__image">
-                        <a href="/en-US/news/2020-all-wheel-drive-full-video">
-                          <picture>
-                            <img data-src="/assets/img/scb_my21_5010_50to01_dpaley-294.jpg?itok=jxJno3MQ"
-                              class="lazyload" alt="Eton Image" title=""></picture>
-                        </a>
-                      </div>
-                      <div class="media-block__text-container">
-                        <div class="media-block__category"><a href="/en-US/news?show=news">News</a></div>
-                        <h2 class="media-block__title"><a
-                            href="/en-US/news/2020-all-wheel-drive-full-video">{{product.name}} </a></h2>
-                        <a class="media-block__cta" href="/en-US/news/2020-all-wheel-drive-full-video">Read
-                          More</a>
-                      </div>
-                    </div> -->
                   </ng-container>
                 </div>
               </div>

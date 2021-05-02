@@ -22,6 +22,7 @@ export class OverviewComponent implements OnInit {
   showFullImage(image: Media, i: number) {
     this.openDialog(image, i);
   }
+
   openDialog(image: Media, i: number): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: "100%",

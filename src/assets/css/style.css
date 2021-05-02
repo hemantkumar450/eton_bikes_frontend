@@ -5940,7 +5940,7 @@ label {
 
 @media (max-width:47.9375em) {
   .media-block__carousel--3-up .media-block:nth-of-type(1) {
-    margin-bottom: 1.875rem
+    margin-bottom: 0.875rem
   }
 
   .media-block__carousel--3-up .media-block:nth-of-type(n+2) {
@@ -5949,7 +5949,7 @@ label {
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 1.875rem
+    margin-bottom: 0.875rem
   }
 
   .media-block__carousel--3-up .media-block:nth-of-type(n+2) .media-block__image a {
@@ -5982,14 +5982,14 @@ label {
   .media-block__carousel--3-up .media-block:nth-of-type(1) {
     float: left;
     width: calc(67% - 0.9375rem);
-    margin-right: 1.875rem;
+    margin-right: 0.875rem;
     overflow: hidden
   }
 
   .media-block__carousel--3-up .media-block:nth-of-type(n+2) {
     width: calc(32.5% - 0.9375rem);
     float: left;
-    margin-bottom: 1.875rem
+    margin-bottom: 0.875rem
   }
 }
 

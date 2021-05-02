@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
 import { section } from "src/app/core/model/page.model";
+import { Media } from "src/app/core/model/product.model";
+import { ModalComponent } from "src/app/shared/modal/modal.component";
 import { environment } from "src/environments/environment";
 
 @Component({
@@ -10,14 +13,12 @@ import { environment } from "src/environments/environment";
 export class SliderComponent implements OnInit {
   @Input() section: section;
   path = environment.filePath;
-  sliderImages: any[];
-  constructor() {}
+  sliderImages: any;
+  constructor(public dialog: MatDialog) {}
   name = "Angular";
   slideNo = 0;
   withAnim = true;
   resetAnim = true;
-
-  
 
   exLineup = "tab1";
 
@@ -28,7 +29,6 @@ export class SliderComponent implements OnInit {
   }
 
   splitArray(arr, size) {
-    console.log(arr, size);
     const len = (arr && arr.slice && arr.length) | 0;
     if (size !== Math.floor(size) || size < 1) return null;
     for (var chunks = [], i = 0; i < len; i += size) {
@@ -60,5 +60,18 @@ export class SliderComponent implements OnInit {
       }
     }
     return className;
+  }
+
+  openDialog(image: Media, i: number): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: "100%",
+      height: "100%",
+      disableClose: false,
+      panelClass: "my-full-screen-dialog",
+      data: { curr: image, allImage: this.sliderImages.flat(), index: i },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      // this.email = result;
+    });
   }
 }

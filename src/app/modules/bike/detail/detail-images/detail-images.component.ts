@@ -35,6 +35,7 @@ export class DetailImagesComponent implements OnInit {
     console.log(image, "imagess");
     this.openDialog(image, i);
   }
+
   openDialog(image: object, i: number): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: "100%",
