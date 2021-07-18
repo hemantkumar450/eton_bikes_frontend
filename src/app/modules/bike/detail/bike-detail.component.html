@@ -1,4 +1,4 @@
-<mat-progress-bar mode="indeterminate" *ngIf="loader"></mat-progress-bar>
+<mat-progress-bar mode="indeterminate" color="warn" *ngIf="loader"></mat-progress-bar>
 <main id="main" role="main">
 
   <div class="region region-content">
@@ -66,7 +66,7 @@
       <!-- end #overview -->
 
       <!-- detail_images -->
-      <app-detail-images *ngIf="productDetail.close_up_media.length" [close_up_media]="productDetail.close_up_media">
+      <app-detail-images *ngIf="productDetail && productDetail.close_up_media.length" [close_up_media]="productDetail.close_up_media">
       </app-detail-images>
       <!-- end #detail_images -->
 
