@@ -1,6 +1,6 @@
-<div id="frame_hero">
+<div id="frame_hero" style="cursor: pointer;">
   <section class="hero-panel hero-panel--text-left  hero-panel--has-text hero-panel--image">
-    <div class="hero-panel__inner">
+    <div class="hero-panel__inner" (click)="showFullImage(section.medias[0], 0)">
       <picture>
         <img class=" lazyloaded" [src]="path+section.medias[0].media_link" default="">
       </picture>
